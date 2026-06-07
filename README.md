@@ -12,8 +12,6 @@ My personal website as an iOS developer and AI researcher.
 
 - **GitHub**: https://github.com/NatAndDev
 - **LinkedIn**: https://linkedin.com/in/natalia-andrzejewski
-- **Twitter**: https://twitter.com/NatEinDev
-
 ---
 
 Built with HTML, CSS, and vanilla JavaScript. Hosted on GitHub Pages.
