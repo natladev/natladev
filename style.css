@@ -78,6 +78,16 @@ body {
     text-align: center;
 }
 
+.hero-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.25);
+}
+
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
@@ -93,6 +103,143 @@ body {
     color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto;
+}
+
+.hero-tagline {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--accent-light);
+}
+
+/* Sound wave: chaos settling into calm */
+.sound-wave {
+    max-width: 700px;
+    margin: 3rem auto 0;
+}
+
+.sound-wave svg {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+.sound-wave path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    vector-effect: non-scaling-stroke;
+}
+
+.wave-jagged {
+    opacity: 0.9;
+    animation: wave-settle-out 7s ease 1s forwards;
+}
+
+.wave-smooth {
+    opacity: 0;
+    animation: wave-settle-in 7s ease 1s forwards;
+}
+
+@keyframes wave-settle-out {
+    to { opacity: 0; }
+}
+
+@keyframes wave-settle-in {
+    to { opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wave-jagged { display: none; }
+    .wave-smooth { opacity: 0.9; animation: none; }
+}
+
+/* Stat band */
+.stat-band {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 4.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-text {
+    max-width: 480px;
+    margin: 0.75rem auto 0;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Pull quote + standalone line */
+.pull-quote {
+    max-width: 600px;
+    margin: 3rem auto;
+    text-align: center;
+    font-size: 1.35rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.about-content .standalone-line,
+.standalone-line {
+    margin: 3.5rem 0 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text) 0%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Tone demo */
+.tone-demo .about-content > p {
+    text-align: center;
+}
+
+.tone-demo-controls {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.tone-button {
+    font: inherit;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text);
+    background: rgba(59, 130, 246, 0.08);
+    border: 2px solid var(--accent);
+    border-radius: 999px;
+    padding: 1.1rem 2.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: none;
+}
+
+.tone-button:hover {
+    background: rgba(59, 130, 246, 0.18);
+}
+
+.tone-button.playing {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 45px rgba(59, 130, 246, 0.5);
+}
+
+.tone-note {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
 }
 
 /* Sections */
@@ -184,6 +331,12 @@ body {
     cursor: pointer;
 }
 
+.work-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .work-card:hover {
     border-color: var(--accent);
     background: rgba(59, 130, 246, 0.1);
@@ -270,6 +423,10 @@ body {
 
 .social-btn.twitter {
     --hover-color: #1da1f2;
+}
+
+.social-btn.email {
+    --hover-color: #34d399;
 }
 
 /* Footer */
