@@ -438,12 +438,6 @@ body {
     font-size: 1.2rem;
 }
 
-.support-note {
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
 /* Footer */
 footer {
     background: var(--secondary);
