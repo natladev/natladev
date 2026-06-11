@@ -429,6 +429,21 @@ body {
     --hover-color: #34d399;
 }
 
+.social-btn.coffee:hover {
+    border-color: #ff5e5b;
+    color: #ff5e5b;
+}
+
+.coffee-icon {
+    font-size: 1.2rem;
+}
+
+.support-note {
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
 /* Footer */
 footer {
     background: var(--secondary);
