@@ -260,6 +260,16 @@ body {
     margin: 0 auto;
 }
 
+.about-content a {
+    color: var(--accent-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+}
+
+.about-content a:hover {
+    color: var(--accent);
+}
+
 .about-content > p {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -438,7 +448,37 @@ body {
     font-size: 1.2rem;
 }
 
+/* ClearPage page */
+.cp-wordmark {
+    margin-bottom: 1.5rem;
+}
+
+.cp-wordmark img {
+    width: min(420px, 80%);
+    height: auto;
+}
+
+.cp-mascot {
+    width: 180px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
 /* Footer */
+.legal-links {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.legal-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    color: var(--accent);
+}
+
 footer {
     background: var(--secondary);
     border-top: 1px solid var(--border);
