@@ -10,8 +10,8 @@ My personal website as an iOS developer and AI researcher.
 
 ## 🔗 Links
 
-- **GitHub**: https://github.com/NatAndDev
-- **LinkedIn**: https://linkedin.com/in/natalia-andrzejewski
+- **GitHub**: https://github.com/natladev
+- **LinkedIn**: https://www.linkedin.com/in/natladev/
 ---
 
 Built with HTML, CSS, and vanilla JavaScript. Hosted on GitHub Pages.
