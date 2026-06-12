@@ -15,21 +15,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            <ul class="nav-links" id="navMenu">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#work">Work</a></li>
                 <li><a href="clearpage.html">ClearPage</a></li>
-                <li><a href="tinnitus.html">Tinnitus Research</a></li>
+                <li><a href="tinnitus.html">Tinnitus</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="index.html#socials">Connect</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="main">
         <div class="container">
             <h1>Keep it free</h1>
             <p class="subtitle">Everything I build — MyTinnitusMask and ClearPage — is free forever: no ads, no subscriptions, nothing to unlock.</p>

@@ -30,6 +30,31 @@ body {
     padding: 0 2rem;
 }
 
+/* Accessibility: skip link + visible keyboard focus */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 200;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 8px 0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-light);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 /* Navigation */
 .navbar {
     position: sticky;
@@ -53,6 +78,19 @@ body {
     color: var(--accent);
     text-decoration: none;
     letter-spacing: 2px;
+}
+
+.nav-toggle {
+    display: none;
+    font: inherit;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--text);
+    background: none;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 0.35rem 0.65rem;
+    cursor: pointer;
 }
 
 .nav-links {
@@ -464,6 +502,23 @@ body {
     margin-bottom: 1rem;
 }
 
+.cp-appicon {
+    display: block;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 1.5rem;
+    border-radius: 22%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.cp-illustration {
+    display: block;
+    width: 200px;
+    height: auto;
+    margin: 2.5rem auto 0;
+    opacity: 0.9;
+}
+
 /* Footer */
 .legal-links {
     margin-top: 0.5rem;
@@ -503,12 +558,40 @@ footer {
         font-size: 1.8rem;
     }
 
+    .navbar .container {
+        position: relative;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
     .nav-links {
-        gap: 1rem;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        padding: 0.5rem 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
     }
 
     .nav-links a {
-        font-size: 0.85rem;
+        display: block;
+        padding: 0.85rem;
+        font-size: 1rem;
     }
 
     .work-grid {

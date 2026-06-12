@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Natalia Andrzejewski - iOS Developer & AI Researcher">
+    <meta name="description" content="iOS developer and AI researcher using tech to help people — free, privacy-first accessibility apps like MyTinnitusMask and ClearPage.">
     <title>Natalia Andrzejewski | iOS Developer & AI Researcher</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
@@ -13,23 +13,40 @@
     <meta property="og:image" content="https://natladev.com/nat.jpg">
     <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Natalia Andrzejewski",
+        "url": "https://natladev.com/",
+        "image": "https://natladev.com/nat.jpg",
+        "jobTitle": "iOS Developer & AI Researcher",
+        "sameAs": [
+            "https://github.com/NatAndDev",
+            "https://www.linkedin.com/in/natladev/"
+        ],
+        "knowsAbout": ["iOS development", "Machine learning", "Accessibility", "Tinnitus masking", "Dyslexia-friendly design"]
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">nat</a>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            <ul class="nav-links" id="navMenu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="clearpage.html">ClearPage</a></li>
-                <li><a href="tinnitus.html">Tinnitus Research</a></li>
+                <li><a href="tinnitus.html">Tinnitus</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="#socials">Connect</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="main">
         <div class="container">
             <img src="nat.jpg" alt="Natalia Andrzejewski" class="hero-photo">
             <h1>Hey, I'm Nat</h1>
@@ -43,7 +60,7 @@
             <div class="about-content">
                 <p>I'm an iOS developer with production-scale experience shipping apps to millions of users. I'm currently pursuing a Master's in Artificial Intelligence while building personal passion projects: an adaptive audio masking app for tinnitus and a dyslexia-friendly reading app.</p>
 
-                <p>Accessibility is the thread that runs through everything I build. My mission is the curb cut effect: ramps cut into curbs for wheelchairs ended up helping everyone — strollers, suitcases, delivery carts. I first heard the term in a talk by <a href="https://chrisward.de" target="_blank">Chris Ward</a>, my tech lead, recognized for his advocacy for neurodivergent people in tech and for LGBTQ+ rights. His openness is why I can say this out loud: I'm autistic and dyslexic. The curbs I cut are ones I know from the inside.</p>
+                <p>Accessibility is the thread that runs through everything I build. My mission is the curb cut effect: ramps cut into curbs for wheelchairs ended up helping everyone — strollers, suitcases, delivery carts. I first heard the term in a talk by <a href="https://chrisward.de" target="_blank">Chris Ward</a>, my tech lead, recognized for his advocacy for neurodivergent people in tech and for LGBTQ+ rights. His openness made it a little easier to write this quietly here: I'm autistic and dyslexic. The curbs I cut are ones I know from the inside.</p>
 
                 <div class="skills">
                     <h3>What I work with</h3>
@@ -68,7 +85,7 @@
             <h2>Current Work & Interests</h2>
             <div class="work-grid">
                 <a href="tinnitus.html" class="work-card work-card-link">
-                    <h3>Tinnitus Audio Masking App</h3>
+                    <h3>MyTinnitusMask — Adaptive Tinnitus Relief</h3>
                     <p>A free, privacy-first iOS app that learns the masking sound that works for you — psychoacoustic tinnitus matching plus an on-device adaptive optimizer. Built as my Master's thesis. Learn more →</p>
                     <div class="tags">
                         <span>iOS</span>
@@ -90,34 +107,13 @@
                 </a>
 
                 <div class="work-card">
-                    <h3>Machine Learning & AI</h3>
-                    <p>Currently studying deep learning, neural networks, and supervised/unsupervised learning as part of my M.Sc. in Artificial Intelligence.</p>
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Deep Learning</span>
-                        <span>Data Science</span>
-                        <span>Research</span>
-                    </div>
-                </div>
-
-                <div class="work-card">
                     <h3>Production iOS Development</h3>
-                    <p>Building features for large-scale consumer apps used by millions. Expertise in async/await, performance optimization, and privacy-first architecture.</p>
+                    <p>Building features for large-scale consumer apps used by millions, while studying deep learning and neural networks for my M.Sc. in Artificial Intelligence. Expertise in async/await, performance optimization, and privacy-first architecture.</p>
                     <div class="tags">
                         <span>Swift</span>
                         <span>SwiftUI</span>
                         <span>Performance</span>
-                        <span>Privacy</span>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <h3>Open Research & Community</h3>
-                    <p>The tinnitus app will always be free — no ads, no subscription. Its research methods and anonymized dataset will be published openly. Passionate about sharing knowledge with the iOS and AI communities.</p>
-                    <div class="tags">
-                        <span>Free Forever</span>
-                        <span>Open Data</span>
-                        <span>Community</span>
+                        <span>Deep Learning</span>
                     </div>
                 </div>
             </div>
@@ -131,7 +127,7 @@
             <div class="social-links">
                 <a href="https://github.com/NatAndDev" class="social-btn github" target="_blank">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.01 12.01 0 0024 12c0-6.63-5.37-12-12-12z"/>
                     </svg>
                     GitHub
                 </a>

@@ -13,23 +13,39 @@
     <meta property="og:image" content="https://natladev.com/assets/clearpage/icon1024-light.png">
     <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ClearPage",
+        "url": "https://natladev.com/clearpage.html",
+        "image": "https://natladev.com/assets/clearpage/icon1024-light.png",
+        "operatingSystem": "iOS",
+        "applicationCategory": "EducationalApplication",
+        "description": "A free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout. On-device OCR in English, Spanish, and German. No accounts, no network, no analytics.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "Natalia Andrzejewski", "url": "https://natladev.com/" }
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            <ul class="nav-links" id="navMenu">
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#work">Work</a></li>
                 <li><a href="clearpage.html">ClearPage</a></li>
-                <li><a href="tinnitus.html">Tinnitus Research</a></li>
+                <li><a href="tinnitus.html">Tinnitus</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="index.html#socials">Connect</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <header class="hero" id="main">
         <div class="container">
             <h1 class="cp-wordmark"><img src="assets/clearpage/clearpage-wordmark-cream.svg" alt="ClearPage"></h1>
             <p class="subtitle">A free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout — your spacing, your typeface, your colors.</p>
@@ -49,8 +65,8 @@
             <h2>A dog, a marker, one line</h2>
             <div class="about-content">
                 <p>ClearPage began as a single marker drawing of <strong>Horus</strong>, my border collie — ears back, mid-sniff, his body curling into the letter C. That one unbroken line became the whole brand: a friendly guide who finds what you're looking for and brings it back in a shape you can read.</p>
-                <p>The idea behind the app is the <em>curb cut effect</em>: ramps cut into curbs for wheelchairs ended up helping everyone — strollers, suitcases, delivery carts. ClearPage re-renders any photographed text in a dyslexia-friendly layout, and like a good curb cut, it smooths the path for every reader.</p>
-                <p>The picture in my head is simple. A kid at school snaps the worksheet and reads it like everyone else — no struggling, no falling behind, no shrinking in their seat. Someone on a train or a plane photographs a few pages and settles into a peaceful reading session, in their own layout, at their own pace. And because everything runs on the device, it works exactly there: in the classroom with no Wi-Fi, in the tunnel, at 10,000 meters. Reading should never be the hard part.</p>
+                <p>The idea behind the app is the <em>curb cut effect</em>: ramps cut into curbs for wheelchairs ended up helping everyone — strollers, suitcases, delivery carts. ClearPage is a curb cut for reading.</p>
+                <p>The picture in my head is simple. A kid at school snaps the worksheet and reads it like everyone else — no struggling, no falling behind, no shrinking in their seat. Someone on a train or a plane settles into a peaceful reading session, in their own layout, at their own pace — in the classroom with no Wi-Fi, in the tunnel, at 10,000 meters, because everything runs on the device. Reading should never be the hard part.</p>
             </div>
         </div>
     </section>
@@ -116,10 +132,28 @@
         </div>
     </section>
 
+    <section id="status" class="section">
+        <div class="container">
+            <h2>Get it &amp; what's next</h2>
+            <div class="about-content">
+                <img src="assets/clearpage/icon1024-light.png" alt="ClearPage app icon — Horus drawn in one line on a warm cream background" class="cp-appicon">
+                <p>ClearPage is in beta and ready to install via TestFlight — <a href="mailto:natiosdev@gmail.com">email me</a> for an invite. The App Store release follows once the beta has settled.</p>
+                <div class="highlights">
+                    <h3>On the workbench</h3>
+                    <ul>
+                        <li><strong>Dyscalculia support</strong> — extending the same idea to numbers: re-rendering digits, quantities, and math notation in layouts that are easier to parse. Same curb, more cuts.</li>
+                        <li>Lock Screen and Control Center controls, plus a Smart Stack widget.</li>
+                    </ul>
+                </div>
+                <img src="assets/clearpage/process-state-dark.png" alt="Horus sniffing along a dotted trail — work in progress" class="cp-illustration">
+            </div>
+        </div>
+    </section>
+
     <section id="support-cta" class="section social-section">
         <div class="container">
             <h2>Like what Horus fetched?</h2>
-            <p>ClearPage is free forever. If it smoothed the path for you or someone you love, you can help cover the costs.</p>
+            <p>If ClearPage smoothed the path for you or someone you love, you can help cover the costs.</p>
             <div class="social-links">
                 <a href="support.html" class="social-btn coffee">
                     <span class="coffee-icon">☕</span>
