@@ -487,11 +487,11 @@ button:focus-visible {
 }
 
 /* ClearPage page */
-.cp-wordmark {
+.wordmark {
     margin-bottom: 1.5rem;
 }
 
-.cp-wordmark img {
+.wordmark img {
     width: min(420px, 80%);
     height: auto;
 }
