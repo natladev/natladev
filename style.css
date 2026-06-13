@@ -681,6 +681,18 @@ footer {
     }
 }
 
+/* Theme-dependent assets: dark-only shown on dark theme, light-only on light */
+.light-only { display: none; }
+:root[data-theme="light"] .light-only { display: inline; }
+:root[data-theme="light"] .dark-only { display: none; }
+
+/* Dark-mode illustrations get a dark backdrop when the theme is light */
+:root[data-theme="light"] .cp-illustration {
+    background: #0f172a;
+    border-radius: 20px;
+    padding: 1.25rem;
+}
+
 /* Reading preferences widget */
 .prefs-toggle {
     position: fixed;
