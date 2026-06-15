@@ -51,6 +51,7 @@
         <div class="container">
             <img src="nat.jpg" alt="Natalia Andrzejewski" class="hero-photo">
             <h1>Hey, I'm Nat</h1>
+            <p class="hero-tagline" style="margin-top: 0.5rem; margin-bottom: 1rem;">Building accessible apps from lived experience</p>
             <p class="subtitle">iOS Developer | M.Sc. in AI | Using tech to help people</p>
         </div>
     </header>
@@ -59,7 +60,7 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>I'm an iOS developer with production-scale experience shipping apps to millions of users. I'm currently pursuing a Master's in Artificial Intelligence while building personal passion projects: an adaptive audio masking app for tinnitus and a dyslexia-friendly reading app.</p>
+                <p>I'm an iOS developer with production-scale experience shipping apps to millions of users. I'm completing a Master's in Artificial Intelligence — currently building my thesis project, <strong>MyTinnitusMask</strong>, an adaptive audio masking app for tinnitus. Alongside it, I'm building <strong>ClearPage</strong>, a dyslexia-friendly reading app. Both are free, forever.</p>
 
                 <p>I was in a talk by <a href="https://chrisward.de" target="_blank">Chris Ward</a>, my tech lead at my workplace and an advocate for LGBTQ+ rights and neurodivergent communities. He talked about the curb cut effect: ramps cut into curbs for wheelchairs ended up helping everyone — strollers, suitcases, delivery carts. It had a profound impact on me. Because I'm autistic and dyslexic, I realized I could cut the curbs that I know from the inside. That idea — designing from lived experience, for universal benefit — became the thread that runs through everything I build.</p>
 
@@ -73,7 +74,9 @@
                         <span>Machine Learning</span>
                         <span>AVAudioEngine</span>
                         <span>Bayesian Optimization</span>
-                        <span>Accessibility</span>
+                        <span>Accessibility Design</span>
+                        <span>Inclusive UX</span>
+                        <span>User Research</span>
                     </div>
                 </div>
 
@@ -83,11 +86,14 @@
 
     <section id="work" class="section">
         <div class="container">
-            <h2>Current Work & Interests</h2>
+            <h2>Projects</h2>
             <div class="work-grid">
                 <a href="tinnitus.html" class="work-card work-card-link">
-                    <h3>MyTinnitusMask — Adaptive Tinnitus Relief</h3>
-                    <p>A free, privacy-first iOS app that learns the masking sound that works for you — psychoacoustic tinnitus matching plus an on-device adaptive optimizer. Built as my Master's thesis. Learn more →</p>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <h3>MyTinnitusMask — Adaptive Tinnitus Relief</h3>
+                        <span style="background: rgba(59, 130, 246, 0.2); color: var(--accent-light); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; margin-left: 0.5rem;">In Development</span>
+                    </div>
+                    <p><em style="color: var(--accent-light);">Built from love.</em> My husband has tinnitus. I couldn't make the ringing stop, so I enrolled in a Master's in AI. The result: a free app that learns which masking sound works for each person — psychoacoustic matching plus Bayesian optimization, entirely on-device. Learn more →</p>
                     <div class="tags">
                         <span>iOS</span>
                         <span>Bayesian Optimization</span>
@@ -97,8 +103,11 @@
                 </a>
 
                 <a href="clearpage.html" class="work-card work-card-link">
-                    <h3>ClearPage — Dyslexia-Friendly Reading</h3>
-                    <p>A free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout. On-device OCR, no accounts, no analytics. Join the beta →</p>
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                        <h3>ClearPage — Dyslexia-Friendly Reading</h3>
+                        <span style="background: rgba(52, 211, 153, 0.2); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; margin-left: 0.5rem;">In Beta</span>
+                    </div>
+                    <p><em style="color: var(--accent-light);">Removing barriers, not fixing deficits.</em> Dyslexia is a formatting problem, not a reading problem. Snap a photo or screenshot, and ClearPage re-renders text in your layout — your spacing, your typeface, your colors. Free, offline, on-device OCR in English, Spanish, and German. Join the beta →</p>
                     <div class="tags">
                         <span>iOS</span>
                         <span>Accessibility</span>
@@ -138,10 +147,50 @@
         </div>
     </section>
 
+    <section class="section" style="background: var(--secondary); border-top: 1px solid var(--border);">
+        <div class="container">
+            <h2>Stay in the loop</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Get notified when ClearPage launches on the App Store and for updates on MyTinnitusMask.</p>
+            <div style="max-width: 400px; margin: 0 auto;">
+                <form method="POST" action="https://formspree.io/f/xvznlbnn" style="display: flex; gap: 0.75rem;">
+                    <input type="email" name="email" placeholder="Your email" required style="flex: 1; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--primary); color: var(--text); font: inherit;" />
+                    <button type="submit" style="padding: 0.85rem 1.75rem; background: var(--accent); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; white-space: nowrap;">Join</button>
+                </form>
+                <p style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">I'll only send you updates about app launches. No spam, no ads.</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
-            <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
-            <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;">Projects</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="tinnitus.html" style="color: var(--text-muted); text-decoration: none;">MyTinnitusMask</a></li>
+                        <li><a href="clearpage.html" style="color: var(--text-muted); text-decoration: none;">ClearPage</a></li>
+                        <li><a href="support.html" style="color: var(--text-muted); text-decoration: none;">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;">Connect</h4>
+                    <ul style="list-style: none;">
+                        <li><a href="https://github.com/natladev" target="_blank" style="color: var(--text-muted); text-decoration: none;">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/natladev/" target="_blank" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a></li>
+                        <li><a href="https://ko-fi.com/natladev" target="_blank" style="color: var(--text-muted); text-decoration: none;">Ko-fi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;">Accessibility</h4>
+                    <ul style="list-style: none;">
+                        <li><span style="color: var(--text-muted);">Reading preferences</span><br><span style="font-size: 0.85rem; color: var(--text-muted);">Check bottom right ↓</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+                <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+            </div>
         </div>
     </footer>
 
