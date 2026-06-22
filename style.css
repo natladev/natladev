@@ -5,51 +5,77 @@
 }
 
 :root {
-    --primary: #0f172a;
-    --secondary: #1e293b;
-    --accent: #3b82f6;
-    --accent-light: #60a5fa;
-    --text: #f1f5f9;
-    --text-muted: #cbd5e1;
-    --border: #334155;
-    --bg-dark: #0f172a;
-    --bg-darker: #020617;
-    --nav-bg: rgba(15, 23, 42, 0.8);
-    --nav-bg-solid: rgba(15, 23, 42, 0.97);
-    --card-bg: rgba(59, 130, 246, 0.05);
-    --card-bg-hover: rgba(59, 130, 246, 0.1);
-    --tag-bg: rgba(59, 130, 246, 0.15);
-    --panel-bg: #1e293b;
+    --primary: #1f2733;
+    --secondary: #28323f;
+    --accent: #5b86ab;
+    --accent-light: #8ab0cf;
+    --text: #f3efe4;
+    --text-muted: #b6bfca;
+    --border: #3a4452;
+    --bg-dark: #1f2733;
+    --bg-darker: #161d27;
+    --nav-bg: rgba(31, 39, 51, 0.82);
+    --nav-bg-solid: rgba(31, 39, 51, 0.97);
+    --card-bg: rgba(243, 239, 228, 0.035);
+    --card-bg-hover: rgba(243, 239, 228, 0.065);
+    --tag-bg: rgba(115, 155, 191, 0.18);
+    --panel-bg: #28323f;
+    --cta-bg: #8ab0cf;
+    --cta-text: #161d27;
     color-scheme: dark;
 }
 
 :root[data-theme="light"] {
-    --primary: #f8fafc;
-    --secondary: #e2e8f0;
-    --accent: #2563eb;
-    --accent-light: #1d4ed8;
-    --text: #0f172a;
-    --text-muted: #475569;
-    --border: #cbd5e1;
-    --bg-dark: #f8fafc;
-    --bg-darker: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.85);
-    --nav-bg-solid: rgba(255, 255, 255, 0.97);
-    --card-bg: rgba(37, 99, 235, 0.05);
-    --card-bg-hover: rgba(37, 99, 235, 0.1);
-    --tag-bg: rgba(37, 99, 235, 0.12);
-    --panel-bg: #ffffff;
+    --primary: #f7f4ec;
+    --secondary: #efe9da;
+    --accent: #38618c;
+    --accent-light: #5680a8;
+    --text: #232f42;
+    --text-muted: #5e6b7d;
+    --border: #ded7c3;
+    --bg-dark: #f7f4ec;
+    --bg-darker: #fffdf8;
+    --nav-bg: rgba(247, 244, 236, 0.86);
+    --nav-bg-solid: rgba(247, 244, 236, 0.97);
+    --card-bg: rgba(35, 47, 66, 0.035);
+    --card-bg-hover: rgba(35, 47, 66, 0.065);
+    --tag-bg: rgba(56, 97, 140, 0.1);
+    --panel-bg: #fffdf8;
+    --cta-bg: #2c4a68;
+    --cta-text: #fffdf8;
     color-scheme: light;
+}
+
+/* OpenDyslexic — used only when the dyslexia-friendly font preference is on */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('assets/fonts/OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('assets/fonts/OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Reading preferences (set as data attributes on <html> by prefs.js) */
 :root[data-textsize="large"] { font-size: 112.5%; }
 :root[data-textsize="xl"] { font-size: 125%; }
 
-:root[data-font="dyslexic"] body {
-    font-family: Verdana, 'Trebuchet MS', Tahoma, sans-serif;
-    letter-spacing: 0.03em;
-    word-spacing: 0.12em;
+:root[data-font="dyslexic"] body,
+:root[data-font="dyslexic"] h1,
+:root[data-font="dyslexic"] h2,
+:root[data-font="dyslexic"] h3,
+:root[data-font="dyslexic"] .logo,
+:root[data-font="dyslexic"] .tone-button {
+    font-family: 'OpenDyslexic', Verdana, 'Trebuchet MS', Tahoma, sans-serif;
+    letter-spacing: 0.02em;
+    word-spacing: 0.1em;
 }
 
 :root[data-spacing="relaxed"] body { line-height: 1.9; }
@@ -127,7 +153,7 @@ button:focus-visible {
     line-height: 1;
     color: var(--text);
     background: none;
-    border: 2px solid var(--border);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 0.35rem 0.65rem;
     cursor: pointer;
@@ -161,19 +187,16 @@ button:focus-visible {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid var(--accent);
+    border: 2px solid var(--accent);
     margin-bottom: 1.5rem;
-    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
 }
 
 .hero h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
 }
 
 .hero .subtitle {
@@ -241,10 +264,7 @@ button:focus-visible {
     font-size: 4.5rem;
     font-weight: 700;
     line-height: 1.1;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent);
 }
 
 .stat-text {
@@ -271,10 +291,7 @@ button:focus-visible {
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--text) 0%, var(--accent-light) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent);
 }
 
 /* Tone demo */
@@ -292,25 +309,25 @@ button:focus-visible {
     font-weight: 600;
     font-size: 1.05rem;
     color: var(--text);
-    background: rgba(59, 130, 246, 0.08);
-    border: 2px solid var(--accent);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 999px;
     padding: 1.1rem 2.2rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background 0.25s ease, box-shadow 0.25s ease;
     user-select: none;
     -webkit-user-select: none;
     touch-action: none;
 }
 
 .tone-button:hover {
-    background: rgba(59, 130, 246, 0.18);
+    background: var(--card-bg-hover);
 }
 
 .tone-button.playing {
     background: var(--accent);
-    color: #fff;
-    box-shadow: 0 0 45px rgba(59, 130, 246, 0.5);
+    color: var(--bg-dark);
+    box-shadow: 0 0 0 6px var(--tag-bg);
 }
 
 .tone-note {
@@ -480,20 +497,37 @@ button:focus-visible {
     align-items: center;
     gap: 0.75rem;
     padding: 1rem 1.75rem;
-    border: 2px solid var(--border);
-    border-radius: 8px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
     color: var(--text);
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     background: var(--card-bg);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .social-btn:hover {
-    border-color: var(--accent);
-    background: var(--tag-bg);
-    color: var(--accent-light);
-    transform: translateY(-2px);
+    background: var(--card-bg-hover);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+/* Primary CTA — one confident filled button per page, for the one action that matters most */
+.social-btn.primary {
+    background: var(--cta-bg);
+    border-color: var(--cta-bg);
+    color: var(--cta-text);
+    font-weight: 600;
+    box-shadow: 0 4px 14px var(--tag-bg);
+}
+
+.social-btn.primary:hover {
+    background: var(--cta-bg);
+    border-color: var(--cta-bg);
+    box-shadow: 0 8px 22px var(--tag-bg);
+    transform: translateY(-1px);
+    opacity: 0.92;
 }
 
 .social-btn svg {
@@ -517,13 +551,37 @@ button:focus-visible {
     --hover-color: #34d399;
 }
 
-.social-btn.coffee:hover {
-    border-color: #ff5e5b;
-    color: #ff5e5b;
+/* Status badges on work cards ("In Development" / "In Beta") */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 0.5rem;
 }
 
-.coffee-icon {
-    font-size: 1.2rem;
+.badge-dev {
+    background: var(--tag-bg);
+    color: var(--accent);
+}
+
+.badge-beta {
+    background: rgba(181, 127, 46, 0.16);
+    color: #b5762c;
+}
+
+/* Hero trust line */
+.trust-line {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.trust-line span {
+    margin: 0 0.5rem;
+    color: var(--border);
 }
 
 /* ClearPage page */
@@ -702,18 +760,20 @@ footer {
     width: 3.25rem;
     height: 3.25rem;
     border-radius: 50%;
-    border: 2px solid var(--accent);
+    border: 1px solid var(--border);
     background: var(--panel-bg);
     color: var(--text);
     font: inherit;
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .prefs-toggle:hover {
     background: var(--card-bg-hover);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 .prefs-panel {
@@ -726,7 +786,7 @@ footer {
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.25rem;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
 }
 
 .prefs-panel[hidden] {
