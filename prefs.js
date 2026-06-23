@@ -48,8 +48,10 @@
     title.textContent = 'Reading preferences';
     panel.appendChild(title);
 
+    // Refresh pressed-state across every set of controls on the page
+    // (the floating panel and any inline mount share one source of truth).
     function refreshButtons() {
-        panel.querySelectorAll('.prefs-options button').forEach(btn => {
+        document.querySelectorAll('.prefs-options button').forEach(btn => {
             const current = prefs[btn.dataset.group] || '';
             const value = btn.dataset.value;
             const isActive = btn.dataset.group === 'theme'
@@ -59,36 +61,46 @@
         });
     }
 
-    groups.forEach(group => {
-        const fieldset = document.createElement('fieldset');
-        const legend = document.createElement('legend');
-        legend.textContent = group.label;
-        fieldset.appendChild(legend);
-        const row = document.createElement('div');
-        row.className = 'prefs-options';
-        group.options.forEach(([value, label]) => {
-            const btn = document.createElement('button');
-            btn.type = 'button';
-            btn.textContent = label;
-            btn.dataset.group = group.key;
-            btn.dataset.value = value;
-            btn.addEventListener('click', () => {
-                if (group.key === 'theme') {
-                    if (value === 'system') delete prefs.theme; else prefs.theme = value;
-                } else if (value === '') {
-                    delete prefs[group.key];
-                } else {
-                    prefs[group.key] = value;
-                }
-                save();
-                apply();
-                refreshButtons();
+    // Build the fieldset/button controls into the given container.
+    function buildControls(container) {
+        groups.forEach(group => {
+            const fieldset = document.createElement('fieldset');
+            const legend = document.createElement('legend');
+            legend.textContent = group.label;
+            fieldset.appendChild(legend);
+            const row = document.createElement('div');
+            row.className = 'prefs-options';
+            group.options.forEach(([value, label]) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.textContent = label;
+                btn.dataset.group = group.key;
+                btn.dataset.value = value;
+                btn.addEventListener('click', () => {
+                    if (group.key === 'theme') {
+                        if (value === 'system') delete prefs.theme; else prefs.theme = value;
+                    } else if (value === '') {
+                        delete prefs[group.key];
+                    } else {
+                        prefs[group.key] = value;
+                    }
+                    save();
+                    apply();
+                    refreshButtons();
+                });
+                row.appendChild(btn);
             });
-            row.appendChild(btn);
+            fieldset.appendChild(row);
+            container.appendChild(fieldset);
         });
-        fieldset.appendChild(row);
-        panel.appendChild(fieldset);
-    });
+    }
+
+    buildControls(panel);
+
+    // Optional inline mount: a page can include <div id="prefs-inline">
+    // to surface the same controls within its content.
+    const inlineMount = document.getElementById('prefs-inline');
+    if (inlineMount) buildControls(inlineMount);
 
     const reset = document.createElement('button');
     reset.type = 'button';

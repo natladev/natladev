@@ -52,32 +52,57 @@
             <img src="nat.jpg" alt="Natalia Andrzejewski" class="hero-photo">
             <h1>Hey, I'm Nat</h1>
             <p class="hero-tagline" style="margin-top: 0.5rem; margin-bottom: 1rem;">Building accessible apps from lived experience</p>
-            <p class="subtitle">iOS Developer | M.Sc. in AI | Using tech to help people</p>
-            <p class="trust-line">Built solo<span>·</span>Free, forever<span>·</span>No ads, no tracking</p>
+            <p class="subtitle">iOS Developer | M.Sc. in AI (in progress) | Using tech to help people</p>
+            <div class="hero-apps">
+                <a href="tinnitus.html" class="hero-app wm-mtm" aria-label="MyTinnitusMask">
+                    <img class="dark-only" src="assets/mytinnitusmask/wordmark-tight.svg" alt="MyTinnitusMask" width="550" height="66">
+                    <img class="light-only" src="assets/mytinnitusmask/wordmark-ink-tight.svg" alt="MyTinnitusMask" width="550" height="66">
+                </a>
+                <a href="clearpage.html" class="hero-app" aria-label="ClearPage">
+                    <img class="dark-only" src="assets/clearpage/clearpage-wordmark-cream.svg" alt="ClearPage" width="420" height="142">
+                    <img class="light-only" src="assets/clearpage/clearpage-wordmark-ink.svg" alt="ClearPage" width="420" height="142">
+                </a>
+            </div>
         </div>
     </header>
 
     <section id="about" class="section">
         <div class="container">
-            <h2>About Me</h2>
+            <h2>Why I build what I build</h2>
             <div class="about-content">
-                <p>I'm an iOS developer with production-scale experience shipping apps to millions of users. I'm completing a Master's in Artificial Intelligence — currently building my thesis project, <strong>MyTinnitusMask</strong>, an adaptive audio masking app for tinnitus. Alongside it, I'm building <strong>ClearPage</strong>, a dyslexia-friendly reading app. Both are free, forever.</p>
+                <p>A while back my tech lead, <a href="https://chrisward.de" target="_blank">Chris Ward</a> — an advocate for LGBTQ+ rights and neurodivergent communities — gave a talk about the curb cut effect: the ramps cut into curbs for wheelchairs ended up helping everyone, from strollers to suitcases to delivery carts. It stayed with me. I'm autistic and dyslexic, and I realized I could cut the curbs I already know from the inside — designing from lived experience, for everyone's benefit.</p>
 
-                <p>I was in a talk by <a href="https://chrisward.de" target="_blank">Chris Ward</a>, my tech lead at my workplace and an advocate for LGBTQ+ rights and neurodivergent communities. He talked about the curb cut effect: ramps cut into curbs for wheelchairs ended up helping everyone — strollers, suitcases, delivery carts. It had a profound impact on me. Because I'm autistic and dyslexic, I realized I could cut the curbs that I know from the inside. That idea — designing from lived experience, for universal benefit — became the thread that runs through everything I build.</p>
+                <p class="standalone-line">Design for one, help everyone.</p>
+
+                <p>That thread runs through everything I make. By day I'm an iOS developer who's shipped apps to millions of users; on the side I'm working toward a Master's in Artificial Intelligence, with my thesis still ahead of me. Both of my apps — <strong>MyTinnitusMask</strong> and <strong>ClearPage</strong> — grew straight out of that idea, and both are free, forever.</p>
 
                 <div class="skills">
                     <h3>What I work with</h3>
-                    <div class="skill-tags">
-                        <span>Swift</span>
-                        <span>SwiftUI</span>
-                        <span>iOS</span>
-                        <span>Python</span>
-                        <span>Machine Learning</span>
-                        <span>AVAudioEngine</span>
-                        <span>Bayesian Optimization</span>
-                        <span>Accessibility Design</span>
-                        <span>Inclusive UX</span>
-                        <span>User Research</span>
+                    <div class="skill-groups">
+                        <div class="skill-group">
+                            <span class="skill-group-label">iOS</span>
+                            <div class="skill-tags">
+                                <span>Swift</span>
+                                <span>SwiftUI</span>
+                                <span>AVAudioEngine</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-label">AI &amp; research</span>
+                            <div class="skill-tags">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>Bayesian Optimization</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <span class="skill-group-label">Design</span>
+                            <div class="skill-tags">
+                                <span>Accessibility Design</span>
+                                <span>Inclusive UX</span>
+                                <span>User Research</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -85,16 +110,19 @@
         </div>
     </section>
 
-    <section id="work" class="section">
+    <section id="work" class="section has-glow">
         <div class="container">
             <h2>Projects</h2>
             <div class="work-grid">
-                <a href="tinnitus.html" class="work-card work-card-link">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
-                        <h3>MyTinnitusMask — Adaptive Tinnitus Relief</h3>
-                        <span class="badge badge-dev">In Development</span>
+                <a href="tinnitus.html" class="work-card work-card-link proj-card accent-teal">
+                    <div class="proj-head">
+                        <img class="proj-icon" src="assets/mytinnitusmask/icon1024.png" alt="MyTinnitusMask app icon" width="60" height="60">
+                        <div class="proj-titles">
+                            <h3>MyTinnitusMask</h3>
+                            <span class="badge badge-dev">In Development</span>
+                        </div>
                     </div>
-                    <p><em style="color: var(--accent-light);">Built from love.</em> My husband has tinnitus. I couldn't make the ringing stop, so I enrolled in a Master's in AI. The result: a free app that learns which masking sound works for each person — psychoacoustic matching plus Bayesian optimization, entirely on-device. Learn more →</p>
+                    <p><em>Built from love.</em> My husband has tinnitus. I couldn't make the ringing stop, so I enrolled in a Master's in AI. The result: a free app that learns which masking sound works for each person — psychoacoustic matching plus Bayesian optimization, entirely on-device. Learn more →</p>
                     <div class="tags">
                         <span>iOS</span>
                         <span>Bayesian Optimization</span>
@@ -103,12 +131,18 @@
                     </div>
                 </a>
 
-                <a href="clearpage.html" class="work-card work-card-link">
-                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
-                        <h3>ClearPage — Dyslexia-Friendly Reading</h3>
-                        <span class="badge badge-beta">In Beta</span>
+                <a href="clearpage.html" class="work-card work-card-link proj-card accent-amber">
+                    <div class="proj-head">
+                        <img class="proj-icon" src="assets/clearpage/icon1024-light.png" alt="ClearPage app icon" width="60" height="60">
+                        <div class="proj-titles">
+                            <h3>ClearPage</h3>
+                            <span class="proj-store-badge">
+                                <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download ClearPage on the App Store" width="120" height="40">
+                                <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download ClearPage on the App Store" width="120" height="40">
+                            </span>
+                        </div>
                     </div>
-                    <p><em style="color: var(--accent-light);">Removing barriers, not fixing deficits.</em> Dyslexia is a formatting problem, not a reading problem. Snap a photo or screenshot, and ClearPage re-renders text in your layout — your spacing, your typeface, your colors. Free, offline, on-device OCR in English, Spanish, and German. Join the beta →</p>
+                    <p><em>Removing barriers, not fixing deficits.</em> Dyslexia is a formatting problem, not a reading problem. Snap a photo or screenshot, and ClearPage re-renders text in your layout — your spacing, your typeface, your colors. Free, offline, on-device OCR in English, Spanish, and German. Get it on the App Store →</p>
                     <div class="tags">
                         <span>iOS</span>
                         <span>Accessibility</span>
@@ -151,7 +185,7 @@
     <section class="section" style="background: var(--secondary); border-top: 1px solid var(--border);">
         <div class="container">
             <h2>Stay in the loop</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Get notified when ClearPage launches on the App Store and for updates on MyTinnitusMask.</p>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">ClearPage is out now — get notified when MyTinnitusMask launches, plus occasional updates on both apps.</p>
             <div style="max-width: 400px; margin: 0 auto;">
                 <form method="POST" action="https://formspree.io/f/xvznlbnn" style="display: flex; gap: 0.75rem;">
                     <input type="email" name="email" placeholder="Your email" required style="flex: 1; padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--primary); color: var(--text); font: inherit;" />
