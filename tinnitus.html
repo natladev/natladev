@@ -46,7 +46,7 @@
         </div>
     </nav>
 
-    <header class="hero" id="main">
+    <header class="hero hero-aurora" id="main">
         <div class="container">
             <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
                 <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a>
@@ -77,10 +77,14 @@
             <h2>A love story, actually</h2>
             <div class="about-content">
                 <p>Every app has an origin story. This one is a love story.</p>
-                <p>My husband has tinnitus. For him, silence isn't silent: quiet evenings, the moment before sleep, an empty room — there's always a ringing that only he can hear, and it never switches off. I watched the person I love hunt for relief everywhere: conventional medicine, acupuncture, every masking-sound playlist the internet had to offer.</p>
-                <blockquote class="pull-quote">Some nights he pretended something worked, so I would worry less.<br>Most nights, he couldn't even fake it.</blockquote>
-                <p>I couldn't make the ringing stop. So I did what felt entirely proportionate at the time: I enrolled in a Master's in Artificial Intelligence. (He probably hoped for a more tender, affectionate wife to hold his hand through the hard nights. He's getting a thesis. He calls it weaponized autism; I call it love.) The question driving it all: could a machine <em>learn</em> which sound gives one specific person their quiet back? Tinnitus is deeply personal — the masker that saves one person's night does nothing for the next. That's exactly the kind of problem machine learning was made for.</p>
-                <p>MyTinnitusMask is my thesis on paper, but really it's a promise. Because it was built out of love rather than for profit, it is <strong>free, forever</strong> — no subscription, no ads, no account. Dedicated to all of you who live every day with a sound nobody else can hear, and have felt like nobody cared.</p>
+                <p>My husband has tinnitus. For him, silence isn't silent — there's a ringing only he can hear, and it never switches off. I watched him try everything for relief: medicine, acupuncture, every masking playlist the internet could offer. Nothing held.</p>
+                <p>I couldn't make the ringing stop, so I did the only proportionate thing — I enrolled in a Master's in Artificial Intelligence. (He calls it weaponized autism; I call it love.)</p>
+                <figure class="love-note">
+                    <img src="assets/mytinnitusmask/drawing.webp" alt="A hand-drawn sketch on an orange sticky note of two smiling figures waving, arms around each other" width="1000" height="926" loading="lazy">
+                    <figcaption>A drawing of us I made in 2022.</figcaption>
+                </figure>
+                <p>The idea is simple: tinnitus is personal. The sound that quiets one person does nothing for the next — there's no single masker to prescribe, only <em>yours</em>. That's exactly the kind of problem machine learning was made for: a system that learns, from you, which sound gives your quiet back.</p>
+                <p>MyTinnitusMask is my thesis on paper. Really, it's a promise — built out of love, not for profit, so it's <strong>free, forever</strong>. No subscription, no ads, no account. For everyone who lives with a sound nobody else can hear, and has felt like nobody was listening.</p>
                 <p class="standalone-line">You are not alone.</p>
             </div>
         </div>
@@ -90,10 +94,18 @@
         <div class="container">
             <h2>What does tinnitus sound like?</h2>
             <div class="about-content">
-                <p>If you have tinnitus, you already know — this demo is for the people who love you. Send them this page and let them hold the button.</p>
+                <p>If you live with tinnitus, you already know this sound. If you don't, this is the closest I can get you — built from my husband's clinical audiogram, the exact ringing he hears every waking moment.</p>
                 <div class="tone-demo-controls">
-                    <button id="toneButton" class="tone-button" aria-label="Press and hold to hear a quiet tinnitus-like tone">Press &amp; hold to hear what he hears</button>
-                    <p class="tone-note">A quiet metallic static that swells and fades in slow waves — tuned to match his clinical audiogram. It stops the instant you let go.<br>He doesn't get to let go.</p>
+                    <button id="toneButton" class="ear-emitter" aria-label="Press and hold to hear a quiet tinnitus-like tone">
+                        <span class="ear-waves" aria-hidden="true"><span></span><span></span><span></span></span>
+                        <span class="ear-icon" aria-hidden="true">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M17 20c-.29 0-.56-.06-.76-.15-.71-.37-1.21-.88-1.71-2.38-.51-1.56-1.47-2.29-2.39-3-.79-.61-1.61-1.24-2.32-2.53C9.29 10.98 9 9.93 9 9c0-2.8 2.2-5 5-5s5 2.2 5 5h2c0-3.93-3.07-7-7-7S7 5.07 7 9c0 1.26.38 2.65 1.07 3.9.91 1.65 1.98 2.48 2.85 3.15.81.62 1.39 1.07 1.71 2.05.6 1.84 1.32 2.81 2.66 3.51.51.27 1.09.39 1.71.39 2.21 0 4-1.79 4-4h-2c0 1.1-.9 2-2 2zM7.64 2.64L6.22 1.22C4.23 3.21 3 5.96 3 9s1.23 5.79 3.22 7.78l1.41-1.41C6.01 13.74 5 11.49 5 9s1.01-4.74 2.64-6.36zM11.5 9c0 1.38 1.12 2.5 2.5 2.5s2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5-2.5 1.12-2.5 2.5z"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <p class="tone-prompt">Press &amp; hold to hear what he lives with</p>
+                    <p class="tone-note">A quiet static that swells and fades. It stops the instant you let go — he never does.</p>
                 </div>
             </div>
         </div>
@@ -102,9 +114,10 @@
     <section id="how" class="section">
         <div class="container">
             <h2>How it works</h2>
-            <div class="work-grid">
-                <div class="work-card">
-                    <h3>1 · Match your tinnitus</h3>
+            <div class="step-grid">
+                <div class="step accent-blue">
+                    <span class="step-badge gradient-badge" aria-hidden="true">1</span>
+                    <h3>Match your tinnitus</h3>
                     <p>A guided psychoacoustic session finds your tinnitus pitch (binary search over frequency), its loudness, and the minimum level of noise that masks it — the same measures used in audiology clinics, adapted for AirPods.</p>
                     <div class="tags">
                         <span>Psychoacoustics</span>
@@ -112,24 +125,27 @@
                         <span>MML</span>
                     </div>
                 </div>
-                <div class="work-card">
-                    <h3>2 · Compare candidate sounds</h3>
+                <div class="step accent-teal">
+                    <span class="step-badge gradient-badge" aria-hidden="true">2</span>
+                    <h3>Compare candidate sounds</h3>
                     <p>Each session plays two candidate maskers, A/B style, and you rate the relief each one gives. Comparing two sounds in the same session filters out the noise of good and bad days.</p>
                     <div class="tags">
                         <span>A/B Sessions</span>
                         <span>Relief Ratings</span>
                     </div>
                 </div>
-                <div class="work-card">
-                    <h3>3 · The optimizer learns</h3>
+                <div class="step accent-gold">
+                    <span class="step-badge gradient-badge" aria-hidden="true">3</span>
+                    <h3>The optimizer learns</h3>
                     <p>A Bayesian bandit algorithm (Thompson sampling) runs entirely on your device, updating its beliefs after every comparison and converging on the masker parameters that work best for <em>you</em>.</p>
                     <div class="tags">
                         <span>Bayesian Optimization</span>
                         <span>On-Device ML</span>
                     </div>
                 </div>
-                <div class="work-card">
-                    <h3>4 · Listen and relax</h3>
+                <div class="step accent-rose">
+                    <span class="step-badge gradient-badge" aria-hidden="true">4</span>
+                    <h3>Listen and relax</h3>
                     <p>Once rated, the winning sound keeps playing on a timer — in the background, with the screen locked — while you read, work, or fall asleep. Progress is tracked with the clinically validated THI questionnaire.</p>
                     <div class="tags">
                         <span>Background Audio</span>
@@ -164,14 +180,33 @@
             <div class="about-content">
                 <img src="assets/mytinnitusmask/icon1024.png" alt="MyTinnitusMask app icon — a jagged wave settling into a calm one" class="app-icon" width="96" height="96">
                 <p>The app is feature-complete for its first study. The planned path:</p>
-                <div class="highlights">
-                    <ul>
-                        <li><strong>Now</strong> — in beta on TestFlight, alongside hardware validation (AirPods Pro frequency characterization).</li>
-                        <li><strong>Next</strong> — ethics committee submission, then a small clinical pilot.</li>
-                        <li><strong>Later</strong> — public release. Participation in the research opens once ethics approval is in place.</li>
-                    </ul>
+                <div class="timeline">
+                    <div class="timeline-item accent-teal">
+                        <span class="timeline-node" aria-hidden="true"></span>
+                        <div class="timeline-body">
+                            <span class="timeline-when">Now</span>
+                            <p>In beta on TestFlight, preparing documentation with the university and ethics committee.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item accent-blue">
+                        <span class="timeline-node" aria-hidden="true"></span>
+                        <div class="timeline-body">
+                            <span class="timeline-when">Next</span>
+                            <p>Ethics approval, then a small clinical pilot.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item accent-gold">
+                        <span class="timeline-node" aria-hidden="true"></span>
+                        <div class="timeline-body">
+                            <span class="timeline-when">Later</span>
+                            <p>Public release. Participation in the research opens once ethics approval is in place.</p>
+                        </div>
+                    </div>
                 </div>
-                <p>Interested in the project — as a participant, clinician, or researcher? <a href="index.html#socials">Reach out</a> and I'll get in touch when the study opens.</p>
+                <div class="status-cta">
+                    <p>Interested as a participant, clinician, or researcher? Reach out and I'll get in touch when the study opens.</p>
+                    <a href="index.html#socials" class="cta-link">Let's connect →</a>
+                </div>
             </div>
         </div>
     </section>
@@ -186,5 +221,17 @@
     <script src="script.js"></script>
     <script src="tinnitus.js"></script>
     <script src="prefs.js" defer></script>
+    <script>
+    (function () {
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce || !('IntersectionObserver' in window)) return;
+        const io = new IntersectionObserver((ents) => {
+            ents.forEach(en => {
+                if (en.isIntersecting) { en.target.classList.add('is-visible'); io.unobserve(en.target); }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.section').forEach(s => { s.classList.add('reveal'); io.observe(s); });
+    })();
+    </script>
 </body>
 </html>
