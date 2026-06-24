@@ -134,4 +134,37 @@
     document.body.appendChild(panel);
     refreshButtons();
     apply();
+
+    // First-visit nudge: invite people to read the site their way (shown once, ever).
+    try {
+        const HINT_KEY = 'natladev-hint';
+        if (!localStorage.getItem(HINT_KEY)) {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            const hint = document.createElement('div');
+            hint.className = 'prefs-hint';
+            hint.setAttribute('role', 'status');
+            hint.innerHTML = '<p>New here? You can read this site <strong>your way</strong> — font, size, spacing, and color.</p>';
+
+            const got = document.createElement('button');
+            got.type = 'button';
+            got.className = 'prefs-hint-dismiss';
+            got.textContent = 'Got it';
+            hint.appendChild(got);
+
+            document.body.appendChild(hint);
+            try { localStorage.setItem(HINT_KEY, '1'); } catch (e) { /* private mode */ }
+            if (!reduce) toggle.classList.add('attention');
+
+            const dismiss = () => {
+                hint.classList.add('is-gone');
+                toggle.classList.remove('attention');
+                setTimeout(() => hint.remove(), 350);
+            };
+            got.addEventListener('click', dismiss);
+            toggle.addEventListener('click', dismiss, { once: true });
+            requestAnimationFrame(() => requestAnimationFrame(() => hint.classList.add('is-shown')));
+            setTimeout(dismiss, 12000);
+        }
+    } catch (e) { /* private mode — skip the nudge */ }
 })();

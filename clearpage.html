@@ -48,6 +48,7 @@
                 <li><a href="index.html#work">Work</a></li>
                 <li><a href="clearpage.html">Dyslexia</a></li>
                 <li><a href="tinnitus.html">Tinnitus</a></li>
+                <li><a href="devlog.html">Devlog</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="index.html#socials">Connect</a></li>
             </ul>
@@ -88,6 +89,54 @@
                     <span class="ba-tag">Original</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="try-live" class="section tryit-section">
+        <div class="container">
+            <h2>Try it yourself</h2>
+            <p class="tryit-intro">Type or paste anything below, then flip the switches and watch the text reshape — the same way ClearPage does it on your phone. Nothing leaves your browser.</p>
+            <div class="tryit">
+                <div class="tryit-controls">
+                    <label class="tryit-field">
+                        <span>Your text</span>
+                        <textarea id="tryInput" rows="3" spellcheck="false">The bold puppy dribbled a ball by the quiet pond.</textarea>
+                    </label>
+                    <div class="tryit-toggles">
+                        <div class="tryit-group" role="group" aria-label="Typeface">
+                            <span class="tryit-label">Typeface</span>
+                            <div class="seg">
+                                <button type="button" data-opt="font" data-val="" class="is-on">Default</button>
+                                <button type="button" data-opt="font" data-val="dys">Dyslexia-friendly</button>
+                            </div>
+                        </div>
+                        <div class="tryit-group" role="group" aria-label="Spacing">
+                            <span class="tryit-label">Spacing</span>
+                            <div class="seg">
+                                <button type="button" data-opt="space" data-val="" class="is-on">Normal</button>
+                                <button type="button" data-opt="space" data-val="relaxed">Relaxed</button>
+                            </div>
+                        </div>
+                        <div class="tryit-group" role="group" aria-label="Text size">
+                            <span class="tryit-label">Size</span>
+                            <div class="seg">
+                                <button type="button" data-opt="size" data-val="" class="is-on">A</button>
+                                <button type="button" data-opt="size" data-val="large">A+</button>
+                                <button type="button" data-opt="size" data-val="xl">A++</button>
+                            </div>
+                        </div>
+                        <div class="tryit-group" role="group" aria-label="Letter anchors">
+                            <span class="tryit-label">Letter anchors</span>
+                            <div class="seg">
+                                <button type="button" data-opt="anchor" data-val="" class="is-on">Off</button>
+                                <button type="button" data-opt="anchor" data-val="on">On</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tryit-output" id="tryOutput"></div>
+            </div>
+            <p class="tryit-foot">Letter anchors color the letters that mirror each other — <span class="anchor a-b">b</span>, <span class="anchor a-d">d</span>, <span class="anchor a-p">p</span>, <span class="anchor a-q">q</span> — so they stop flipping.</p>
         </div>
     </section>
 
@@ -360,6 +409,46 @@
             }, { threshold: 0.12 });
             document.querySelectorAll('.section').forEach(s => { s.classList.add('reveal'); io.observe(s); });
         }
+    })();
+    </script>
+    <script>
+    // Live "Try it yourself" — reshape the typed text the way ClearPage does, in-browser.
+    (function () {
+        const input = document.getElementById('tryInput');
+        const out = document.getElementById('tryOutput');
+        if (!input || !out) return;
+
+        const state = { font: '', space: '', size: '', anchor: '' };
+        const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+        const anchorClass = { b: 'a-b', d: 'a-d', p: 'a-p', q: 'a-q' };
+
+        function render() {
+            let html = esc(input.value || '');
+            if (state.anchor === 'on') {
+                html = html.replace(/[bdpq]/g, ch => '<span class="anchor ' + anchorClass[ch] + '">' + ch + '</span>');
+            }
+            html = html.replace(/\n/g, '<br>');
+            out.innerHTML = html || '<span class="tryit-empty">Your reshaped text appears here…</span>';
+            out.classList.toggle('is-dys', state.font === 'dys');
+            out.classList.toggle('sp-relaxed', state.space === 'relaxed');
+            out.classList.toggle('sz-large', state.size === 'large');
+            out.classList.toggle('sz-xl', state.size === 'xl');
+        }
+
+        document.querySelectorAll('.tryit-toggles .seg button').forEach(btn => {
+            btn.setAttribute('aria-pressed', String(btn.classList.contains('is-on')));
+            btn.addEventListener('click', () => {
+                state[btn.dataset.opt] = btn.dataset.val;
+                btn.parentElement.querySelectorAll('button').forEach(b => {
+                    const on = b === btn;
+                    b.classList.toggle('is-on', on);
+                    b.setAttribute('aria-pressed', String(on));
+                });
+                render();
+            });
+        });
+        input.addEventListener('input', render);
+        render();
     })();
     </script>
 </body>
