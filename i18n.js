@@ -8,10 +8,20 @@
     const T = window.I18N || {};
 
     function readLang() {
+        // A saved choice always wins.
         try {
-            const l = localStorage.getItem(KEY);
-            return SUPPORTED.indexOf(l) >= 0 ? l : 'en';
-        } catch (e) { return 'en'; }
+            const saved = localStorage.getItem(KEY);
+            if (SUPPORTED.indexOf(saved) >= 0) return saved;
+        } catch (e) { /* private mode */ }
+        // Otherwise fall back to the visitor's browser language.
+        const prefs = (navigator.languages && navigator.languages.length)
+            ? navigator.languages
+            : [navigator.language || navigator.userLanguage || ''];
+        for (let i = 0; i < prefs.length; i++) {
+            const code = (prefs[i] || '').slice(0, 2).toLowerCase();
+            if (SUPPORTED.indexOf(code) >= 0) return code;
+        }
+        return 'en';
     }
     let lang = readLang();
 
