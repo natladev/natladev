@@ -521,58 +521,14 @@ button:focus-visible {
     line-height: 1.8;
 }
 
-.skills,
 .highlights {
     margin: 3rem 0;
 }
 
-.skills h3,
 .highlights h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     color: var(--accent);
-}
-
-.skill-groups {
-    display: flex;
-    flex-direction: column;
-    gap: 1.15rem;
-    margin-top: 1.5rem;
-    max-width: 640px;
-}
-
-.skill-group {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-}
-
-.skill-group-label {
-    flex: 0 0 6rem;
-    padding-top: 0.45rem;
-    font-weight: 700;
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-}
-
-.skill-tags span {
-    display: inline-block;
-    background: var(--tag-bg);
-    border: none;
-    color: var(--accent);
-    padding: 0.4rem 0.95rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 500;
 }
 
 .highlights ul {
@@ -2164,15 +2120,6 @@ footer {
 
     .section h2 {
         font-size: 1.5rem;
-    }
-
-    .skill-tags {
-        gap: 0.5rem;
-    }
-
-    .skill-tags span {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
     }
 }
 
