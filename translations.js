@@ -43,7 +43,7 @@ window.I18N = {
         // Home — hero
         "home.hero.greeting": "Hola, soy Nat",
         "home.hero.pronouns": "ella",
-        "home.hero.lead": "Creo herramientas de accesibilidad desde la experiencia propia — <strong>diseña para uno, ayuda a todos</strong>.",
+        "home.hero.lead": "Creo herramientas de accesibilidad desde la experiencia propia.<br><strong>Diseña para uno, ayuda a todos</strong>.",
         "home.hero.cred": "Desarrolladora iOS con apps usadas por millones · Máster en IA en curso · humana",
         "home.hero.tag.mtm": "Alivio del tinnitus, con base científica",
         "home.hero.tag.cp": "Lectura amigable con la dislexia",
@@ -290,7 +290,7 @@ window.I18N = {
         // Home — hero
         "home.hero.greeting": "Hi, ich bin Nat",
         "home.hero.pronouns": "sie / ihr",
-        "home.hero.lead": "Ich baue Barrierefreiheits-Tools aus eigener Erfahrung — <strong>gestalte für einen, hilf allen</strong>.",
+        "home.hero.lead": "Ich baue Barrierefreiheits-Tools aus eigener Erfahrung.<br><strong>Gestalte für einen, hilf allen</strong>.",
         "home.hero.cred": "iOS-Entwicklerin mit Apps für Millionen · Master in KI in Arbeit · Mensch",
         "home.hero.tag.mtm": "Tinnitus-Linderung, erforscht",
         "home.hero.tag.cp": "Legasthenie-freundliches Lesen",
