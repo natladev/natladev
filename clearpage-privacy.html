@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Privacy policy for the ClearPage iOS app. ClearPage collects no data — all processing happens on your device.">
+    <meta name="description" content="Privacy policy for the ClearPage iOS app. ClearPage collects no data, all processing happens on your device.">
     <title>ClearPage Privacy Policy | Natalia Andrzejewski</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
@@ -14,113 +14,79 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="clearpage.html">Dyslexia</a></li>
-                <li><a href="tinnitus.html">Tinnitus</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="index.html#socials">Connect</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="tinnitus.html" data-i18n="nav.tinnitus">Tinnitus</a></li>
+                    <li><a href="devlog.html" data-i18n="nav.devlog">Devlog</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
         </div>
     </nav>
 
     <section class="section" id="main">
         <div class="container">
-            <h2>ClearPage Privacy Policy</h2>
+            <h2 data-i18n="cpp.title">ClearPage Privacy Policy</h2>
             <div class="about-content">
-                <p><em>Last updated: June 12, 2026 · Applies to the ClearPage app for iPhone and iPad.</em></p>
+                <p><em data-i18n="cpp.updated">Last updated: June 12, 2026 · Applies to the ClearPage app for iPhone and iPad.</em></p>
 
-                <h3>1. The short version</h3>
-                <p>ClearPage collects no data. There are no accounts, no analytics, no advertising, and no network requests. Everything the app does — text recognition, speech, your reading profile — happens entirely on your device.</p>
+                <h3 data-i18n="cpp.s1.h">1. The short version</h3>
+                <p data-i18n="cpp.s1.p">ClearPage collects no data. There are no accounts, no analytics, no advertising, and no network requests. Everything the app does, text recognition, speech, your reading profile, happens entirely on your device.</p>
 
-                <h3>2. Controller / contact</h3>
-                <p>
+                <h3 data-i18n="cpp.s2.h">2. Controller / contact</h3>
+                <p data-i18n-html="cpp.s2.addr">
                     Natalia Andrzejewski<br>
                     Johannestr. 24<br>
                     53844 Troisdorf, Germany<br>
                     Email: <a href="mailto:natiosdev@gmail.com">natiosdev@gmail.com</a>
                 </p>
 
-                <h3>3. What stays on your device</h3>
-                <p>ClearPage processes the following data exclusively on your device; none of it is transmitted to me or to any third party:</p>
+                <h3 data-i18n="cpp.s3.h">3. What stays on your device</h3>
+                <p data-i18n="cpp.s3.p">ClearPage processes the following data exclusively on your device; none of it is transmitted to me or to any third party:</p>
                 <ul>
-                    <li><strong>Photos and camera images</strong> you choose to scan. Text recognition uses Apple's on-device Vision framework. Images are processed in memory and are not uploaded anywhere.</li>
-                    <li><strong>Recognized text</strong>, which is displayed in your reading layout and discarded when you leave it.</li>
-                    <li><strong>Your reading profile</strong> (typeface, spacing, colors, tint), stored locally in the app's own storage so the app and its extensions can share it.</li>
-                    <li><strong>Read Aloud speech</strong>, generated by Apple's on-device speech synthesis.</li>
+                    <li data-i18n-html="cpp.s3.li1"><strong>Photos and camera images</strong> you choose to scan. Text recognition uses Apple's on-device Vision framework. Images are processed in memory and are not uploaded anywhere.</li>
+                    <li data-i18n-html="cpp.s3.li2"><strong>Recognized text</strong>, which is displayed in your reading layout and discarded when you leave it.</li>
+                    <li data-i18n-html="cpp.s3.li3"><strong>Your reading profile</strong> (typeface, spacing, colors, tint), stored locally in the app's own storage so the app and its extensions can share it.</li>
+                    <li data-i18n-html="cpp.s3.li4"><strong>Read Aloud speech</strong>, generated by Apple's on-device speech synthesis.</li>
                 </ul>
 
-                <h3>4. Permissions</h3>
-                <p>ClearPage asks for camera access (to capture text you want to read) and photo library access (to scan pictures you choose). Both are optional — you can paste text instead — and are used solely for the purpose stated in the permission prompt.</p>
+                <h3 data-i18n="cpp.s4.h">4. Permissions</h3>
+                <p data-i18n="cpp.s4.p">ClearPage asks for camera access (to capture text you want to read) and photo library access (to scan pictures you choose). Both are optional, you can paste text instead, and are used solely for the purpose stated in the permission prompt.</p>
 
-                <h3>5. Third parties</h3>
-                <p>The app embeds no third-party SDKs, trackers, or advertising frameworks. If you install ClearPage through the App Store or TestFlight, Apple processes data under its own terms; see <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's privacy policy</a>.</p>
+                <h3 data-i18n="cpp.s5.h">5. Third parties</h3>
+                <p data-i18n-html="cpp.s5.p">The app embeds no third-party SDKs, trackers, or advertising frameworks. If you install ClearPage through the App Store or TestFlight, Apple processes data under its own terms; see <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's privacy policy</a>.</p>
 
-                <h3>6. Children</h3>
-                <p>Because ClearPage collects no personal data, it is safe for readers of any age, including children.</p>
+                <h3 data-i18n="cpp.s6.h">6. Children</h3>
+                <p data-i18n="cpp.s6.p">Because ClearPage collects no personal data, it is safe for readers of any age, including children.</p>
 
-                <h3>7. Your rights</h3>
-                <p>Under the GDPR you have the right to access, rectification, erasure, restriction of processing, data portability, and objection, and the right to complain to a supervisory authority. Since ClearPage stores no personal data outside your device, the practical answer to any data request is: the data exists only on your device, and deleting the app deletes it. For any questions, email me.</p>
+                <h3 data-i18n="cpp.s7.h">7. Your rights</h3>
+                <p data-i18n="cpp.s7.p">Under the GDPR you have the right to access, rectification, erasure, restriction of processing, data portability, and objection, and the right to complain to a supervisory authority. Since ClearPage stores no personal data outside your device, the practical answer to any data request is: the data exists only on your device, and deleting the app deletes it. For any questions, email me.</p>
 
-                <h3>8. Changes</h3>
-                <p>If a future version of ClearPage ever changes any of the above (for example, an optional online feature), this policy will be updated here before that version ships.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" lang="de">
-        <div class="container">
-            <h2>Datenschutzerklärung (Deutsch)</h2>
-            <div class="about-content">
-                <p><em>Stand: 12. Juni 2026 · Gilt für die ClearPage-App für iPhone und iPad.</em></p>
-
-                <h3>1. Kurzfassung</h3>
-                <p>ClearPage erhebt keine Daten. Es gibt keine Konten, keine Analyse-Dienste, keine Werbung und keine Netzwerkzugriffe. Alles, was die App tut — Texterkennung, Sprachausgabe, Ihr Leseprofil — geschieht vollständig auf Ihrem Gerät.</p>
-
-                <h3>2. Verantwortliche / Kontakt</h3>
-                <p>
-                    Natalia Andrzejewski<br>
-                    Johannestr. 24<br>
-                    53844 Troisdorf<br>
-                    E-Mail: <a href="mailto:natiosdev@gmail.com">natiosdev@gmail.com</a>
-                </p>
-
-                <h3>3. Was auf Ihrem Gerät bleibt</h3>
-                <p>ClearPage verarbeitet die folgenden Daten ausschließlich auf Ihrem Gerät; nichts davon wird an mich oder Dritte übermittelt:</p>
-                <ul>
-                    <li><strong>Fotos und Kamerabilder</strong>, die Sie zum Scannen auswählen. Die Texterkennung nutzt Apples Vision-Framework auf dem Gerät. Bilder werden im Arbeitsspeicher verarbeitet und nirgendwohin hochgeladen.</li>
-                    <li><strong>Erkannter Text</strong>, der in Ihrem Leselayout angezeigt und beim Verlassen verworfen wird.</li>
-                    <li><strong>Ihr Leseprofil</strong> (Schrift, Abstände, Farben, Hintergrundton), lokal im Speicher der App abgelegt, damit App und Erweiterungen es gemeinsam nutzen können.</li>
-                    <li><strong>Vorlesen-Sprachausgabe</strong>, erzeugt durch Apples Sprachsynthese auf dem Gerät.</li>
-                </ul>
-
-                <h3>4. Berechtigungen</h3>
-                <p>ClearPage fragt nach Kamerazugriff (um Text aufzunehmen, den Sie lesen möchten) und Fotomediathek-Zugriff (um von Ihnen gewählte Bilder zu scannen). Beides ist optional — Sie können stattdessen Text einfügen — und wird ausschließlich für den im Berechtigungsdialog genannten Zweck verwendet.</p>
-
-                <h3>5. Dritte</h3>
-                <p>Die App enthält keine SDKs, Tracker oder Werbe-Frameworks von Drittanbietern. Wenn Sie ClearPage über den App Store oder TestFlight installieren, verarbeitet Apple Daten nach eigenen Bedingungen; siehe die <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Datenschutzrichtlinie von Apple</a>.</p>
-
-                <h3>6. Kinder</h3>
-                <p>Da ClearPage keine personenbezogenen Daten erhebt, ist die App für Leserinnen und Leser jeden Alters geeignet, auch für Kinder.</p>
-
-                <h3>7. Ihre Rechte</h3>
-                <p>Nach der DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei einer Aufsichtsbehörde. Da ClearPage keine personenbezogenen Daten außerhalb Ihres Geräts speichert, gilt praktisch: Die Daten existieren nur auf Ihrem Gerät, und mit dem Löschen der App sind sie gelöscht. Bei Fragen schreiben Sie mir gern eine E-Mail.</p>
-
-                <h3>8. Änderungen</h3>
-                <p>Sollte eine künftige Version von ClearPage etwas am Vorstehenden ändern (z.&nbsp;B. eine optionale Online-Funktion), wird diese Erklärung hier aktualisiert, bevor diese Version erscheint.</p>
+                <h3 data-i18n="cpp.s8.h">8. Changes</h3>
+                <p data-i18n="cpp.s8.p">If a future version of ClearPage ever changes any of the above (for example, an optional online feature), this policy will be updated here before that version ships.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
-            <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+            <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a></p>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script src="prefs.js" defer></script>
 </body>

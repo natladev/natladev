@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MyTinnitusMask — a free, privacy-first iOS app researching adaptive sound masking for tinnitus relief. A project born from a love story.">
+    <meta name="description" content="MyTinnitusMask, a free, privacy-first iOS app researching adaptive sound masking for tinnitus relief. A project born from a love story.">
     <title>Tinnitus Research | Natalia Andrzejewski</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="MyTinnitusMask — adaptive tinnitus masking research">
+    <meta property="og:title" content="MyTinnitusMask, adaptive tinnitus masking research">
     <meta property="og:description" content="A free, privacy-first iOS app that learns the masking sound that works for you. Born from a love story, dedicated to everyone who needs a moment of peace.">
     <meta property="og:url" content="https://natladev.com/tinnitus.html">
     <meta property="og:image" content="https://natladev.com/assets/mytinnitusmask/icon1024.png">
@@ -23,7 +23,7 @@
         "image": "https://natladev.com/assets/mytinnitusmask/icon1024.png",
         "operatingSystem": "iOS",
         "applicationCategory": "HealthApplication",
-        "description": "A free, privacy-first iOS app that learns the masking sound that works for you — psychoacoustic tinnitus matching plus an on-device adaptive optimizer. Built as a Master's thesis in Artificial Intelligence.",
+        "description": "A free, privacy-first iOS app that learns the masking sound that works for you, psychoacoustic tinnitus matching plus an on-device adaptive optimizer. Built as a Master's thesis in Artificial Intelligence.",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
         "author": { "@type": "Person", "name": "Natalia Andrzejewski", "url": "https://natladev.com/" }
     }
@@ -34,29 +34,36 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="clearpage.html">Dyslexia</a></li>
-                <li><a href="tinnitus.html">Tinnitus</a></li>
-                <li><a href="devlog.html">Devlog</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="index.html#socials">Connect</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="tinnitus.html" data-i18n="nav.tinnitus">Tinnitus</a></li>
+                    <li><a href="devlog.html" data-i18n="nav.devlog">Devlog</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
         </div>
     </nav>
 
     <header class="hero hero-aurora" id="main">
         <div class="container">
             <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-                <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a>
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="bc.home">Home</a>
                 <span style="color: var(--text-muted); margin: 0 0.5rem;">→</span>
                 <span style="color: var(--accent);">MyTinnitusMask</span>
             </nav>
             <h1 class="wordmark"><img class="dark-only" src="assets/mytinnitusmask/wordmark.svg" alt="MyTinnitusMask" width="460" height="111"><img class="light-only" src="assets/mytinnitusmask/wordmark-ink.svg" alt="MyTinnitusMask" width="460" height="111"></h1>
-            <p class="subtitle">A free, privacy-first iOS app researching adaptive sound masking for tinnitus relief — built as a Master's thesis in Artificial Intelligence.</p>
-            <p class="hero-tagline">If your silence rings, this page is for you.</p>
+            <p class="subtitle" data-i18n="tin.hero.sub">A free, privacy-first iOS app researching adaptive sound masking for tinnitus relief, built as a Master's thesis in Artificial Intelligence.</p>
+            <p class="hero-tagline" data-i18n="tin.hero.tagline">If your silence rings, this page is for you.</p>
             <div class="sound-wave" aria-hidden="true">
                 <svg viewBox="0 0 1000 100" preserveAspectRatio="none">
                     <path class="wave-jagged" d="M0,50 L25,12 L50,68 L75,28 L100,88 L125,20 L150,60 L175,8 L200,75 L225,35 L250,90 L275,15 L300,55 L325,25 L350,82 L375,40 L400,70 L425,10 L450,62 L475,30 L500,85 L525,18 L550,58 L575,38 L600,78 L625,22 L650,65 L675,12 L700,72 L725,45 L750,88 L775,25 L800,55 L825,15 L850,80 L875,35 L900,65 L925,20 L950,75 L975,42 L1000,50"/>
@@ -68,36 +75,36 @@
 
     <section class="section stat-band">
         <div class="container">
-            <p class="stat-number">1 in 7</p>
-            <p class="stat-text">adults worldwide lives with tinnitus. For most, there is no cure — only the search for relief.</p>
+            <p class="stat-number" data-i18n="tin.stat.num">1 in 7</p>
+            <p class="stat-text" data-i18n="tin.stat.text">adults worldwide lives with tinnitus. For most, there is no cure, only the search for relief.</p>
         </div>
     </section>
 
     <section id="why" class="section">
         <div class="container">
-            <h2>A love story, actually</h2>
+            <h2 data-i18n="tin.why.h2">A love story, actually</h2>
             <div class="about-content">
-                <p>Every app has an origin story. This one is a love story.</p>
-                <p>My husband has tinnitus. For him, silence isn't silent — there's a ringing only he can hear, and it never switches off. I watched him try everything for relief: medicine, acupuncture, every masking playlist the internet could offer. Nothing held.</p>
-                <p>I couldn't make the ringing stop, so I did the only proportionate thing — I enrolled in a Master's in Artificial Intelligence. (He calls it weaponized autism; I call it love.)</p>
+                <p data-i18n="tin.why.p1">Every app has an origin story. This one is a love story.</p>
+                <p data-i18n="tin.why.p2">My husband has tinnitus. For him, silence isn't silent: there's a ringing only he can hear, and it never switches off. I watched him try everything for relief: medicine, acupuncture, every masking playlist the internet could offer. Nothing held.</p>
+                <p data-i18n="tin.why.p3">I couldn't make the ringing stop, so I did the only proportionate thing: I enrolled in a Master's in Artificial Intelligence. (He calls it weaponized autism; I call it love.)</p>
                 <figure class="love-note">
                     <img src="assets/mytinnitusmask/drawing.webp" alt="A hand-drawn sketch on an orange sticky note of two smiling figures waving, arms around each other" width="1000" height="926" loading="lazy">
-                    <figcaption>A drawing of us I made in 2022.</figcaption>
+                    <figcaption data-i18n="tin.why.caption">A drawing of us I made some years ago.</figcaption>
                 </figure>
-                <p>The idea is simple: tinnitus is personal. The sound that quiets one person does nothing for the next — there's no single masker to prescribe, only <em>yours</em>. That's exactly the kind of problem machine learning was made for: a system that learns, from you, which sound gives your quiet back.</p>
-                <p>MyTinnitusMask is my thesis on paper. Really, it's a promise — built out of love, not for profit, so it's <strong>free, forever</strong>. No subscription, no ads, no account. For everyone who lives with a sound nobody else can hear, and has felt like nobody was listening.</p>
-                <p class="standalone-line">You are not alone.</p>
+                <p data-i18n-html="tin.why.p4">The idea is simple: tinnitus is personal. The sound that quiets one person does nothing for the next: there's no single masker to prescribe, only <em>yours</em>. That's exactly the kind of problem machine learning was made for: a system that learns, from you, which sound gives your quiet back.</p>
+                <p data-i18n-html="tin.why.p5">MyTinnitusMask is my thesis on paper. Really, it's a promise, built out of love, not for profit, so it's <strong>free, forever</strong>. No subscription, no ads, no account. For everyone who lives with a sound nobody else can hear, and has felt like nobody was listening.</p>
+                <p class="standalone-line" data-i18n="tin.why.quote">You are not alone.</p>
             </div>
         </div>
     </section>
 
     <section id="hear" class="section tone-demo">
         <div class="container">
-            <h2>What does tinnitus sound like?</h2>
+            <h2 data-i18n="tin.hear.h2">What does tinnitus sound like?</h2>
             <div class="about-content">
-                <p>If you live with tinnitus, you already know this sound. If you don't, this is the closest I can get you — built from my husband's clinical audiogram, the exact ringing he hears every waking moment.</p>
+                <p data-i18n="tin.hear.p">If you live with tinnitus, you already know this sound. If you don't, this is the closest I can get you, built from my husband's clinical audiogram, the exact ringing he hears every waking moment.</p>
                 <div class="tone-demo-controls">
-                    <button id="toneButton" class="ear-emitter" aria-label="Press and hold to hear a quiet tinnitus-like tone">
+                    <button id="toneButton" class="ear-emitter" aria-label="Press and hold to hear a quiet tinnitus-like tone" data-i18n-aria="tin.hear.btnAria">
                         <span class="ear-waves" aria-hidden="true"><span></span><span></span><span></span></span>
                         <span class="ear-icon" aria-hidden="true">
                             <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -105,8 +112,8 @@
                             </svg>
                         </span>
                     </button>
-                    <p class="tone-prompt">Press &amp; hold to hear what he lives with</p>
-                    <p class="tone-note">A quiet static that swells and fades. It stops the instant you let go — he never does.</p>
+                    <p class="tone-prompt" data-i18n="tin.hear.prompt">Press &amp; hold to hear what he lives with</p>
+                    <p class="tone-note" data-i18n="tin.hear.note">A quiet static that swells and fades. It stops the instant you let go, he never does.</p>
                 </div>
             </div>
         </div>
@@ -114,13 +121,13 @@
 
     <section id="how" class="section">
         <div class="container">
-            <h2>How it works</h2>
+            <h2 data-i18n="tin.how.h2">How it works</h2>
             <div class="flow">
                 <div class="flow-step accent-blue">
                     <div class="flow-marker"><span class="flow-badge gradient-badge" aria-hidden="true">1</span></div>
                     <div class="flow-content">
-                        <h3>Match your tinnitus</h3>
-                        <p>A guided psychoacoustic session finds your tinnitus pitch (binary search over frequency), its loudness, and the minimum level of noise that masks it — the same measures used in audiology clinics, adapted for AirPods.</p>
+                        <h3 data-i18n="tin.how.s1.h">Match your tinnitus</h3>
+                        <p data-i18n="tin.how.s1.p">A guided psychoacoustic session finds your tinnitus pitch (binary search over frequency), its loudness, and the minimum level of noise that masks it, the same measures used in audiology clinics, adapted for AirPods.</p>
                         <div class="tags">
                             <span>Psychoacoustics</span>
                             <span>Frequency Matching</span>
@@ -131,8 +138,8 @@
                 <div class="flow-step accent-teal">
                     <div class="flow-marker"><span class="flow-badge gradient-badge" aria-hidden="true">2</span></div>
                     <div class="flow-content">
-                        <h3>Compare candidate sounds</h3>
-                        <p>Each session plays two candidate maskers, A/B style, and you rate the relief each one gives. Comparing two sounds in the same session filters out the noise of good and bad days.</p>
+                        <h3 data-i18n="tin.how.s2.h">Compare candidate sounds</h3>
+                        <p data-i18n="tin.how.s2.p">Each session plays two candidate maskers, A/B style, and you rate the relief each one gives. Comparing two sounds in the same session filters out the noise of good and bad days.</p>
                         <div class="tags">
                             <span>A/B Sessions</span>
                             <span>Relief Ratings</span>
@@ -142,8 +149,8 @@
                 <div class="flow-step accent-gold">
                     <div class="flow-marker"><span class="flow-badge gradient-badge" aria-hidden="true">3</span></div>
                     <div class="flow-content">
-                        <h3>The optimizer learns</h3>
-                        <p>A Bayesian bandit algorithm (Thompson sampling) runs entirely on your device, updating its beliefs after every comparison and converging on the masker parameters that work best for <em>you</em>.</p>
+                        <h3 data-i18n="tin.how.s3.h">The optimizer learns</h3>
+                        <p data-i18n-html="tin.how.s3.p">A Bayesian bandit algorithm (Thompson sampling) runs entirely on your device, updating its beliefs after every comparison and converging on the masker parameters that work best for <em>you</em>.</p>
                         <div class="tags">
                             <span>Bayesian Optimization</span>
                             <span>On-Device ML</span>
@@ -153,8 +160,8 @@
                 <div class="flow-step accent-rose">
                     <div class="flow-marker"><span class="flow-badge gradient-badge" aria-hidden="true">4</span></div>
                     <div class="flow-content">
-                        <h3>Listen and relax</h3>
-                        <p>Once rated, the winning sound keeps playing on a timer — in the background, with the screen locked — while you read, work, or fall asleep. Progress is tracked with the clinically validated THI questionnaire.</p>
+                        <h3 data-i18n="tin.how.s4.h">Listen and relax</h3>
+                        <p data-i18n="tin.how.s4.p">Once rated, the winning sound keeps playing on a timer, in the background, with the screen locked, while you read, work, or fall asleep. Progress is tracked with the clinically validated THI questionnaire.</p>
                         <div class="tags">
                             <span>Background Audio</span>
                             <span>THI Tracking</span>
@@ -167,16 +174,16 @@
 
     <section id="privacy" class="section">
         <div class="container">
-            <h2>Privacy by design</h2>
+            <h2 data-i18n="tin.priv.h2">Privacy by design</h2>
             <div class="about-content">
-                <p>Everything stays on your device: your tinnitus profile, your sessions, your questionnaire scores. There is no server, no account, and no analytics.</p>
+                <p data-i18n="tin.priv.p">Everything stays on your device: your tinnitus profile, your sessions, your questionnaire scores. There is no server, no account, and no analytics.</p>
                 <div class="highlights">
-                    <h3>If you choose to contribute to the research</h3>
+                    <h3 data-i18n="tin.priv.h3">If you choose to contribute to the research</h3>
                     <ul>
-                        <li>Contributing a session is strictly opt-in, one session at a time.</li>
-                        <li>The exact data is shown on screen before anything is sent — no hidden fields.</li>
-                        <li>Contributions are truly anonymous: no name, no email, no device ID, nothing that can link a row of data back to you.</li>
-                        <li>The dataset, methods, and analysis protocols will be published openly (CC0) alongside the thesis.</li>
+                        <li data-i18n="tin.priv.li1">Contributing a session is strictly opt-in, one session at a time.</li>
+                        <li data-i18n="tin.priv.li2">The exact data is shown on screen before anything is sent, no hidden fields.</li>
+                        <li data-i18n="tin.priv.li3">Contributions are truly anonymous: no name, no email, no device ID, nothing that can link a row of data back to you.</li>
+                        <li data-i18n="tin.priv.li4">The dataset, methods, and analysis protocols will be published openly (CC0) alongside the thesis.</li>
                     </ul>
                 </div>
             </div>
@@ -185,36 +192,36 @@
 
     <section id="status" class="section">
         <div class="container">
-            <h2>Project status</h2>
+            <h2 data-i18n="tin.status.h2">Project status</h2>
             <div class="about-content">
-                <img src="assets/mytinnitusmask/icon1024.png" alt="MyTinnitusMask app icon — a jagged wave settling into a calm one" class="app-icon" width="96" height="96">
-                <p>The app is feature-complete for its first study. The planned path:</p>
+                <img src="assets/mytinnitusmask/icon1024.png" alt="MyTinnitusMask app icon, a jagged wave settling into a calm one" data-i18n-alt="tin.status.iconAlt" class="app-icon" width="96" height="96">
+                <p data-i18n="tin.status.p">The app is feature-complete for its first study. The planned path:</p>
                 <div class="timeline">
                     <div class="timeline-item accent-teal">
                         <span class="timeline-node" aria-hidden="true"></span>
                         <div class="timeline-body">
-                            <span class="timeline-when">Now</span>
-                            <p>In beta on TestFlight, preparing documentation with the university and ethics committee.</p>
+                            <span class="timeline-when" data-i18n="tin.status.now">Now</span>
+                            <p data-i18n="tin.status.t1">In beta on TestFlight, preparing documentation with the university and ethics committee.</p>
                         </div>
                     </div>
                     <div class="timeline-item accent-blue">
                         <span class="timeline-node" aria-hidden="true"></span>
                         <div class="timeline-body">
-                            <span class="timeline-when">Next</span>
-                            <p>Ethics approval, then a small clinical pilot.</p>
+                            <span class="timeline-when" data-i18n="tin.status.next">Next</span>
+                            <p data-i18n="tin.status.t2">Ethics approval, then a small clinical pilot.</p>
                         </div>
                     </div>
                     <div class="timeline-item accent-gold">
                         <span class="timeline-node" aria-hidden="true"></span>
                         <div class="timeline-body">
-                            <span class="timeline-when">Later</span>
-                            <p>Public release. Participation in the research opens once ethics approval is in place.</p>
+                            <span class="timeline-when" data-i18n="tin.status.later">Later</span>
+                            <p data-i18n="tin.status.t3">Public release. Participation in the research opens once ethics approval is in place.</p>
                         </div>
                     </div>
                 </div>
                 <div class="status-cta">
-                    <p>Interested as a participant, clinician, or researcher? Reach out and I'll get in touch when the study opens.</p>
-                    <a href="index.html#socials" class="cta-link">Let's connect →</a>
+                    <p data-i18n="tin.status.cta">Interested as a participant, clinician, or researcher? Reach out and I'll get in touch when the study opens.</p>
+                    <a href="index.html#socials" class="cta-link" data-i18n="tin.status.ctaLink">Let's connect →</a>
                 </div>
             </div>
         </div>
@@ -222,11 +229,13 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
-            <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+            <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a></p>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script src="tinnitus.js"></script>
     <script src="prefs.js" defer></script>

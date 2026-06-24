@@ -14,15 +14,23 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="clearpage.html">Dyslexia</a></li>
-                <li><a href="tinnitus.html">Tinnitus</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="index.html#socials">Connect</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="tinnitus.html" data-i18n="nav.tinnitus">Tinnitus</a></li>
+                    <li><a href="devlog.html" data-i18n="nav.devlog">Devlog</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
         </div>
     </nav>
 
@@ -87,10 +95,12 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
-            <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+            <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a></p>
         </div>
     </footer>
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script src="prefs.js" defer></script>
 </body>

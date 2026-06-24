@@ -725,6 +725,55 @@ button:focus-visible {
     color: #2ea06e;
 }
 
+/* Hero pronouns — mini badge tucked under the name */
+.hero-pronouns {
+    display: inline-block;
+    margin-top: -0.35rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: var(--tag-bg);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    padding: 0.08rem 0.55rem;
+    line-height: 1.4;
+}
+
+/* Right side of the nav bar: links + language switch + menu toggle */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Language switcher (always visible in the bar) */
+.lang-switch {
+    display: inline-flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+.lang-btn {
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.lang-btn:hover { color: var(--text); border-color: var(--accent); }
+.lang-btn[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
 /* ===== Shared design language ===== */
 /* Accent presets: set --c-a / --c-b / --c-glow for gradients, glows, and hovers */
 .accent-teal  { --c-a: #1f8d86; --c-b: #44c3b6; --c-glow: rgba(31, 141, 134, 0.30); }

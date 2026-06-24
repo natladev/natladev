@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ClearPage — a free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout. No accounts, no network, no analytics.">
+    <meta name="description" content="ClearPage, a free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout. No accounts, no network, no analytics.">
     <meta name="apple-itunes-app" content="app-id=6779539839">
     <title>ClearPage | Natalia Andrzejewski</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ClearPage — dyslexia-friendly reading, from any photo">
+    <meta property="og:title" content="ClearPage, dyslexia-friendly reading, from any photo">
     <meta property="og:description" content="A free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout. Smoothing the digital path for everyone.">
     <meta property="og:url" content="https://natladev.com/clearpage.html">
     <meta property="og:image" content="https://natladev.com/assets/clearpage/og-launch.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
-    <meta property="og:image:alt" content="ClearPage: Dyslexia Reader — New launch alert. Ready. Set. Get. Now on the App Store.">
+    <meta property="og:image:alt" content="ClearPage: Dyslexia Reader, New launch alert. Ready. Set. Get. Now on the App Store.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://natladev.com/assets/clearpage/og-launch.jpg">
     <link rel="stylesheet" href="style.css">
@@ -42,32 +42,39 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="clearpage.html">Dyslexia</a></li>
-                <li><a href="tinnitus.html">Tinnitus</a></li>
-                <li><a href="devlog.html">Devlog</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="index.html#socials">Connect</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="tinnitus.html" data-i18n="nav.tinnitus">Tinnitus</a></li>
+                    <li><a href="devlog.html" data-i18n="nav.devlog">Devlog</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
         </div>
     </nav>
 
     <header class="hero" id="main">
         <div class="container">
             <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-                <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a>
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="bc.home">Home</a>
                 <span style="color: var(--text-muted); margin: 0 0.5rem;">→</span>
                 <span style="color: var(--accent);">ClearPage</span>
             </nav>
             <h1 class="wordmark"><img class="dark-only" src="assets/clearpage/clearpage-wordmark-cream.svg" alt="ClearPage" width="420" height="142"><img class="light-only" src="assets/clearpage/clearpage-wordmark-ink.svg" alt="ClearPage" width="420" height="142"></h1>
-            <p class="subtitle">A free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout — your spacing, your typeface, your colors.</p>
+            <p class="subtitle" data-i18n="cp.hero.sub">A free, offline iOS app that re-renders text from any photo or screenshot in a dyslexia-friendly layout, your spacing, your typeface, your colors.</p>
             <div class="social-links">
                 <a href="https://apps.apple.com/app/clearpage-dyslexia-reader/id6779539839" class="appstore-badge" rel="noopener" aria-label="Download ClearPage on the App Store">
-                    <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download on the App Store" width="135" height="40">
-                    <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download on the App Store" width="135" height="40">
+                    <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download on the App Store" data-i18n-alt="cp.badgeAlt" width="135" height="40">
+                    <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download on the App Store" data-i18n-alt="cp.badgeAlt" width="135" height="40">
                 </a>
             </div>
         </div>
@@ -75,18 +82,18 @@
 
     <section id="try" class="section ba-section">
         <div class="container">
-            <h2>See the difference</h2>
-            <p class="ba-intro">The same page, before and after. Drag the handle to wipe the original clean and reveal how ClearPage reshapes it.</p>
+            <h2 data-i18n="cp.ba.h2">See the difference</h2>
+            <p class="ba-intro" data-i18n="cp.ba.intro">The same page, before and after. Drag the handle to wipe the original clean and reveal how ClearPage reshapes it.</p>
             <div class="ba">
                 <div class="ba-compare" id="baCompare" style="--pos:50%">
-                    <img class="ba-img ba-before" src="assets/clearpage/before-web.webp" alt="A page of dense, looping cursive that is almost impossible to read — how a confusing page can feel." width="640" height="1387" loading="lazy">
-                    <img class="ba-img ba-after" src="assets/clearpage/after-web.webp" alt="The same page reshaped by ClearPage: generous spacing, a clear typeface, and color anchors on easily-confused letters." width="640" height="1387" loading="lazy">
+                    <img class="ba-img ba-before" src="assets/clearpage/before-web.webp" alt="A page of dense, looping cursive that is almost impossible to read, how a confusing page can feel." data-i18n-alt="cp.ba.beforeAlt" width="640" height="1387" loading="lazy">
+                    <img class="ba-img ba-after" src="assets/clearpage/after-web.webp" alt="The same page reshaped by ClearPage: generous spacing, a clear typeface, and color anchors on easily-confused letters." data-i18n-alt="cp.ba.afterAlt" width="640" height="1387" loading="lazy">
                     <div class="ba-divider" aria-hidden="true"><span class="ba-knob">↔</span></div>
-                    <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" step="1" aria-label="Drag to compare the original page with the ClearPage version">
+                    <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" step="1" aria-label="Drag to compare the original page with the ClearPage version" data-i18n-aria="cp.ba.aria">
                 </div>
                 <div class="ba-tags">
                     <span class="ba-tag ba-tag-after">ClearPage</span>
-                    <span class="ba-tag">Original</span>
+                    <span class="ba-tag" data-i18n="cp.ba.original">Original</span>
                 </div>
             </div>
         </div>
@@ -94,81 +101,81 @@
 
     <section id="try-live" class="section tryit-section">
         <div class="container">
-            <h2>Try it yourself</h2>
-            <p class="tryit-intro">Type or paste anything below, then flip the switches and watch the text reshape — the same way ClearPage does it on your phone. Nothing leaves your browser.</p>
+            <h2 data-i18n="cp.try.h2">Try it yourself</h2>
+            <p class="tryit-intro" data-i18n="cp.try.intro">Type or paste anything below, then flip the switches and watch the text reshape, the same way ClearPage does it on your phone. Nothing leaves your browser.</p>
             <div class="tryit">
                 <div class="tryit-controls">
                     <label class="tryit-field">
-                        <span>Your text</span>
-                        <textarea id="tryInput" rows="3" spellcheck="false">The bold puppy dribbled a ball by the quiet pond.</textarea>
+                        <span data-i18n="cp.try.label">Your text</span>
+                        <textarea id="tryInput" rows="3" spellcheck="false" data-i18n="cp.try.sample">The bold puppy dribbled a ball by the quiet pond.</textarea>
                     </label>
                     <div class="tryit-toggles">
-                        <div class="tryit-group" role="group" aria-label="Typeface">
-                            <span class="tryit-label">Typeface</span>
+                        <div class="tryit-group" role="group" aria-label="Typeface" data-i18n-aria="cp.try.typeface">
+                            <span class="tryit-label" data-i18n="cp.try.typeface">Typeface</span>
                             <div class="seg">
-                                <button type="button" data-opt="font" data-val="" class="is-on">Default</button>
-                                <button type="button" data-opt="font" data-val="dys">Dyslexia-friendly</button>
+                                <button type="button" data-opt="font" data-val="" class="is-on" data-i18n="cp.try.default">Default</button>
+                                <button type="button" data-opt="font" data-val="dys" data-i18n="cp.try.dys">Dyslexia-friendly</button>
                             </div>
                         </div>
-                        <div class="tryit-group" role="group" aria-label="Spacing">
-                            <span class="tryit-label">Spacing</span>
+                        <div class="tryit-group" role="group" aria-label="Spacing" data-i18n-aria="cp.try.spacing">
+                            <span class="tryit-label" data-i18n="cp.try.spacing">Spacing</span>
                             <div class="seg">
-                                <button type="button" data-opt="space" data-val="" class="is-on">Normal</button>
-                                <button type="button" data-opt="space" data-val="relaxed">Relaxed</button>
+                                <button type="button" data-opt="space" data-val="" class="is-on" data-i18n="cp.try.normal">Normal</button>
+                                <button type="button" data-opt="space" data-val="relaxed" data-i18n="cp.try.relaxed">Relaxed</button>
                             </div>
                         </div>
-                        <div class="tryit-group" role="group" aria-label="Text size">
-                            <span class="tryit-label">Size</span>
+                        <div class="tryit-group" role="group" aria-label="Text size" data-i18n-aria="cp.try.size">
+                            <span class="tryit-label" data-i18n="cp.try.size">Size</span>
                             <div class="seg">
                                 <button type="button" data-opt="size" data-val="" class="is-on">A</button>
                                 <button type="button" data-opt="size" data-val="large">A+</button>
                                 <button type="button" data-opt="size" data-val="xl">A++</button>
                             </div>
                         </div>
-                        <div class="tryit-group" role="group" aria-label="Letter anchors">
-                            <span class="tryit-label">Letter anchors</span>
+                        <div class="tryit-group" role="group" aria-label="Letter anchors" data-i18n-aria="cp.try.anchors">
+                            <span class="tryit-label" data-i18n="cp.try.anchors">Letter anchors</span>
                             <div class="seg">
-                                <button type="button" data-opt="anchor" data-val="" class="is-on">Off</button>
-                                <button type="button" data-opt="anchor" data-val="on">On</button>
+                                <button type="button" data-opt="anchor" data-val="" class="is-on" data-i18n="cp.try.off">Off</button>
+                                <button type="button" data-opt="anchor" data-val="on" data-i18n="cp.try.on">On</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="tryit-output" id="tryOutput"></div>
             </div>
-            <p class="tryit-foot">Letter anchors color the letters that mirror each other — <span class="anchor a-b">b</span>, <span class="anchor a-d">d</span>, <span class="anchor a-p">p</span>, <span class="anchor a-q">q</span> — so they stop flipping.</p>
+            <p class="tryit-foot" data-i18n-html="cp.try.foot">Letter anchors color the letters that mirror each other, <span class="anchor a-b">b</span>, <span class="anchor a-d">d</span>, <span class="anchor a-p">p</span>, <span class="anchor a-q">q</span>, so they stop flipping.</p>
         </div>
     </section>
 
     <section id="story" class="section">
         <div class="container">
-            <h2>Breaking the barriers of dyslexia</h2>
+            <h2 data-i18n="cp.story.h2">Breaking the barriers of dyslexia</h2>
             <div class="about-content">
-                <p>Dyslexia isn't a reading problem — it's a formatting problem. Dyslexic readers don't struggle with words themselves, but with how they sit on the page: tight spacing, standard fonts, and no room to breathe turn reading into work.</p>
-                <p>ClearPage removes that barrier. Snap a photo or screenshot and it re-renders the text in a layout you control — your spacing, your typeface, your colors. Reading stops being a battle and becomes a choice, on your own device, with no Wi-Fi needed.</p>
-                <p class="standalone-line">The curb cut effect: design for one, help everyone.</p>
+                <p data-i18n="cp.story.p1">Dyslexia isn't a reading problem, it's a formatting problem. Dyslexic readers don't struggle with words themselves, but with how they sit on the page: tight spacing, standard fonts, and no room to breathe turn reading into work.</p>
+                <p data-i18n="cp.story.p2">ClearPage removes that barrier. Snap a photo or screenshot and it re-renders the text in a layout you control, your spacing, your typeface, your colors. Reading stops being a battle and becomes a choice, on your own device, with no Wi-Fi needed.</p>
+                <p class="standalone-line" data-i18n="cp.story.quote">The curb cut effect: design for one, help everyone.</p>
             </div>
-            <p class="who-lead">Made for dyslexia — useful for everyone.</p>
+            <p class="who-lead" data-i18n="cp.who.lead">Made for dyslexia, useful for everyone.</p>
             <div class="who-static">
                 <div class="who-card accent-blue">
                     <span class="who-icon gradient-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></span>
-                    <h3>Students</h3>
-                    <p>Scan a worksheet, textbook page, or slide and read it in a layout that doesn't fight back.</p>
+                    <h3 data-i18n="cp.who.students.h">Students</h3>
+                    <p data-i18n="cp.who.students.p">Scan a worksheet, textbook page, or slide and read it in a layout that doesn't fight back.</p>
                 </div>
                 <div class="who-card accent-teal">
                     <span class="who-icon gradient-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg></span>
-                    <h3>Adults with dyslexia</h3>
-                    <p>Email, contracts, menus, signs — turn everyday reading into something you control.</p>
+                    <h3 data-i18n="cp.who.adults.h">Adults with dyslexia</h3>
+                    <p data-i18n="cp.who.adults.p">Email, contracts, menus, signs, turn everyday reading into something you control.</p>
                 </div>
                 <div class="who-card accent-amber">
                     <span class="who-icon gradient-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></span>
-                    <h3>Parents &amp; teachers</h3>
-                    <p>Hand a child a tool that makes any printed page readable, on their own device, offline.</p>
+                    <h3 data-i18n="cp.who.parents.h">Parents &amp; teachers</h3>
+                    <p data-i18n="cp.who.parents.p">Hand a child a tool that makes any printed page readable, on their own device, offline.</p>
                 </div>
                 <div class="who-card accent-rose">
                     <span class="who-icon gradient-badge"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></span>
-                    <h3>Anyone, really</h3>
-                    <p>Tired eyes, a cramped PDF, a low-contrast screenshot — clearer formatting helps everyone.</p>
+                    <h3 data-i18n="cp.who.anyone.h">Anyone, really</h3>
+                    <p data-i18n="cp.who.anyone.p">Tired eyes, a cramped PDF, a low-contrast screenshot, clearer formatting helps everyone.</p>
                 </div>
             </div>
         </div>
@@ -176,7 +183,7 @@
 
     <section id="features" class="section">
         <div class="container">
-            <h2>What it does</h2>
+            <h2 data-i18n="cp.feat.h2">What it does</h2>
             <div class="work-grid">
                 <div class="work-card feat-card accent-blue">
                     <div class="card-media">
@@ -184,8 +191,8 @@
                             <source src="assets/clearpage/clips/scan-anything.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <h3>Scan anything</h3>
-                    <p>On-device OCR from any photo, screenshot, or the camera — in English, Spanish, and German.</p>
+                    <h3 data-i18n="cp.feat.scan.h">Scan anything</h3>
+                    <p data-i18n="cp.feat.scan.p">On-device OCR from any photo, screenshot, or the camera, in English, Spanish, and German.</p>
                     <div class="tags">
                         <span>On-Device OCR</span>
                         <span>EN · ES · DE</span>
@@ -198,8 +205,8 @@
                             <source src="assets/clearpage/clips/read-your-way.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <h3>Read it your way</h3>
-                    <p>Your spacing, size, typeface, and tint — plus color anchors for confusable letters like b, d, p, q.</p>
+                    <h3 data-i18n="cp.feat.read.h">Read it your way</h3>
+                    <p data-i18n="cp.feat.read.p">Your spacing, size, typeface, and tint, plus color anchors for confusable letters like b, d, p, q.</p>
                     <div class="tags">
                         <span>Adaptive Layout</span>
                         <span>OpenDyslexic</span>
@@ -212,8 +219,8 @@
                             <source src="assets/clearpage/clips/live-aloud.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <h3>Live &amp; aloud</h3>
-                    <p>Read live through the camera, or have any page read aloud with word-by-word highlighting and a reading ruler.</p>
+                    <h3 data-i18n="cp.feat.live.h">Live &amp; aloud</h3>
+                    <p data-i18n="cp.feat.live.p">Read live through the camera, or have any page read aloud with word-by-word highlighting and a reading ruler.</p>
                     <div class="tags">
                         <span>Live Hover</span>
                         <span>Read Aloud</span>
@@ -226,8 +233,8 @@
                             <source src="assets/clearpage/clips/math-decoded.mp4" type="video/mp4">
                         </video>
                     </div>
-                    <h3>Math, decoded</h3>
-                    <p>Math Power colors look-alike symbols (∈, ⊂, &lt;, &gt;), explains each in plain language, and reads formulas aloud.</p>
+                    <h3 data-i18n="cp.feat.math.h">Math, decoded</h3>
+                    <p data-i18n="cp.feat.math.p">Math Power colors look-alike symbols (∈, ⊂, &lt;, &gt;), explains each in plain language, and reads formulas aloud.</p>
                     <div class="tags">
                         <span>Math Power</span>
                         <span>Symbol Glossary</span>
@@ -236,10 +243,10 @@
                 </div>
                 <div class="work-card feat-card accent-amber">
                     <div class="card-media">
-                        <img src="assets/clearpage/screenshots/widget-web.webp" alt="ClearPage Home Screen widget with Quick Actions for Photo, Camera, Live, and Paste" width="720" height="1558" loading="lazy">
+                        <img src="assets/clearpage/screenshots/widget-web.webp" alt="ClearPage Home Screen widget with Quick Actions for Photo, Camera, Live, and Paste" data-i18n-alt="cp.feat.widget.alt" width="720" height="1558" loading="lazy">
                     </div>
-                    <h3>One tap away</h3>
-                    <p>A Home Screen widget puts Photo, Camera, Live, and Paste a single tap from anywhere.</p>
+                    <h3 data-i18n="cp.feat.widget.h">One tap away</h3>
+                    <p data-i18n="cp.feat.widget.p">A Home Screen widget puts Photo, Camera, Live, and Paste a single tap from anywhere.</p>
                     <div class="tags">
                         <span>Home Screen Widget</span>
                         <span>Quick Actions</span>
@@ -247,10 +254,10 @@
                 </div>
                 <div class="work-card feat-card accent-teal">
                     <div class="card-media">
-                        <img src="assets/clearpage/screenshots/action_extension-web.webp" alt="The iOS share sheet showing a Read with ClearPage action" width="720" height="1558" loading="lazy">
+                        <img src="assets/clearpage/screenshots/action_extension-web.webp" alt="The iOS share sheet showing a Read with ClearPage action" data-i18n-alt="cp.feat.share.alt" width="720" height="1558" loading="lazy">
                     </div>
-                    <h3>Share to read</h3>
-                    <p>Send a photo from any app straight to ClearPage with the Share Extension.</p>
+                    <h3 data-i18n="cp.feat.share.h">Share to read</h3>
+                    <p data-i18n="cp.feat.share.p">Send a photo from any app straight to ClearPage with the Share Extension.</p>
                     <div class="tags">
                         <span>Share Extension</span>
                         <span>Any App</span>
@@ -262,10 +269,10 @@
 
     <section id="status" class="section has-glow">
         <div class="container">
-            <h2>Get ClearPage</h2>
+            <h2 data-i18n="cp.get.h2">Get ClearPage</h2>
             <div class="get-launch">
-                <a href="https://apps.apple.com/app/clearpage-dyslexia-reader/id6779539839" class="launch-card-link" rel="noopener" aria-label="Download ClearPage on the App Store">
-                    <img class="launch-card" src="assets/clearpage/og-launch.jpg" alt="ClearPage: Dyslexia Reader — New launch alert. Ready. Set. Get. Now on the App Store." width="1200" height="628">
+                <a href="https://apps.apple.com/app/clearpage-dyslexia-reader/id6779539839" class="launch-card-link" rel="noopener" aria-label="Download ClearPage on the App Store" data-i18n-aria="cp.badgeAlt">
+                    <img class="launch-card" src="assets/clearpage/og-launch.jpg" alt="ClearPage: Dyslexia Reader, New launch alert. Ready. Set. Get. Now on the App Store." data-i18n-alt="cp.get.alt" width="1200" height="628">
                 </a>
             </div>
         </div>
@@ -275,7 +282,7 @@
         <div class="container">
             <div class="ryw-banner">
                 <span class="ryw-aa" aria-hidden="true">Aa</span>
-                <p>This page reads your way, too. Tap the <strong>Aa</strong> button in the bottom corner to set the type, spacing, and theme — your choice sticks across every page here.</p>
+                <p data-i18n-html="cp.ryw.p">This page reads your way, too. Tap the <strong>Aa</strong> button in the bottom corner to set the type, spacing, and theme, your choice sticks across every page here.</p>
                 <span class="ryw-arrow" aria-hidden="true">↘</span>
             </div>
         </div>
@@ -283,31 +290,31 @@
 
     <section id="faq" class="section">
         <div class="container">
-            <h2>Questions</h2>
+            <h2 data-i18n="cp.faq.h2">Questions</h2>
             <div class="faq-accordion">
                 <details class="faq-item">
-                    <summary>Is it really free?</summary>
-                    <p>Yes — no ads, no subscription, nothing to unlock. Accessibility shouldn't come at a cost. You can chip in on the <a href="support.html">support page</a> if you'd like.</p>
+                    <summary data-i18n="cp.faq.q1">Is it really free?</summary>
+                    <p data-i18n-html="cp.faq.a1">Yes, no ads, no subscription, nothing to unlock. Accessibility shouldn't come at a cost. You can chip in on the <a href="support.html">support page</a> if you'd like.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Does it work offline?</summary>
-                    <p>Completely. OCR and Read Aloud run on-device — no Wi-Fi, no signal needed.</p>
+                    <summary data-i18n="cp.faq.q2">Does it work offline?</summary>
+                    <p data-i18n="cp.faq.a2">Completely. OCR and Read Aloud run on-device, no Wi-Fi, no signal needed.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>What about my privacy?</summary>
-                    <p>Your photos and profile never leave your device. No accounts, no network, no analytics. <a href="clearpage-privacy.html">Privacy policy</a>.</p>
+                    <summary data-i18n="cp.faq.q3">What about my privacy?</summary>
+                    <p data-i18n-html="cp.faq.a3">Your photos and profile never leave your device. No accounts, no network, no analytics. <a href="clearpage-privacy.html">Privacy policy</a>.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Which languages?</summary>
-                    <p>OCR and the full interface in English, Spanish, and German.</p>
+                    <summary data-i18n="cp.faq.q4">Which languages?</summary>
+                    <p data-i18n="cp.faq.a4">OCR and the full interface in English, Spanish, and German.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>What do I need?</summary>
-                    <p>An iPhone or iPad. Grab it free on the App Store and start scanning right away.</p>
+                    <summary data-i18n="cp.faq.q5">What do I need?</summary>
+                    <p data-i18n="cp.faq.a5">An iPhone or iPad. Grab it free on the App Store and start scanning right away.</p>
                 </details>
                 <details class="faq-item">
-                    <summary>Is it accessible?</summary>
-                    <p>Localized in EN, ES &amp; DE, scales with Dynamic Type for low vision, and fully VoiceOver-labeled with Reduce Motion support.</p>
+                    <summary data-i18n="cp.faq.q6">Is it accessible?</summary>
+                    <p data-i18n-html="cp.faq.a6">Localized in EN, ES &amp; DE, scales with Dynamic Type for low vision, and fully VoiceOver-labeled with Reduce Motion support.</p>
                 </details>
             </div>
         </div>
@@ -315,11 +322,13 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
-            <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a> · <a href="clearpage-privacy.html">App Privacy</a></p>
+            <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+            <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a> · <a href="clearpage-privacy.html" data-i18n="footer.appPrivacy">App Privacy</a></p>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script src="prefs.js" defer></script>
     <script>
@@ -387,7 +396,7 @@
     })();
     </script>
     <script>
-    // Live "Try it yourself" — reshape the typed text the way ClearPage does, in-browser.
+    // Live "Try it yourself", reshape the typed text the way ClearPage does, in-browser.
     (function () {
         const input = document.getElementById('tryInput');
         const out = document.getElementById('tryOutput');

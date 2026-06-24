@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Support Natalia Andrzejewski's free apps — MyTinnitusMask and ClearPage. No ads, no subscriptions, ever.">
+    <meta name="description" content="Support Natalia Andrzejewski's free apps, MyTinnitusMask and ClearPage. No ads, no subscriptions, ever.">
     <title>Support | Natalia Andrzejewski</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Support my work">
-    <meta property="og:description" content="MyTinnitusMask and ClearPage are free forever — no ads, no subscriptions. If they helped you, you can help cover the costs.">
+    <meta property="og:description" content="MyTinnitusMask and ClearPage are free forever, no ads, no subscriptions. If they helped you, you can help cover the costs.">
     <meta property="og:url" content="https://natladev.com/support.html">
     <meta property="og:image" content="https://natladev.com/nat.jpg">
     <meta name="twitter:card" content="summary">
@@ -20,29 +20,36 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">nat</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
-            <ul class="nav-links" id="navMenu">
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#work">Work</a></li>
-                <li><a href="clearpage.html">Dyslexia</a></li>
-                <li><a href="tinnitus.html">Tinnitus</a></li>
-                <li><a href="devlog.html">Devlog</a></li>
-                <li><a href="support.html">Support</a></li>
-                <li><a href="index.html#socials">Connect</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="tinnitus.html" data-i18n="nav.tinnitus">Tinnitus</a></li>
+                    <li><a href="devlog.html" data-i18n="nav.devlog">Devlog</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
         </div>
     </nav>
 
     <header class="hero" id="main">
         <div class="container">
             <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
-                <a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a>
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="bc.home">Home</a>
                 <span style="color: var(--text-muted); margin: 0 0.5rem;">→</span>
-                <span style="color: var(--accent);">Support</span>
+                <span style="color: var(--accent);" data-i18n="nav.support">Support</span>
             </nav>
-            <h1>Keep it free</h1>
-            <p class="subtitle">Hard work runs on gummies, black coffee, and AI tokens ☕🍬</p>
-            <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Thank you for supporting my mission of making this place a little better, one app at a time.</p>
+            <h1 data-i18n="support.hero.h1">Keep it free</h1>
+            <p class="subtitle" data-i18n="support.hero.sub">Hard work runs on gummies, black coffee, and AI tokens ☕🍬</p>
+            <p style="text-align: center; color: var(--text-muted); font-size: 1.1rem; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="support.hero.thanks">Thank you for supporting my mission of making this place a little better, one app at a time.</p>
             <div class="hero-app-icons">
                 <a href="clearpage.html" class="app-icon-badge" aria-label="ClearPage">
                     <img src="assets/clearpage/icon1024-light.png" alt="ClearPage app icon" width="76" height="76">
@@ -56,8 +63,8 @@
 
     <section id="support" class="section social-section support-section">
         <div class="container">
-            <h2>A few ways to give back</h2>
-            <p class="give-intro">These apps are free forever — no ads, no subscriptions. If they made your day a little easier, here are some kind ways to keep them going.</p>
+            <h2 data-i18n="support.h2">A few ways to give back</h2>
+            <p class="give-intro" data-i18n="support.intro">These apps are free forever, no ads, no subscriptions. If they made your day a little easier, here are some kind ways to keep them going.</p>
             <div class="give-grid">
                 <a href="https://ko-fi.com/natladev" class="give-action tile-coffee" target="_blank" rel="noopener">
                     <span class="tile-icon">
@@ -65,8 +72,8 @@
                             <path d="M2 21h18v-2H2v2zM20 8h-2V5H4v9c0 1.66 1.34 3 3 3h8c1.66 0 3-1.34 3-3v-1h2c1.11 0 2-.89 2-2v-2c0-1.11-.89-2-2-2zm0 4h-2v-2h2v2z"/>
                         </svg>
                     </span>
-                    <h3>Buy me a coffee</h3>
-                    <p>A one-off tip on Ko-fi.</p>
+                    <h3 data-i18n="support.coffee.h">Buy me a coffee</h3>
+                    <p data-i18n="support.coffee.p">A one-off tip on Ko-fi.</p>
                 </a>
                 <a href="https://apps.apple.com/app/clearpage-dyslexia-reader/id6779539839?action=write-review" class="give-action tile-star" target="_blank" rel="noopener">
                     <span class="tile-icon">
@@ -74,19 +81,19 @@
                             <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                         </svg>
                     </span>
-                    <h3>Rate ClearPage</h3>
-                    <p>A quick App Store review — free, and how new readers find it.</p>
+                    <h3 data-i18n="support.rate.h">Rate ClearPage</h3>
+                    <p data-i18n="support.rate.p">A quick App Store review, free, and how new readers find it.</p>
                 </a>
-                <button type="button" class="give-action tile-share share-btn" data-share-title="Natalia Andrzejewski — free accessibility apps" data-share-text="MyTinnitusMask and ClearPage — free, privacy-first iOS apps." data-share-url="https://natladev.com/">
+                <button type="button" class="give-action tile-share share-btn" data-share-title="Natalia Andrzejewski, free accessibility apps" data-share-text="MyTinnitusMask and ClearPage, free, privacy-first iOS apps." data-share-url="https://natladev.com/">
                     <span class="tile-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
                         </svg>
                     </span>
-                    <h3>Share the apps</h3>
-                    <p>Send them to someone who'd find them useful.</p>
+                    <h3 data-i18n="support.share.h">Share the apps</h3>
+                    <p data-i18n="support.share.p">Send them to someone who'd find them useful.</p>
                 </button>
-                <!-- TODO: enable once the Gewerbe is registered — also re-add Etsy to datenschutz.html section 4 (DE + EN)
+                <!-- TODO: enable once the Gewerbe is registered, also re-add Etsy to datenschutz.html section 4 (DE + EN)
                 <a href="[ETSY-SHOP-URL]" class="give-action" target="_blank" rel="noopener">
                     <span class="tile-icon">
                         <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -94,7 +101,7 @@
                         </svg>
                     </span>
                     <h3>Grab some merch</h3>
-                    <p>Tees, mugs, and stickers — every purchase helps.</p>
+                    <p>Tees, mugs, and stickers, every purchase helps.</p>
                 </a>
                 -->
             </div>
@@ -105,35 +112,36 @@
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
                 <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;">Projects</h4>
+                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;" data-i18n="footer.projects">Projects</h4>
                     <ul style="list-style: none;">
                         <li><a href="tinnitus.html" style="color: var(--text-muted); text-decoration: none;">MyTinnitusMask</a></li>
                         <li><a href="clearpage.html" style="color: var(--text-muted); text-decoration: none;">ClearPage</a></li>
-                        <li><a href="support.html" style="color: var(--text-muted); text-decoration: none;">Support</a></li>
+                        <li><a href="support.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="footer.support">Support</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;">Connect</h4>
+                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;" data-i18n="footer.connect">Connect</h4>
                     <ul style="list-style: none;">
-                        <li><a href="https://github.com/natladev" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">GitHub</a></li>
                         <li><a href="https://www.linkedin.com/in/natladev/" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">LinkedIn</a></li>
                         <li><a href="https://ko-fi.com/natladev" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">Ko-fi</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;">Accessibility</h4>
+                    <h4 style="color: var(--accent); margin-bottom: 0.75rem; font-size: 0.95rem;" data-i18n="footer.accessibility">Accessibility</h4>
                     <ul style="list-style: none;">
-                        <li><span style="color: var(--text-muted);">Reading preferences</span><br><span style="font-size: 0.85rem; color: var(--text-muted);">Check bottom right ↓</span></li>
+                        <li><span style="color: var(--text-muted);" data-i18n="footer.readingPrefs">Reading preferences</span><br><span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="footer.checkBottom">Check bottom right ↓</span></li>
                     </ul>
                 </div>
             </div>
             <div style="border-top: 1px solid var(--border); padding-top: 1.5rem;">
-                <p>&copy; 2026 Natalia Andrzejewski. Built with care.</p>
-                <p class="legal-links"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
+                <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+                <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a></p>
             </div>
         </div>
     </footer>
 
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
     <script src="prefs.js" defer></script>
     <script>
