@@ -1100,54 +1100,56 @@ button:focus-visible {
     .hero-aurora::before { animation: none; }
 }
 
-/* Tinnitus "How it works" — borderless guided steps */
-.step-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 1.75rem;
-    max-width: 760px;
+/* Tinnitus "How it works" — guided flow timeline */
+.flow {
+    max-width: 680px;
     margin: 2.5rem auto 0;
 }
-@media (max-width: 560px) {
-    .step-grid { grid-template-columns: 1fr; max-width: 360px; }
+.flow-step {
+    display: grid;
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1.5rem;
+    padding-bottom: 2.5rem;
+    animation: tile-rise 0.5s ease both;
 }
-.step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.9rem;
-    padding: 2rem 1.25rem;
-    border-radius: 20px;
-    transition: background 0.35s ease, transform 0.35s ease;
-    animation: tile-rise 0.55s ease both;
-}
-.step:nth-child(1) { animation-delay: 0.05s; }
-.step:nth-child(2) { animation-delay: 0.13s; }
-.step:nth-child(3) { animation-delay: 0.21s; }
-.step:nth-child(4) { animation-delay: 0.29s; }
-.step-badge {
+.flow-step:nth-child(1) { animation-delay: 0.05s; }
+.flow-step:nth-child(2) { animation-delay: 0.13s; }
+.flow-step:nth-child(3) { animation-delay: 0.21s; }
+.flow-step:nth-child(4) { animation-delay: 0.29s; }
+.flow-step:last-child { padding-bottom: 0; }
+.flow-marker { position: relative; }
+.flow-badge {
     width: 3.5rem;
     height: 3.5rem;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 700;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.step:hover {
-    background: radial-gradient(circle at 50% 16%, var(--c-glow), transparent 72%);
-    transform: translateY(-5px);
+/* connecting line, fading from this step's accent toward the next */
+.flow-step:not(:last-child) .flow-marker::after {
+    content: '';
+    position: absolute;
+    left: 1.75rem;
+    transform: translateX(-50%);
+    top: 3.95rem;
+    bottom: -2.5rem;
+    width: 3px;
+    border-radius: 3px;
+    background: linear-gradient(180deg, var(--c-a), var(--c-glow));
 }
-.step:hover .step-badge {
+.flow-content { padding-top: 0.45rem; }
+.flow-content h3 { font-size: 1.15rem; color: var(--text); margin: 0 0 0.4rem; }
+.flow-content p { color: var(--text-muted); line-height: 1.65; margin: 0 0 0.85rem; font-size: 0.97rem; }
+.flow-content .tags span { color: var(--c-a); }
+.flow-step:hover .flow-badge {
     transform: scale(1.08) rotate(-4deg);
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 14px 32px var(--c-glow);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.35), 0 12px 28px var(--c-glow);
 }
-.step h3 { font-size: 1.12rem; color: var(--text); margin: 0; }
-.step p { color: var(--text-muted); line-height: 1.6; margin: 0; font-size: 0.95rem; }
-.step .tags { justify-content: center; }
-.step .tags span { color: var(--c-a); }
 @media (prefers-reduced-motion: reduce) {
-    .step { animation: none; }
-    .step:hover { transform: none; }
-    .step:hover .step-badge { transform: none; }
+    .flow-step { animation: none; }
+    .flow-step:hover .flow-badge { transform: none; }
 }
 
 /* Let's Connect — tile accents (matches the Support tiles) */
@@ -1347,53 +1349,30 @@ button:focus-visible {
     .who-card:hover .who-icon { transform: none; }
 }
 
-/* Who it's for — drifting marquee */
-.who-marquee {
-    margin-top: 2.75rem;
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+/* Who it's for — static grid */
+.who-lead {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
 }
-.who-track {
-    display: flex;
-    width: max-content;
-    animation: who-scroll 38s linear infinite;
+.who-static {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem 1.25rem;
+    margin-top: 2rem;
 }
-.who-marquee:hover .who-track,
-.who-marquee:focus-within .who-track { animation-play-state: paused; }
-.who-group {
-    display: flex;
-    gap: 1.5rem;
-    padding-right: 1.5rem;
-    flex-shrink: 0;
+@media (max-width: 860px) {
+    .who-static { grid-template-columns: repeat(2, 1fr); }
 }
-.who-track .who-card {
-    flex: 0 0 280px;
-    margin: 0;
-    animation: none;
+@media (max-width: 460px) {
+    .who-static { grid-template-columns: 1fr; }
 }
-@keyframes who-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-    .who-track {
-        animation: none;
-        width: auto;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-    }
-    .who-group {
-        display: contents;
-    }
-    .who-group[aria-hidden="true"] { display: none; }
-    .who-marquee {
-        -webkit-mask-image: none;
-        mask-image: none;
-        overflow: visible;
-    }
-}
+.who-static .who-card:nth-child(1) { animation-delay: 0.05s; }
+.who-static .who-card:nth-child(2) { animation-delay: 0.12s; }
+.who-static .who-card:nth-child(3) { animation-delay: 0.19s; }
+.who-static .who-card:nth-child(4) { animation-delay: 0.26s; }
 
 /* FAQ — open Q&A cards */
 .faq-grid {
