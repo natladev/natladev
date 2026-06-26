@@ -40,6 +40,9 @@ window.I18N = {
         "footer.privacy": "Política de privacidad",
         "footer.appPrivacy": "Privacidad de la app",
         "footer.accessibility": "Accesibilidad",
+        // Reading-preferences first-visit hint
+        "prefs.hint": "¿Nueva por aquí? Puedes leer este sitio <strong>a tu manera</strong>: tipografía, tamaño, espaciado y color.",
+        "prefs.hintDismiss": "Entendido",
         // Home — hero
         "home.hero.greeting": "Hola, soy Nat",
         "home.hero.lead": "Creo herramientas de accesibilidad desde la experiencia propia.<br><strong>Diseña para uno, ayuda a todos</strong>.",
@@ -86,7 +89,7 @@ window.I18N = {
         "support.share.p": "Mándaselas a alguien a quien le vengan bien.",
         // Tinnitus
         "tin.hero.sub": "Una app de iOS gratuita y respetuosa con la privacidad que investiga el enmascaramiento adaptativo de sonido para aliviar el tinnitus, creada como tesis de un Máster en Inteligencia Artificial.",
-        "tin.hero.tagline": "Si tu silencio pita, esta página es para ti.",
+        "tin.hero.tagline": "Si en tu silencio hay ruido, esta página es para ti.",
         "tin.stat.num": "1 de cada 7",
         "tin.stat.text": "personas adultas en el mundo vive con tinnitus. Para la mayoría no hay cura, solo la búsqueda de alivio.",
         "tin.why.h2": "Una historia de amor, en realidad",
@@ -101,7 +104,7 @@ window.I18N = {
         "tin.hear.p": "Si vives con tinnitus, ya conoces este sonido. Si no, esto es lo más cerca que puedo acercarte: creado a partir del audiograma clínico de mi esposo, el pitido exacto que oye a cada instante.",
         "tin.hear.btnAria": "Mantén pulsado para oír un tono suave parecido al tinnitus",
         "tin.hear.prompt": "Mantén pulsado para oír con lo que él vive",
-        "tin.hear.note": "Un pitido suave que sube y baja. Se detiene en cuanto sueltas; él nunca lo hace.",
+        "tin.hear.note": "Un pitido suave que sube y baja. Se detiene en cuanto sueltas el botón. Para las personas con tinnitus, este pitido nunca se detiene.",
         "tin.how.h2": "Cómo funciona",
         "tin.how.s1.h": "Empareja tu tinnitus",
         "tin.how.s1.p": "Una sesión psicoacústica guiada encuentra el tono de tu tinnitus (búsqueda binaria por frecuencia), su volumen y el nivel mínimo de ruido que lo enmascara: las mismas medidas que se usan en las clínicas de audiología, adaptadas a los AirPods.",
@@ -288,6 +291,9 @@ window.I18N = {
         "footer.privacy": "Datenschutzerklärung",
         "footer.appPrivacy": "App-Datenschutz",
         "footer.accessibility": "Barrierefreiheit",
+        // Reading-preferences first-visit hint
+        "prefs.hint": "Neu hier? Du kannst diese Seite <strong>nach deiner Art</strong> lesen — Schrift, Größe, Abstand und Farbe.",
+        "prefs.hintDismiss": "Verstanden",
         // Home — hero
         "home.hero.greeting": "Hi, ich bin Nat",
         "home.hero.lead": "Ich entwickle Accessibility-Tools aus eigener Betroffenheit.<br><strong>Für einen gestalten, allen helfen</strong>.",

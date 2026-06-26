@@ -141,15 +141,37 @@
         if (!localStorage.getItem(HINT_KEY)) {
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+            // Match the language i18n.js resolves: saved choice, else browser language.
+            const SUPPORTED = ['en', 'es', 'de'];
+            let hintLang = 'en';
+            try {
+                const saved = localStorage.getItem('natladev-lang');
+                if (SUPPORTED.indexOf(saved) >= 0) hintLang = saved;
+            } catch (e) { /* private mode */ }
+            if (hintLang === 'en') {
+                const langPrefs = (navigator.languages && navigator.languages.length)
+                    ? navigator.languages
+                    : [navigator.language || navigator.userLanguage || ''];
+                for (let i = 0; i < langPrefs.length; i++) {
+                    const code = (langPrefs[i] || '').slice(0, 2).toLowerCase();
+                    if (SUPPORTED.indexOf(code) >= 0) { hintLang = code; break; }
+                }
+            }
+            const dict = (hintLang !== 'en' && window.I18N && window.I18N[hintLang]) ? window.I18N[hintLang] : null;
+            const hintHTML = (dict && dict['prefs.hint'])
+                ? dict['prefs.hint']
+                : 'New here? You can read this site <strong>your way</strong> — font, size, spacing, and color.';
+            const dismissText = (dict && dict['prefs.hintDismiss']) ? dict['prefs.hintDismiss'] : 'Got it';
+
             const hint = document.createElement('div');
             hint.className = 'prefs-hint';
             hint.setAttribute('role', 'status');
-            hint.innerHTML = '<p>New here? You can read this site <strong>your way</strong> — font, size, spacing, and color.</p>';
+            hint.innerHTML = '<p>' + hintHTML + '</p>';
 
             const got = document.createElement('button');
             got.type = 'button';
             got.className = 'prefs-hint-dismiss';
-            got.textContent = 'Got it';
+            got.textContent = dismissText;
             hint.appendChild(got);
 
             document.body.appendChild(hint);
