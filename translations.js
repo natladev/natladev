@@ -281,7 +281,7 @@ window.I18N = {
         "footer.support": "Unterstützen",
         "footer.readingPrefs": "Leseeinstellungen",
         "footer.checkBottom": "Unten rechts ↓",
-        "footer.copyright": "© 2026 Natalia Andrzejewski. Mit Sorgfalt gemacht.",
+        "footer.copyright": "© 2026 Natalia Andrzejewski. Mit Sorgfalt entwickelt.",
         "footer.impressum": "Impressum",
         "footer.privacy": "Datenschutzerklärung",
         "footer.appPrivacy": "App-Datenschutz",
