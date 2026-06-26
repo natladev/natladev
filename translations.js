@@ -9,7 +9,7 @@ window.I18N = {
         "nav.dyslexia": "Dislexia",
         "nav.tinnitus": "Tinnitus",
         "nav.devlog": "Devlog",
-        "dl.hero.sub": "Notas desde el taller: cómo creo apps accesibles desde la experiencia propia, la investigación de IA que hay detrás y lo que aprendo por el camino.",
+        "dl.hero.sub": "Notas desde mi escritorio: cómo creo apps accesibles desde la experiencia propia, la investigación de IA que hay detrás y lo que aprendo por el camino.",
         "dl.post1.title": "Hola, te doy la bienvenida al devlog",
         "dl.post1.excerpt": "Por qué existe este espacio, sobre qué escribiré aquí y cómo pienso al construir herramientas que empiezan con una persona y acaban ayudando a todo el mundo.",
         "dl.read": "Leer →",
