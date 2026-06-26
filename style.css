@@ -608,6 +608,19 @@ button:focus-visible {
     line-height: 1.6;
 }
 
+.proj-cta {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: var(--accent-light);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.work-card:hover .proj-cta {
+    color: var(--accent);
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
