@@ -1823,7 +1823,7 @@ button:focus-visible {
 .ba-compare {
     position: relative;
     width: min(300px, 78vw);
-    aspect-ratio: 1179 / 2556;
+    aspect-ratio: 640 / 1216;
     margin: 0 auto;
     border-radius: 34px;
     overflow: hidden;
