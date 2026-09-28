@@ -2624,3 +2624,127 @@ html {
 .storage-status:empty {
     display: none;
 }
+
+/* ClearPage: maker quote in the story section */
+.maker-quote {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 640px;
+    margin: 2.5rem auto 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--accent);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+}
+.maker-quote img {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.maker-quote blockquote p {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--text);
+}
+.maker-quote figcaption {
+    font-size: 0.9rem;
+}
+.maker-quote figcaption a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+.maker-quote figcaption a:hover { color: var(--accent-light); }
+
+/* ClearPage: who makes it */
+.maker {
+    max-width: 760px;
+    margin: 2.5rem auto 0;
+}
+.maker-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.75rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--c-a, var(--accent));
+    border-radius: var(--radius);
+}
+.maker-photo {
+    flex: 0 0 auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--c-a, var(--accent));
+}
+.maker-intro h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+}
+.maker-intro p {
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin: 0;
+}
+.maker-credit {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 1rem 1.75rem;
+    border-left: 3px solid var(--c-a, var(--accent));
+}
+.maker-credit-photo {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.maker-credit p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+.maker-credit strong { color: var(--text); }
+.maker-feedback {
+    margin-top: 1.75rem;
+    text-align: center;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+.maker-feedback a {
+    color: var(--accent-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+}
+
+/* ClearPage: closing download band */
+.cta-band {
+    text-align: center;
+}
+.cta-band p {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .maker-quote,
+    .maker-intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .maker-credit { padding: 1rem 0 1rem 1.25rem; }
+}
+
+.cta-band h2 { margin-bottom: 1rem; }
+.maker-quote blockquote { margin: 0; }
+.maker-credit .team-link { white-space: nowrap; }

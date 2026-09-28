@@ -153,6 +153,13 @@
             <div class="about-content">
                 <p data-i18n="cp.story.p1">Dyslexia isn't a reading problem, it's a formatting problem. Dyslexic readers don't struggle with words themselves, but with how they sit on the page: tight spacing, standard fonts, and no room to breathe turn reading into work.</p>
                 <p data-i18n="cp.story.p2">ClearPage removes that barrier. Snap a photo or screenshot and it re-renders the text in a layout you control, your spacing, your typeface, your colors. Reading stops being a battle and becomes a choice, on your own device, with no Wi-Fi needed.</p>
+                <figure class="maker-quote">
+                    <img src="assets/team/nat.jpeg" alt="" width="1086" height="1448" loading="lazy">
+                    <div>
+                        <blockquote><p data-i18n="cp.story.maker.q">“I built ClearPage because reading shouldn't depend on how someone else laid out the page. You should get to decide that.”</p></blockquote>
+                        <figcaption><a href="#maker" data-i18n="cp.story.maker.by">Natalia Andrzejewski, creator of ClearPage</a></figcaption>
+                    </div>
+                </figure>
                 <p class="standalone-line" data-i18n="cp.story.quote">The curb cut effect: design for one, help everyone.</p>
             </div>
             <p class="who-lead" data-i18n="cp.who.lead">Made for dyslexia, useful for everyone.</p>
@@ -273,47 +280,33 @@
         </div>
     </section>
 
-    <section id="team" class="section has-glow">
-        <div class="container">
-            <h2 data-i18n="cp.team.h2">Meet the team</h2>
-            <p class="team-intro" data-i18n="cp.team.intro">ClearPage isn't a solo project. It's built by a small group of people who care about the same thing.</p>
-            <div class="team-grid">
-                <!--
-                  To add someone: copy one .team-card block, bump the key number
-                  (cp.team.p4.role / cp.team.p4.p), pick an unused accent class
-                  (accent-gold / amber), and add the two new keys to es, de, and zh
-                  in translations.js. Names aren't translated. Drop a square photo
-                  in assets/team/; if there isn't one yet, use the initials
-                  fallback instead: <span class="team-avatar team-avatar-fallback"
-                  aria-hidden="true">XY</span>
-                -->
-                <div class="team-card accent-rose">
-                    <img class="team-avatar" src="assets/team/nat.jpeg" alt="Natalia Andrzejewski" width="1086" height="1448" loading="lazy">
-                    <div class="team-body">
-                        <span class="team-role" data-i18n="cp.team.p1.role">Creator, iOS &amp; ML development</span>
-                        <h3>Natalia Andrzejewski</h3>
-                        <p data-i18n="cp.team.p1.p">Builds and ships the app: the reading engine, the on-device OCR, and the accessibility work underneath it.</p>
-                    </div>
-                </div>
-                <div class="team-card accent-blue">
-                    <img class="team-avatar" src="assets/team/markus.webp" alt="Markus Christian Schmiedeberg" width="700" height="700" loading="lazy">
-                    <div class="team-body">
-                        <span class="team-role" data-i18n="cp.team.p2.role">Creative Director</span>
-                        <h3>Markus Christian Schmiedeberg</h3>
-                        <p data-i18n="cp.team.p2.p">Twenty-five years in product and communication design. He came to ClearPage from the outside, found what wasn't working, and stayed to redesign all of it: direction, experience, and every screen.</p>
-                        <a class="team-link" href="https://mcs-solutions.de/" target="_blank" rel="noopener noreferrer">mcs-solutions.de →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="read-your-way" class="section ryw-section">
         <div class="container">
             <div class="ryw-banner">
                 <span class="ryw-aa" aria-hidden="true">Aa</span>
                 <p data-i18n-html="cp.ryw.p">This page reads your way, too. Tap the <strong>Aa</strong> button in the bottom corner to set the type, spacing, and theme, your choice sticks across every page here.</p>
                 <span class="ryw-arrow" aria-hidden="true">↘</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="maker" class="section has-glow">
+        <div class="container">
+            <h2 data-i18n="cp.maker.h2">Who makes ClearPage</h2>
+            <div class="maker">
+                <div class="maker-intro accent-rose">
+                    <img class="maker-photo" src="assets/team/nat.jpeg" alt="Natalia Andrzejewski" width="1086" height="1448" loading="lazy">
+                    <div>
+                        <span class="team-role" data-i18n="cp.maker.role">Creator, iOS &amp; ML development</span>
+                        <h3>Natalia Andrzejewski</h3>
+                        <p data-i18n="cp.maker.p">Hi, I'm Nat, an indie iOS developer near Cologne. I build ClearPage myself: the reading engine, the on-device text recognition, and the accessibility work underneath it. It's an independent project, so there's nothing to sell you and nothing tracking you.</p>
+                    </div>
+                </div>
+                <div class="maker-credit accent-blue">
+                    <img class="maker-credit-photo" src="assets/team/markus.webp" alt="" width="700" height="700" loading="lazy">
+                    <p><span data-i18n-html="cp.maker.design">Design by <strong>Markus Christian Schmiedeberg</strong>. He brought twenty-five years of product and communication design, found what wasn't working, and redesigned every screen.</span> <a class="team-link" href="https://mcs-solutions.de/" target="_blank" rel="noopener noreferrer">mcs-solutions.de →</a></p>
+                </div>
+                <p class="maker-feedback" data-i18n-html="cp.maker.feedback">Is something still hard to read, or missing? <a href="mailto:natiosdev@gmail.com?subject=ClearPage%20feedback">Tell me</a>, ideas from readers shape what I build next.</p>
             </div>
         </div>
     </section>
@@ -347,6 +340,17 @@
                     <p data-i18n-html="cp.faq.a6">Localized in EN, ES, DE &amp; ZH, scales with Dynamic Type for low vision, and fully VoiceOver-labeled with Reduce Motion support.</p>
                 </details>
             </div>
+        </div>
+    </section>
+
+    <section id="get" class="section cta-band">
+        <div class="container">
+            <h2 data-i18n="cp.cta.h2">Free on iPhone and iPad</h2>
+            <p data-i18n="cp.cta.p">No account, no ads, no Wi-Fi needed.</p>
+            <a href="https://apps.apple.com/app/clearpage-dyslexia-reader/id6779539839" class="appstore-badge" rel="noopener" aria-label="Download ClearPage on the App Store">
+                <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download on the App Store" data-i18n-alt="cp.badgeAlt" width="135" height="40">
+                <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download on the App Store" data-i18n-alt="cp.badgeAlt" width="135" height="40">
+            </a>
         </div>
     </section>
 
