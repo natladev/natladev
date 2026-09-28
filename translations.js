@@ -22,6 +22,7 @@ window.I18N = {
         "footer.copyright": "© 2026 Natalia Andrzejewski. Hecho con cariño.",
         "footer.impressum": "Aviso legal",
         "footer.privacy": "Política de privacidad",
+        "footer.cookies": "Política de cookies",
         "footer.appPrivacy": "Privacidad de la app",
         "footer.accessibility": "Accesibilidad",
         // Reading-preferences first-visit hint
@@ -207,8 +208,6 @@ window.I18N = {
         "cp.team.p1.p": "Crea y publica la app: el motor de lectura, el OCR en el dispositivo y todo el trabajo de accesibilidad que hay debajo.",
         "cp.team.p2.role": "Director creativo",
         "cp.team.p2.p": "Veinticinco años de diseño de producto y comunicación. Llegó a ClearPage desde fuera, vio lo que no funcionaba y se quedó a rediseñarlo todo: la dirección, la experiencia y cada pantalla.",
-        "cp.team.p3.role": "Arquitectura y desarrollo iOS",
-        "cp.team.p3.p": "Más de diez años de desarrollo móvil entre iOS y Android, en fintech, videojuegos, RA y salud. Aporta al rediseño la arquitectura y la robustez técnica que ClearPage necesita para llegar a ser la mejor app gratuita para la dislexia que existe.",
         // ClearPage privacy policy
         "cpp.title": "Política de privacidad de ClearPage",
         "cpp.updated": "Última actualización: 12 de junio de 2026 · Se aplica a la app ClearPage para iPhone y iPad.",
@@ -282,6 +281,7 @@ window.I18N = {
         "footer.copyright": "© 2026 Natalia Andrzejewski. Mit Sorgfalt entwickelt.",
         "footer.impressum": "Impressum",
         "footer.privacy": "Datenschutzerklärung",
+        "footer.cookies": "Cookie-Richtlinie",
         "footer.appPrivacy": "App-Datenschutz",
         "footer.accessibility": "Barrierefreiheit",
         // Reading-preferences first-visit hint
@@ -467,8 +467,6 @@ window.I18N = {
         "cp.team.p1.p": "Baut und veröffentlicht die App: die Lese-Engine, die Texterkennung auf dem Gerät und die Barrierefreiheit, die darunter steckt.",
         "cp.team.p2.role": "Creative Director",
         "cp.team.p2.p": "Fünfundzwanzig Jahre Produkt- und Kommunikationsdesign. Er kam von außen zu ClearPage, sah, was nicht funktionierte, und blieb, um alles neu zu gestalten: die Richtung, das Nutzungserlebnis und jeden einzelnen Screen.",
-        "cp.team.p3.role": "Architektur & iOS-Entwicklung",
-        "cp.team.p3.p": "Über zehn Jahre Mobile-Entwicklung mit iOS und Android, in Fintech, Gaming, AR und Gesundheitswesen. Er bringt dem Redesign die Architektur und die technische Robustheit mit, die ClearPage braucht, um die beste kostenlose Legasthenie-App zu werden, die es gibt.",
         // ClearPage privacy policy
         "cpp.title": "ClearPage Datenschutzerklärung",
         "cpp.updated": "Stand: 12. Juni 2026 · Gilt für die ClearPage-App für iPhone und iPad.",
@@ -542,6 +540,7 @@ window.I18N = {
         "footer.copyright": "© 2026 Natalia Andrzejewski。用心打造。",
         "footer.impressum": "法律声明",
         "footer.privacy": "隐私政策",
+        "footer.cookies": "Cookie 政策",
         "footer.appPrivacy": "应用隐私",
         // Reading-preferences first-visit hint
         "prefs.hint": "第一次来？你可以<strong>按自己的方式</strong>阅读本站——字体、大小、间距和颜色都能调。",
@@ -726,8 +725,6 @@ window.I18N = {
         "cp.team.p1.p": "负责应用的构建与发布：阅读引擎、设备端 OCR，以及底层的全部无障碍工作。",
         "cp.team.p2.role": "创意总监",
         "cp.team.p2.p": "二十五年的产品与传播设计经验。他以局外人的身份来到 ClearPage，发现了那些行不通的地方，然后留下来把一切重新设计：方向、体验，以及每一个界面。",
-        "cp.team.p3.role": "架构与 iOS 开发",
-        "cp.team.p3.p": "十余年移动开发经验，横跨 iOS 与 Android，涉足金融科技、游戏、AR 与医疗。他为这次重新设计带来架构与技术稳健性——那正是 ClearPage 成为现有最好的免费阅读障碍应用所需要的。",
         // ClearPage privacy policy
         "cpp.title": "ClearPage 隐私政策",
         "cpp.updated": "最后更新：2026 年 6 月 12 日 · 适用于 iPhone 和 iPad 版 ClearPage 应用。",

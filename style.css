@@ -2588,3 +2588,39 @@ html {
     background: var(--accent);
     color: var(--bg-dark);
 }
+
+/* Cookie policy: local storage table */
+.storage-table-wrap {
+    overflow-x: auto;
+    margin: 1rem 0 1.5rem;
+}
+
+.storage-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.storage-table th,
+.storage-table td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.7rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.storage-table thead th {
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.storage-table tbody th {
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.storage-status:empty {
+    display: none;
+}
