@@ -324,8 +324,6 @@ button:focus-visible {
     color: var(--text-muted);
 }
 
-/* Tacet's mark is compact, so size it to sit level with the ClearPage logo */
-.hero-app.wm-mtm img { height: 2rem; }
 
 .hero-app:focus-visible {
     outline: 3px solid var(--accent-light);
@@ -336,7 +334,6 @@ button:focus-visible {
 @media (max-width: 768px) {
     .hero-apps { gap: 2rem; }
     .hero-app img { height: 2.25rem; }
-    .hero-app.wm-mtm img { height: 1.6rem; }
 }
 
 /* Hero sheet music: restless notes falling silent under the tacet mark */
