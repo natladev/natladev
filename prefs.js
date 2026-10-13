@@ -116,6 +116,11 @@
         'prefs.on': 'On',
         'prefs.normal': 'Normal',
         'prefs.relaxed': 'Relaxed',
+        'prefs.listen': 'Read aloud',
+        'prefs.play': 'Read this page',
+        'prefs.pause': 'Pause',
+        'prefs.resume': 'Resume',
+        'prefs.stop': 'Stop',
         'prefs.reset': 'Reset to defaults'
     };
     function siteLang() {
@@ -231,6 +236,139 @@
     const inlineMount = document.getElementById('prefs-inline');
     if (inlineMount) buildControls(inlineMount);
 
+    // Read aloud, as in ClearPage: the page is spoken block by block with the
+    // device's own voices, and the block being read is highlighted.
+    const speech = window.speechSynthesis;
+    const reader = { state: 'idle', blocks: [], index: 0, run: 0 };
+    let playBtn = null, stopBtn = null, barPlay = null, readBar = null;
+
+    function readableBlocks() {
+        const scope = document.querySelector('main') || document.body;
+        const seen = [];
+        return Array.prototype.filter.call(
+            scope.querySelectorAll('h1, h2, h3, h4, p, li, figcaption, summary'), el => {
+                if (!el.offsetParent || !el.innerText.trim()) return false;
+                if (el.closest('.prefs-panel, .prefs-banner, .read-bar, nav, [aria-hidden="true"]')) return false;
+                // A list item holding paragraphs is read through those paragraphs.
+                if (seen.some(parent => parent.contains(el))) return false;
+                if (el.querySelector('p, li')) return false;
+                seen.push(el);
+                return true;
+            });
+    }
+
+    function voiceFor(lang) {
+        const voices = speech.getVoices().filter(v => v.lang && v.lang.toLowerCase().indexOf(lang) === 0);
+        // A voice on the device first: the text then never leaves it.
+        return voices.filter(v => v.localService)[0] || voices[0] || null;
+    }
+
+    function showReading(el) {
+        document.querySelectorAll('.reading-now').forEach(e => e.classList.remove('reading-now'));
+        if (!el) return;
+        el.classList.add('reading-now');
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        el.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+    }
+
+    function refreshReader() {
+        const playing = reader.state === 'playing';
+        const key = playing ? 'prefs.pause' : reader.state === 'paused' ? 'prefs.resume' : 'prefs.play';
+        [playBtn, barPlay].forEach(btn => { if (btn) mark(btn, key); });
+        if (stopBtn) stopBtn.hidden = reader.state === 'idle';
+        if (readBar) readBar.hidden = reader.state === 'idle';
+    }
+
+    function speakNext() {
+        const run = reader.run;
+        const el = reader.blocks[reader.index];
+        if (!el) return stopReading();
+        showReading(el);
+        const lang = (root.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
+        const utterance = new SpeechSynthesisUtterance(el.innerText.trim());
+        utterance.lang = { en: 'en-US', es: 'es-ES', de: 'de-DE', zh: 'zh-CN' }[lang] || lang;
+        const voice = voiceFor(lang);
+        if (voice) utterance.voice = voice;
+        utterance.rate = 0.95;
+        const next = () => {
+            // A cancelled run (stop, or a new start) must not carry on.
+            if (run !== reader.run || reader.state === 'idle') return;
+            reader.index += 1;
+            speakNext();
+        };
+        utterance.onend = next;
+        utterance.onerror = next;
+        speech.speak(utterance);
+    }
+
+    function stopReading() {
+        reader.run += 1;
+        reader.state = 'idle';
+        if (speech) speech.cancel();
+        showReading(null);
+        refreshReader();
+    }
+
+    function toggleReading() {
+        if (reader.state === 'playing') {
+            speech.pause();
+            reader.state = 'paused';
+        } else if (reader.state === 'paused') {
+            speech.resume();
+            reader.state = 'playing';
+        } else {
+            speech.cancel();
+            reader.run += 1;
+            reader.blocks = readableBlocks();
+            // Start with what is on screen, not from the top of a long page.
+            const first = reader.blocks.findIndex(el => el.getBoundingClientRect().bottom > 80);
+            reader.index = Math.max(0, first);
+            reader.state = 'playing';
+            speakNext();
+        }
+        refreshReader();
+    }
+
+    if (speech && window.SpeechSynthesisUtterance) {
+        const fieldset = document.createElement('fieldset');
+        const legend = document.createElement('legend');
+        mark(legend, 'prefs.listen');
+        const row = document.createElement('div');
+        row.className = 'prefs-actions';
+        playBtn = document.createElement('button');
+        playBtn.type = 'button';
+        playBtn.className = 'prefs-play';
+        playBtn.addEventListener('click', toggleReading);
+        stopBtn = document.createElement('button');
+        stopBtn.type = 'button';
+        mark(stopBtn, 'prefs.stop');
+        stopBtn.addEventListener('click', stopReading);
+        row.append(playBtn, stopBtn);
+        fieldset.append(legend, row);
+        // First in the panel: the option people open it for most.
+        title.after(fieldset);
+
+        // While it reads, pause and stop stay in reach without the panel.
+        readBar = document.createElement('div');
+        readBar.className = 'read-bar';
+        readBar.setAttribute('role', 'group');
+        barPlay = document.createElement('button');
+        barPlay.type = 'button';
+        barPlay.addEventListener('click', toggleReading);
+        const barStop = document.createElement('button');
+        barStop.type = 'button';
+        mark(barStop, 'prefs.stop');
+        barStop.addEventListener('click', stopReading);
+        readBar.append(barPlay, barStop);
+        document.body.appendChild(readBar);
+
+        // The words change with the language; a half-read page would not match.
+        document.addEventListener('natladev:langchange', () => { if (reader.state !== 'idle') stopReading(); });
+        window.addEventListener('pagehide', () => speech.cancel());
+        speech.getVoices(); // some browsers only load their voices once asked
+        refreshReader();
+    }
+
     const reset = document.createElement('button');
     reset.type = 'button';
     reset.className = 'prefs-reset';
@@ -289,6 +427,7 @@
         });
         toggle.setAttribute('aria-label', t('prefs.title'));
         navToggle.setAttribute('aria-label', t('prefs.title'));
+        if (readBar) readBar.setAttribute('aria-label', t('prefs.listen'));
     }
     document.addEventListener('natladev:langchange', relabel);
 

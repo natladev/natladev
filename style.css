@@ -3210,3 +3210,37 @@ button .anchor, [class*="cta"] .anchor, .lang-btn .anchor { color: inherit; }
 .prefs-banner-dismiss { background: transparent; color: var(--cta-text); border: 2px solid currentColor; }
 .prefs-banner button:focus-visible { outline: 3px solid var(--cta-text); outline-offset: 2px; }
 .prefs-banner .anchor { color: inherit; }
+
+/* Read aloud: the controls, and the block being read */
+.prefs-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.prefs-actions button, .read-bar button {
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    cursor: pointer;
+}
+.prefs-actions .prefs-play, .read-bar button:first-child { background: var(--cta-bg); border-color: var(--cta-bg); color: var(--cta-text); }
+.prefs-actions button[hidden], .read-bar[hidden] { display: none; }
+.read-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 1.25rem;
+    transform: translateX(-50%);
+    z-index: 149;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 999px;
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.reading-now { background: var(--tag-bg); outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 6px; scroll-margin-top: 8rem; }
+@media (max-width: 700px) {
+    .read-bar { left: 1rem; transform: none; bottom: calc(1.25rem + env(safe-area-inset-bottom)); }
+}
