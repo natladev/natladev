@@ -3151,3 +3151,51 @@ body.scrolled .to-top { opacity: 1; pointer-events: auto; transform: none; }
 
 /* Letter anchors keep the text color where the background is a filled control */
 button .anchor, [class*="cta"] .anchor, .lang-btn .anchor { color: inherit; }
+
+/* Reading preferences, easy to find: a labelled, filled button in the corner
+   and an "Aa" in the top bar */
+.prefs-toggle {
+    width: auto;
+    min-width: 3.5rem;
+    height: 3.5rem;
+    padding: 0 1.25rem 0 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-radius: 999px;
+    border: 2px solid var(--cta-bg);
+    background: var(--cta-bg);
+    color: var(--cta-text);
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+}
+.prefs-toggle:hover { background: var(--cta-bg); filter: brightness(1.08); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32); }
+.prefs-toggle:focus-visible, .prefs-nav:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+.prefs-aa { font-size: 1.3rem; line-height: 1; }
+.prefs-panel { bottom: 5.5rem; }
+.prefs-panel.from-nav { top: calc(var(--nav-h, 64px) + 0.5rem); bottom: auto; max-height: calc(100vh - var(--nav-h, 64px) - 1.5rem); }
+
+.prefs-nav {
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.4rem 0.7rem;
+    margin-right: 0.5rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    background: var(--tag-bg);
+    color: var(--text);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.prefs-nav:hover, .prefs-nav[aria-expanded="true"] { background: var(--accent); color: var(--cta-text); }
+
+@media (max-width: 700px) {
+    /* Phones: the label shows on arrival, then folds away to free the page. */
+    .prefs-scrolled .prefs-toggle { padding: 0; width: 3.5rem; justify-content: center; }
+    .prefs-scrolled .prefs-label { display: none; }
+    .prefs-nav { display: none; }
+}
+.prefs-panel { z-index: 151; }

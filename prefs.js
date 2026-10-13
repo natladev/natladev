@@ -145,7 +145,15 @@
 
     const toggle = document.createElement('button');
     toggle.className = 'prefs-toggle';
-    toggle.textContent = 'Aa';
+    // Labelled, so it reads as "reading preferences" and not as a mystery icon.
+    const toggleMark = document.createElement('span');
+    toggleMark.className = 'prefs-aa';
+    toggleMark.textContent = 'Aa';
+    toggleMark.setAttribute('aria-hidden', 'true');
+    const toggleLabel = document.createElement('span');
+    toggleLabel.className = 'prefs-label';
+    mark(toggleLabel, 'prefs.title');
+    toggle.append(toggleMark, toggleLabel);
     toggle.setAttribute('aria-label', t('prefs.title'));
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-controls', 'prefsPanel');
@@ -235,22 +243,43 @@
     });
     panel.appendChild(reset);
 
-    function setOpen(open) {
+    // The same panel from the top bar, where people look for settings first.
+    const navToggle = document.createElement('button');
+    navToggle.type = 'button';
+    navToggle.className = 'prefs-nav';
+    navToggle.textContent = 'Aa';
+    navToggle.setAttribute('aria-label', t('prefs.title'));
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-controls', 'prefsPanel');
+    const langSwitch = document.querySelector('.navbar .lang-switch');
+    if (langSwitch) langSwitch.parentNode.insertBefore(navToggle, langSwitch);
+
+    function setOpen(open, fromNav) {
         panel.hidden = !open;
+        // Opened from the top bar, it drops down from there.
+        panel.classList.toggle('from-nav', Boolean(open && fromNav));
         toggle.setAttribute('aria-expanded', String(open));
+        navToggle.setAttribute('aria-expanded', String(open));
         // Keyboard and screen reader users land in the panel they just opened.
         if (open) title.focus({ preventScroll: true });
     }
 
     toggle.addEventListener('click', () => setOpen(panel.hidden));
+    navToggle.addEventListener('click', () => setOpen(panel.hidden, true));
+    // On a phone the label gives way to the page once the visitor scrolls.
+    const onScroll = () => root.classList.toggle('prefs-scrolled', window.scrollY > 240);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && !panel.hidden) {
+            const opener = panel.classList.contains('from-nav') ? navToggle : toggle;
             setOpen(false);
-            toggle.focus();
+            opener.focus();
         }
     });
     document.addEventListener('click', e => {
-        if (!panel.hidden && !panel.contains(e.target) && e.target !== toggle) setOpen(false);
+        if (!panel.hidden && !panel.contains(e.target) && !toggle.contains(e.target)
+            && e.target !== navToggle) setOpen(false);
     });
 
     // Re-translate every label when the site language changes.
@@ -259,6 +288,7 @@
             el.textContent = t(el.dataset.l10n);
         });
         toggle.setAttribute('aria-label', t('prefs.title'));
+        navToggle.setAttribute('aria-label', t('prefs.title'));
     }
     document.addEventListener('natladev:langchange', relabel);
 
