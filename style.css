@@ -3066,3 +3066,36 @@ body.scrolled .to-top { opacity: 1; pointer-events: auto; transform: none; }
 .you-links .you-tile h4 { margin: 0; font-size: 0.98rem; font-weight: 600; }
 .you-links .you-tile p, .you-links .you-cta { display: none; }
 .you-links .you-icon { margin: 0; width: 34px; height: 34px; }
+
+/* ClearPage hero: the pitch beside the before/after slider */
+.hero.hero-has-demo { padding: clamp(5rem, 11vh, 7.5rem) 0 clamp(3.5rem, 8vh, 5.5rem); }
+.hero-demo { margin-top: 3rem; }
+.hero-demo .ba { margin: 0; }
+.hero-demo .ba-compare { width: min(250px, 68vw); }
+.hero-demo .ba-tags { margin-top: 0.9rem; gap: 1.75rem; }
+.hero-demo-note { margin-top: 0.35rem; font-size: 0.8rem; color: var(--text-muted); opacity: 0.8; }
+@media (min-width: 900px) {
+    .hero-split { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: clamp(2.5rem, 6vw, 5.5rem); }
+    .hero-has-demo .hero-copy { text-align: left; }
+    .hero-has-demo .subtitle { margin: 0; }
+    .hero-has-demo .hero-facts, .hero-has-demo .hero-actions { justify-content: flex-start; }
+    .hero-demo { margin-top: 0; text-align: center; }
+}
+
+/* Summarize and Simplify: two screens beside the words */
+.ai-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+}
+.ai-phones { display: flex; gap: 1rem; }
+.ai-phones .card-media { width: 165px; margin: 0; }
+.ai-lead { color: var(--text-muted); line-height: 1.65; margin-bottom: 1.75rem; }
+@media (max-width: 760px) {
+    .ai-row { grid-template-columns: minmax(0, 1fr); }
+    .ai-phones { justify-content: center; }
+    .ai-phones .card-media { width: min(150px, 40vw); }
+}

@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="ClearPage: Dyslexia Reader, New launch alert. Ready. Set. Get. Now on the App Store.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://natladev.com/assets/clearpage/og-launch.jpg">
-    <link rel="stylesheet" href="style.css?v=12">
+    <link rel="stylesheet" href="style.css?v=13">
     <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;}catch(e){}})();</script>
     <script type="application/ld+json">
     {
@@ -61,8 +61,9 @@
         </div>
     </nav>
 
-    <header class="hero" id="main">
-        <div class="container">
+    <header class="hero hero-has-demo" id="main">
+        <div class="container hero-split">
+            <div class="hero-copy">
             <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
                 <a href="index.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="bc.home">Home</a>
                 <span style="color: var(--text-muted); margin: 0 0.5rem;">→</span>
@@ -80,12 +81,28 @@
                 </a>
                 <a href="#devices" class="hero-more" data-i18n="cp.hero.more">See how it works ↓</a>
             </div>
+            </div>
+            <div class="hero-demo">
+            <div class="ba">
+                <div class="ba-compare" id="baCompare" style="--pos:50%">
+                    <img class="ba-img ba-before" src="assets/clearpage/before-web.webp?v=2" alt="A page of dense, looping cursive that is almost impossible to read, how a confusing page can feel." data-i18n-alt="cp.ba.beforeAlt" width="640" height="1216" loading="lazy">
+                    <img class="ba-img ba-after" src="assets/clearpage/after-web.webp?v=2" alt="The same page reshaped by ClearPage: generous spacing, a clear typeface, and color anchors on easily-confused letters." data-i18n-alt="cp.ba.afterAlt" width="640" height="1216" loading="lazy">
+                    <div class="ba-divider" aria-hidden="true"><span class="ba-knob">↔</span></div>
+                    <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" step="1" aria-label="Drag to compare the original page with the ClearPage version" data-i18n-aria="cp.ba.aria">
+                </div>
+                <div class="ba-tags">
+                    <span class="ba-tag ba-tag-after">ClearPage</span>
+                    <span class="ba-tag" data-i18n="cp.ba.original">Original</span>
+                </div>
+            </div>
+                <p class="hero-demo-note" data-i18n="cp.ba.hint">Drag to compare</p>
+            </div>
         </div>
     </header>
 
     <nav class="section-nav" aria-label="On this page" data-i18n-aria="cp.snav.aria">
         <div class="container">
-            <a href="#devices" data-covers="try" data-i18n="cp.snav.see">See it</a>
+            <a href="#devices" data-i18n="cp.snav.see">See it</a>
             <a href="#features" data-covers="math ai" data-i18n="cp.snav.feat">Features</a>
             <a href="#faq" data-i18n="cp.snav.faq">FAQ</a>
             <a href="#get" class="section-nav-cta" data-i18n="cp.snav.get">Get the app</a>
@@ -108,27 +125,6 @@
             <p class="ba-intro" data-i18n="cp.dev.p">One app, laid out for each screen. On iPhone Duo it follows the fold: closed, half-open like a laptop, or fully open.</p>
             <div class="devices-film">
                 <video data-tour="devices" controls muted playsinline preload="none" width="1920" height="1080" poster="assets/clearpage/video/devices-en.jpg" src="assets/clearpage/video/devices-en.mp4" aria-label="ClearPage shown side by side on an iPad, an iPhone and an iPhone Duo that is closed, half-open and open" data-i18n-aria="cp.dev.alt"></video>
-            </div>
-        </div>
-    </section>
-
-    <section id="try" class="section ba-section">
-        <div class="container">
-            <h2 data-i18n="cp.ba.h2">See the difference</h2>
-            <p class="ba-intro" data-i18n="cp.ba.intro">The same page, before and after. Drag the handle to wipe the original clean and reveal how ClearPage reshapes it.</p>
-            <div class="see-grid">
-                <div class="ba">
-                    <div class="ba-compare" id="baCompare" style="--pos:50%">
-                        <img class="ba-img ba-before" src="assets/clearpage/before-web.webp?v=2" alt="A page of dense, looping cursive that is almost impossible to read, how a confusing page can feel." data-i18n-alt="cp.ba.beforeAlt" width="640" height="1216" loading="lazy">
-                        <img class="ba-img ba-after" src="assets/clearpage/after-web.webp?v=2" alt="The same page reshaped by ClearPage: generous spacing, a clear typeface, and color anchors on easily-confused letters." data-i18n-alt="cp.ba.afterAlt" width="640" height="1216" loading="lazy">
-                        <div class="ba-divider" aria-hidden="true"><span class="ba-knob">↔</span></div>
-                        <input type="range" class="ba-range" id="baRange" min="0" max="100" value="50" step="1" aria-label="Drag to compare the original page with the ClearPage version" data-i18n-aria="cp.ba.aria">
-                    </div>
-                    <div class="ba-tags">
-                        <span class="ba-tag ba-tag-after">ClearPage</span>
-                        <span class="ba-tag" data-i18n="cp.ba.original">Original</span>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -218,28 +214,18 @@
                     <h2 data-i18n-html="cp.ai.h2"><strong>Summarize</strong> and <strong>simplify</strong> any page</h2>
                 </div>
             </div>
-            <div class="about-content">
-                <p data-i18n="cp.ai.lead">Some pages are simply too much: too long, or written in words nobody uses. ClearPage can now give you the short version, or the same page in plainer words. Both are written on your device with Apple Intelligence, so the page never leaves your phone.</p>
-            </div>
-            <div class="ai-showcase">
-                <figure class="ai-card">
-                    <div class="card-media phone-shot">
-                        <img class="v2-shot" data-shot="06-summary" src="assets/clearpage/v2/en/06-summary.webp" alt="A page about the water cycle in ClearPage, with a three-sentence summary in a sheet below it." data-i18n-alt="cp.shot.summary" width="600" height="1303" loading="lazy">
-                    </div>
-                    <figcaption>
-                        <strong data-i18n="cp.ai.sum.h">Summarize</strong>
-                        <span data-i18n="cp.ai.sum.p">The main points in a few short sentences, about one for each paragraph. Tap the sparkles, or just shake your phone.</span>
-                    </figcaption>
-                </figure>
-                <figure class="ai-card">
-                    <div class="card-media phone-shot">
-                        <img class="v2-shot" data-shot="07-simplify" src="assets/clearpage/v2/en/07-simplify.webp" alt="A dense paragraph about photosynthesis rewritten by ClearPage in short, plain sentences." data-i18n-alt="cp.shot.simplify" width="600" height="1303" loading="lazy">
-                    </div>
-                    <figcaption>
-                        <strong data-i18n="cp.ai.simp.h">Simplify</strong>
-                        <span data-i18n="cp.ai.simp.p">The whole page again in shorter sentences and everyday words. Nothing is meant to be left out, and the math stays exactly as it was.</span>
-                    </figcaption>
-                </figure>
+            <div class="ai-row">
+                <div class="ai-phones">
+                    <div class="card-media phone-shot"><img class="v2-shot" data-shot="06-summary" src="assets/clearpage/v2/en/06-summary.webp" alt="A page about the water cycle in ClearPage, with a three-sentence summary in a sheet below it." data-i18n-alt="cp.shot.summary" width="600" height="1303" loading="lazy"></div>
+                    <div class="card-media phone-shot"><img class="v2-shot" data-shot="07-simplify" src="assets/clearpage/v2/en/07-simplify.webp" alt="A dense paragraph about photosynthesis rewritten by ClearPage in short, plain sentences." data-i18n-alt="cp.shot.simplify" width="600" height="1303" loading="lazy"></div>
+                </div>
+                <div class="ai-text">
+                    <p class="ai-lead" data-i18n="cp.ai.lead">Some pages are simply too much: too long, or written in words nobody uses. ClearPage can now give you the short version, or the same page in plainer words. Both are written on your device with Apple Intelligence, so the page never leaves your phone.</p>
+                    <ul class="math-points">
+                        <li><strong data-i18n="cp.ai.sum.h">Summarize</strong><span data-i18n="cp.ai.sum.p">The main points in a few short sentences, about one for each paragraph. Tap the sparkles, or just shake your phone.</span></li>
+                        <li><strong data-i18n="cp.ai.simp.h">Simplify</strong><span data-i18n="cp.ai.simp.p">The whole page again in shorter sentences and everyday words. Nothing is meant to be left out, and the math stays exactly as it was.</span></li>
+                    </ul>
+                </div>
             </div>
             <p class="math-next" data-i18n-html="cp.ai.note"><strong>Good to know:</strong> both appear in your own typeface, spacing and colors, and can be shared or saved. They need an iPhone or iPad with Apple Intelligence; on other devices ClearPage works exactly as before. A summary or a rewrite can miss or change a detail, so the original page is always one tap away.</p>
         </div>
@@ -341,7 +327,7 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=11"></script>
+    <script src="translations.js?v=12"></script>
     <script src="i18n.js?v=4"></script>
     <script src="script.js?v=6"></script>
     <script src="prefs.js?v=4" defer></script>
