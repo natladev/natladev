@@ -1,4 +1,4 @@
-// Reading preferences widget — theme, font, text size, line spacing.
+// Reading preferences widget — theme, tint, font, text size, spacing, letter anchors.
 // Saved values are applied before first paint by the inline snippet in each page's <head>.
 (function () {
     const KEY = 'natladev-prefs';
@@ -14,9 +14,75 @@
     function apply() {
         const theme = prefs.theme || 'system';
         root.dataset.theme = theme === 'system' ? (systemLight.matches ? 'light' : 'dark') : theme;
+        // A tint is a tinted light page, so it brings the light theme with it.
+        if (prefs.tint) { root.dataset.tint = prefs.tint; root.dataset.theme = 'light'; } else delete root.dataset.tint;
         if (prefs.font) root.dataset.font = prefs.font; else delete root.dataset.font;
         if (prefs.textsize) root.dataset.textsize = prefs.textsize; else delete root.dataset.textsize;
         if (prefs.spacing) root.dataset.spacing = prefs.spacing; else delete root.dataset.spacing;
+        applyAnchors();
+    }
+
+    // Letter anchors, as in ClearPage: b, d, p and q each keep one color, so
+    // the letters that mirror each other stop swapping places.
+    const ANCHOR_CLASS = { b: 'a-b', d: 'a-d', p: 'a-p', q: 'a-q' };
+    const SKIP = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TEXTAREA: 1, INPUT: 1, SELECT: 1, OPTION: 1, CODE: 1, svg: 1, VIDEO: 1 };
+    let anchorWatch = null;
+
+    function anchorize() {
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+                if (!/[bdpq]/.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+                for (let el = node.parentNode; el && el !== document.body; el = el.parentNode) {
+                    if (SKIP[el.nodeName] || el.isContentEditable
+                        || (el.classList && el.classList.contains('anchor'))) return NodeFilter.FILTER_REJECT;
+                }
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(node => {
+            const fragment = document.createDocumentFragment();
+            node.nodeValue.split(/([bdpq])/).forEach(part => {
+                if (ANCHOR_CLASS[part]) {
+                    const span = document.createElement('span');
+                    span.className = 'anchor ' + ANCHOR_CLASS[part];
+                    span.dataset.auto = '';
+                    span.textContent = part;
+                    fragment.appendChild(span);
+                } else if (part) {
+                    fragment.appendChild(document.createTextNode(part));
+                }
+            });
+            node.parentNode.replaceChild(fragment, node);
+        });
+    }
+
+    function applyAnchors() {
+        const on = prefs.anchors === 'on';
+        if (on) {
+            root.dataset.anchors = 'on';
+            if (!document.body) return;
+            anchorize();
+            // Text that arrives later (a language switch, a caption) gets them too.
+            if (!anchorWatch) {
+                let queued = false;
+                anchorWatch = new MutationObserver(() => {
+                    if (queued) return;
+                    queued = true;
+                    requestAnimationFrame(() => { queued = false; if (prefs.anchors === 'on') anchorize(); });
+                });
+                anchorWatch.observe(document.body, { childList: true, subtree: true, characterData: true });
+            }
+        } else {
+            delete root.dataset.anchors;
+            if (anchorWatch) { anchorWatch.disconnect(); anchorWatch = null; }
+            document.querySelectorAll('span.anchor[data-auto]').forEach(span => {
+                const parent = span.parentNode;
+                parent.replaceChild(document.createTextNode(span.textContent), span);
+                parent.normalize();
+            });
+        }
     }
 
     function save() {
@@ -38,7 +104,16 @@
         'prefs.default': 'Default',
         'prefs.dyslexic': 'Dyslexia-friendly',
         'prefs.textsize': 'Text size',
-        'prefs.spacing': 'Line spacing',
+        'prefs.spacing': 'Spacing',
+        'prefs.tint': 'Background tint',
+        'prefs.none': 'None',
+        'prefs.cream': 'Cream',
+        'prefs.sage': 'Sage',
+        'prefs.sky': 'Sky',
+        'prefs.lilac': 'Lilac',
+        'prefs.anchors': 'Letter anchors',
+        'prefs.off': 'Off',
+        'prefs.on': 'On',
         'prefs.normal': 'Normal',
         'prefs.relaxed': 'Relaxed',
         'prefs.reset': 'Reset to defaults'
@@ -61,9 +136,11 @@
 
     const groups = [
         { key: 'theme', label: 'prefs.theme', def: 'system', options: [['system', 'prefs.system'], ['light', 'prefs.light'], ['dark', 'prefs.dark']] },
+        { key: 'tint', label: 'prefs.tint', def: '', options: [['', 'prefs.none'], ['cream', 'prefs.cream'], ['sage', 'prefs.sage'], ['sky', 'prefs.sky'], ['lilac', 'prefs.lilac']] },
         { key: 'font', label: 'prefs.font', def: '', options: [['', 'prefs.default'], ['dyslexic', 'prefs.dyslexic']] },
         { key: 'textsize', label: 'prefs.textsize', def: '', options: [['', 'A'], ['large', 'A+'], ['xl', 'A++']] },
-        { key: 'spacing', label: 'prefs.spacing', def: '', options: [['', 'prefs.normal'], ['relaxed', 'prefs.relaxed']] }
+        { key: 'spacing', label: 'prefs.spacing', def: '', options: [['', 'prefs.normal'], ['relaxed', 'prefs.relaxed']] },
+        { key: 'anchors', label: 'prefs.anchors', def: '', options: [['', 'prefs.off'], ['on', 'prefs.on']] }
     ];
 
     const toggle = document.createElement('button');
@@ -77,8 +154,12 @@
     panel.className = 'prefs-panel';
     panel.id = 'prefsPanel';
     panel.hidden = true;
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-labelledby', 'prefsTitle');
 
     const title = document.createElement('h2');
+    title.id = 'prefsTitle';
+    title.tabIndex = -1;
     mark(title, 'prefs.title');
     panel.appendChild(title);
 
@@ -110,9 +191,15 @@
                 mark(btn, label);
                 btn.dataset.group = group.key;
                 btn.dataset.value = value;
+                if (group.key === 'tint' && value) btn.classList.add('prefs-swatch', 'tint-' + value);
                 btn.addEventListener('click', () => {
                     if (group.key === 'theme') {
                         if (value === 'system') delete prefs.theme; else prefs.theme = value;
+                        // Leaving the light theme leaves the tint behind.
+                        if (value !== 'light') delete prefs.tint;
+                    } else if (group.key === 'tint' && value) {
+                        prefs.tint = value;
+                        prefs.theme = 'light';
                     } else if (value === '') {
                         delete prefs[group.key];
                     } else {
@@ -151,6 +238,8 @@
     function setOpen(open) {
         panel.hidden = !open;
         toggle.setAttribute('aria-expanded', String(open));
+        // Keyboard and screen reader users land in the panel they just opened.
+        if (open) title.focus({ preventScroll: true });
     }
 
     toggle.addEventListener('click', () => setOpen(panel.hidden));

@@ -89,6 +89,13 @@
     color-scheme: light;
 }
 
+/* Background tints: the light theme on a tinted page, as in ClearPage */
+:root[data-tint] { --text-muted: #4f5b6c; }
+:root[data-tint="cream"] { --primary: #f6ecd2; --secondary: #efe2c0; --bg-dark: #f6ecd2; --bg-darker: #fbf4e2; --panel-bg: #fbf4e2; --border: #e0d0a6; --nav-bg: rgba(246, 236, 210, 0.86); --nav-bg-solid: rgba(246, 236, 210, 0.97); }
+:root[data-tint="sage"] { --primary: #e4eee1; --secondary: #d8e5d4; --bg-dark: #e4eee1; --bg-darker: #f1f7ef; --panel-bg: #f1f7ef; --border: #c6d6c1; --nav-bg: rgba(228, 238, 225, 0.86); --nav-bg-solid: rgba(228, 238, 225, 0.97); }
+:root[data-tint="sky"] { --primary: #e2ebf5; --secondary: #d5e1ee; --bg-dark: #e2ebf5; --bg-darker: #f0f5fa; --panel-bg: #f0f5fa; --border: #c2d1e1; --nav-bg: rgba(226, 235, 245, 0.86); --nav-bg-solid: rgba(226, 235, 245, 0.97); }
+:root[data-tint="lilac"] { --primary: #ebe5f3; --secondary: #e0d8ec; --bg-dark: #ebe5f3; --bg-darker: #f5f1f9; --panel-bg: #f5f1f9; --border: #d1c6e0; --nav-bg: rgba(235, 229, 243, 0.86); --nav-bg-solid: rgba(235, 229, 243, 0.97); }
+
 /* OpenDyslexic — used only when the dyslexia-friendly font preference is on */
 @font-face {
     font-family: 'OpenDyslexic';
@@ -120,7 +127,7 @@
     word-spacing: 0.1em;
 }
 
-:root[data-spacing="relaxed"] body { line-height: 1.9; }
+:root[data-spacing="relaxed"] body { line-height: 1.9; letter-spacing: 0.035em; word-spacing: 0.14em; }
 :root[data-spacing="relaxed"] .about-content > p,
 :root[data-spacing="relaxed"] .work-card p { line-height: 2.1; }
 
@@ -3123,3 +3130,24 @@ body.scrolled .to-top { opacity: 1; pointer-events: auto; transform: none; }
     .about-split .about-content { margin: 0; max-width: none; }
     .about-split .about-content > p { font-size: 1.05rem; }
 }
+
+/* Reading preferences: more options, so the panel scrolls on short screens */
+.prefs-panel { max-height: calc(100vh - 6.5rem); max-height: calc(100dvh - 6.5rem); overflow-y: auto; }
+.prefs-panel h2:focus { outline: none; }
+.prefs-options .prefs-swatch::before {
+    content: '';
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    margin-right: 0.4em;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    vertical-align: -0.05em;
+}
+.prefs-swatch.tint-cream::before { background: #f6ecd2; }
+.prefs-swatch.tint-sage::before { background: #cfe0ca; }
+.prefs-swatch.tint-sky::before { background: #c9daec; }
+.prefs-swatch.tint-lilac::before { background: #d9cdea; }
+
+/* Letter anchors keep the text color where the background is a filled control */
+button .anchor, [class*="cta"] .anchor, .lang-btn .anchor { color: inherit; }
