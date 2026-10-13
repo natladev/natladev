@@ -1829,8 +1829,7 @@ button:focus-visible {
     margin-top: 2.5rem;
 }
 .see-grid .ba { margin: 0; }
-.see-grid .ba-compare,
-.see-grid .watch-phone { width: min(260px, 70vw); }
+.see-grid .ba-compare { width: min(280px, 74vw); }
 
 /* One app on three devices: a short film */
 .devices { margin-top: 4rem; text-align: center; }
