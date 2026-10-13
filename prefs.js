@@ -242,6 +242,7 @@
     const speech = window.speechSynthesis;
     const reader = { state: 'idle', blocks: [], index: 0, run: 0 };
     let playBtn = null, stopBtn = null, barPlay = null, readBar = null;
+    let selectingTab = false;
 
     // Every visible piece of text in the page's content, in reading order:
     // each stretch of text belongs to the nearest box around it (a paragraph,
@@ -301,8 +302,20 @@
 
     function speakNext() {
         const run = reader.run;
-        const el = reader.blocks[reader.index];
+        let el = reader.blocks[reader.index];
         if (!el) return stopReading();
+        // A feature tab only shows its description once selected: select it,
+        // so the whole of it is read and its screen is the one on show.
+        const tab = el.closest('[role="tab"]');
+        if (tab && tab.getAttribute('aria-selected') !== 'true') {
+            selectingTab = true;
+            tab.click();
+            selectingTab = false;
+            reader.blocks = readableBlocks();
+            reader.index = reader.blocks.findIndex(block => tab.contains(block));
+            el = reader.blocks[reader.index];
+            if (!el) return stopReading();
+        }
         showReading(el);
         const lang = (root.getAttribute('lang') || 'en').slice(0, 2).toLowerCase();
         const utterance = new SpeechSynthesisUtterance(el.innerText.trim());
@@ -340,6 +353,18 @@
     }
     document.addEventListener('click', e => {
         if (reader.state === 'idle' || !e.target.closest) return;
+        if (selectingTab) return;
+        // A tapped feature tab opens as usual, and is then read.
+        const tab = e.target.closest('[role="tab"]');
+        if (tab) {
+            setTimeout(() => {
+                if (reader.state === 'idle') return;
+                reader.blocks = readableBlocks();
+                const index = reader.blocks.findIndex(block => tab.contains(block));
+                if (index >= 0) readFrom(index);
+            }, 40);
+            return;
+        }
         if (e.target.closest('a, button, input, textarea, select, label, summary, video, .prefs-panel, .read-bar, .prefs-banner')) return;
         let index = -1;
         reader.blocks.forEach((el, i) => { if (el.contains(e.target)) index = i; });
