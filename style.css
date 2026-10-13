@@ -3199,3 +3199,14 @@ button .anchor, [class*="cta"] .anchor, .lang-btn .anchor { color: inherit; }
     .prefs-nav { display: none; }
 }
 .prefs-panel { z-index: 151; }
+
+/* "Read this site your way" banner, across the top until dismissed */
+.prefs-banner { background: var(--cta-bg); color: var(--cta-text); }
+.prefs-banner .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.6rem 1rem; padding-top: 0.7rem; padding-bottom: 0.7rem; }
+.prefs-banner p { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.45; }
+.prefs-banner strong { font-weight: 800; }
+.prefs-banner button { font: inherit; font-size: 0.95rem; font-weight: 700; padding: 0.45rem 1rem; border-radius: 999px; cursor: pointer; white-space: pre; }
+.prefs-banner-open { background: var(--cta-text); color: var(--cta-bg); border: 2px solid var(--cta-text); }
+.prefs-banner-dismiss { background: transparent; color: var(--cta-text); border: 2px solid currentColor; }
+.prefs-banner button:focus-visible { outline: 3px solid var(--cta-text); outline-offset: 2px; }
+.prefs-banner .anchor { color: inherit; }

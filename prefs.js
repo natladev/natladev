@@ -298,44 +298,56 @@
     apply();
     relabel();
 
-    // First-visit nudge: invite people to read the site their way (shown once, ever).
+    // A banner across the top of every page until it is dismissed: this site
+    // can be read your way, and here is where. First in the page, so screen
+    // reader and keyboard users meet it first too.
     try {
         const HINT_KEY = 'natladev-hint';
-        if (!localStorage.getItem(HINT_KEY)) {
+        if (localStorage.getItem(HINT_KEY) !== 'banner') {
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const EN_HINT = 'New here? You can read this site <strong>your way</strong> — font, size, spacing, color, and letter anchors.';
+            const text = key => {
+                const lang = siteLang();
+                const dict = (lang !== 'en' && window.I18N && window.I18N[lang]) ? window.I18N[lang] : null;
+                return (dict && dict[key]) || { 'prefs.hint': EN_HINT, 'prefs.hintDismiss': 'Got it' }[key];
+            };
 
-            // i18n.js has already resolved the language (URL override, saved choice, browser).
-            const hintLang = siteLang();
-            const dict = (hintLang !== 'en' && window.I18N && window.I18N[hintLang]) ? window.I18N[hintLang] : null;
-            const hintHTML = (dict && dict['prefs.hint'])
-                ? dict['prefs.hint']
-                : 'New here? You can read this site <strong>your way</strong> — font, size, spacing, color, and letter anchors.';
-            const dismissText = (dict && dict['prefs.hintDismiss']) ? dict['prefs.hintDismiss'] : 'Got it';
-
-            const hint = document.createElement('div');
-            hint.className = 'prefs-hint';
-            hint.setAttribute('role', 'status');
-            hint.innerHTML = '<p>' + hintHTML + '</p>';
-
+            const banner = document.createElement('aside');
+            banner.className = 'prefs-banner';
+            const inner = document.createElement('div');
+            inner.className = 'container';
+            const message = document.createElement('p');
+            const open = document.createElement('button');
+            open.type = 'button';
+            open.className = 'prefs-banner-open';
             const got = document.createElement('button');
             got.type = 'button';
-            got.className = 'prefs-hint-dismiss';
-            got.textContent = dismissText;
-            hint.appendChild(got);
-
-            document.body.appendChild(hint);
-            try { localStorage.setItem(HINT_KEY, '1'); } catch (e) { /* private mode */ }
+            got.className = 'prefs-banner-dismiss';
+            const fill = () => {
+                banner.setAttribute('aria-label', t('prefs.title'));
+                message.innerHTML = text('prefs.hint');
+                open.textContent = 'Aa  ' + t('prefs.title');
+                got.textContent = text('prefs.hintDismiss');
+            };
+            fill();
+            document.addEventListener('natladev:langchange', fill);
+            inner.append(message, open, got);
+            banner.appendChild(inner);
+            const skip = document.querySelector('.skip-link');
+            if (skip) skip.after(banner); else document.body.prepend(banner);
             if (!reduce) toggle.classList.add('attention');
 
             const dismiss = () => {
-                hint.classList.add('is-gone');
+                try { localStorage.setItem(HINT_KEY, 'banner'); } catch (e) { /* private mode */ }
                 toggle.classList.remove('attention');
-                setTimeout(() => hint.remove(), 350);
+                banner.remove();
             };
             got.addEventListener('click', dismiss);
-            toggle.addEventListener('click', dismiss, { once: true });
-            requestAnimationFrame(() => requestAnimationFrame(() => hint.classList.add('is-shown')));
-            setTimeout(dismiss, 12000);
+            open.addEventListener('click', e => {
+                e.stopPropagation();
+                dismiss();
+                setOpen(true, true);
+            });
         }
-    } catch (e) { /* private mode — skip the nudge */ }
+    } catch (e) { /* private mode — skip the banner */ }
 })();
