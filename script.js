@@ -52,16 +52,16 @@ if (!prefersReducedMotion) {
     });
 }
 
-// The ClearPage video tour follows the site language
-// (assets/clearpage/video/overview-<lang>.mp4 and its poster).
+// The ClearPage videos follow the site language
+// (assets/clearpage/video/<name>-<lang>.mp4 and its poster).
 (function () {
     const tours = document.querySelectorAll('video[data-tour]');
     if (!tours.length) return;
     const set = lang => tours.forEach(video => {
-        const src = 'assets/clearpage/video/overview-' + lang + '.mp4';
-        if (video.getAttribute('src') === src) return;
-        video.poster = 'assets/clearpage/video/overview-' + lang + '.jpg';
-        video.src = src;
+        const base = 'assets/clearpage/video/' + video.dataset.tour + '-' + lang;
+        if (video.getAttribute('src') === base + '.mp4') return;
+        video.poster = base + '.jpg';
+        video.src = base + '.mp4';
     });
     if (window.getSiteLang) set(window.getSiteLang());
     document.addEventListener('natladev:langchange', e => set(e.detail.lang));

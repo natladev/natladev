@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="ClearPage: Dyslexia Reader, New launch alert. Ready. Set. Get. Now on the App Store.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://natladev.com/assets/clearpage/og-launch.jpg">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=10">
     <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;}catch(e){}})();</script>
     <script type="application/ld+json">
     {
@@ -121,7 +121,7 @@
                 </div>
                 <div class="see-video">
                     <div class="watch-phone">
-                    <video id="watchVideo" data-tour controls muted playsinline preload="none" width="540" height="1170" poster="assets/clearpage/video/overview-en.jpg" src="assets/clearpage/video/overview-en.mp4" aria-label="A short video tour of ClearPage on an iPhone" data-i18n-aria="cp.watch.aria"></video>
+                    <video id="watchVideo" data-tour="overview" controls muted playsinline preload="none" width="540" height="1170" poster="assets/clearpage/video/overview-en.jpg" src="assets/clearpage/video/overview-en.mp4" aria-label="A short video tour of ClearPage on an iPhone" data-i18n-aria="cp.watch.aria"></video>
                     </div>
                     <div class="ba-tags"><span class="ba-tag" data-i18n="cp.watch.h2">Watch it work</span></div>
                 </div>
@@ -173,20 +173,10 @@
             <div class="devices">
                 <h3 data-i18n="cp.dev.h">On iPhone, iPhone Duo and iPad</h3>
                 <p data-i18n="cp.dev.p">One app, laid out for each screen. On iPhone Duo it follows the fold: closed, half-open like a laptop, or fully open.</p>
-                <div class="devices-row">
-                    <figure class="dev-phone">
-                        <img class="v2-shot" data-shot="02-reader" src="assets/clearpage/v2/en/02-reader.webp" alt="The ClearPage reader on an iPhone." data-i18n-alt="cp.dev.alt" width="600" height="1303" loading="lazy">
-                        <figcaption>iPhone</figcaption>
-                    </figure>
-                    <figure class="dev-duo">
-                        <img class="v2-shot" data-shot="dev-duo" src="assets/clearpage/v2/en/dev-duo.webp" alt="A dense paragraph about photosynthesis rewritten by ClearPage in short, plain sentences." data-i18n-alt="cp.shot.simplify" width="1300" height="914" loading="lazy">
-                        <figcaption>iPhone Duo</figcaption>
-                    </figure>
-                    <figure class="dev-ipad">
-                        <img class="v2-shot" data-shot="dev-ipad" src="assets/clearpage/v2/en/dev-ipad.webp" alt="A page about the water cycle in ClearPage, with a three-sentence summary in a sheet below it." data-i18n-alt="cp.shot.summary" width="825" height="1100" loading="lazy">
-                        <figcaption>iPad</figcaption>
-                    </figure>
+                <div class="devices-film">
+                    <video data-tour="devices" controls muted playsinline preload="none" width="1920" height="1080" poster="assets/clearpage/video/devices-en.jpg" src="assets/clearpage/video/devices-en.mp4" aria-label="ClearPage shown side by side on an iPad, an iPhone and an iPhone Duo that is closed, half-open and open" data-i18n-aria="cp.dev.alt"></video>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -355,9 +345,9 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=10"></script>
+    <script src="translations.js?v=11"></script>
     <script src="i18n.js?v=4"></script>
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
     <script src="prefs.js?v=4" defer></script>
     <script>
     // App screenshots follow the site language (assets/clearpage/v2/<lang>/).
