@@ -54,6 +54,7 @@ window.I18N = {
         "prefs.pause": "Pausar",
         "prefs.resume": "Continuar",
         "prefs.stop": "Detener",
+        "prefs.tapHint": "Después toca cualquier texto para oírlo desde ahí.",
         "prefs.reset": "Restablecer valores",
         // Home — hero
         "home.hero.greeting": "Hola, soy Nat",
@@ -325,6 +326,7 @@ window.I18N = {
         "prefs.pause": "Pause",
         "prefs.resume": "Weiter",
         "prefs.stop": "Stopp",
+        "prefs.tapHint": "Tippe danach auf einen Text, um ab dort zu hören.",
         "prefs.reset": "Auf Standard zurücksetzen",
         // Home — hero
         "home.hero.greeting": "Hi, ich bin Nat",
@@ -595,6 +597,7 @@ window.I18N = {
         "prefs.pause": "暂停",
         "prefs.resume": "继续",
         "prefs.stop": "停止",
+        "prefs.tapHint": "之后轻点任意文字，即可从那里开始朗读。",
         "prefs.reset": "恢复默认",
         // Home — hero
         "home.hero.greeting": "你好，我是 Nat",

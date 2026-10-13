@@ -121,6 +121,7 @@
         'prefs.pause': 'Pause',
         'prefs.resume': 'Resume',
         'prefs.stop': 'Stop',
+        'prefs.tapHint': 'Then tap any text to hear it from there.',
         'prefs.reset': 'Reset to defaults'
     };
     function siteLang() {
@@ -242,19 +243,37 @@
     const reader = { state: 'idle', blocks: [], index: 0, run: 0 };
     let playBtn = null, stopBtn = null, barPlay = null, readBar = null;
 
+    // Every visible piece of text in the page's content, in reading order:
+    // each stretch of text belongs to the nearest box around it (a paragraph,
+    // a heading, a list item, a card, a button), so nothing is left out for
+    // being marked up differently.
+    const UNREAD = '.prefs-panel, .prefs-banner, .read-bar, nav, video, script, style, noscript, [aria-hidden="true"], [hidden]';
     function readableBlocks() {
         const scope = document.querySelector('main') || document.body;
-        const seen = [];
-        return Array.prototype.filter.call(
-            scope.querySelectorAll('h1, h2, h3, h4, p, li, figcaption, summary'), el => {
-                if (!el.offsetParent || !el.innerText.trim()) return false;
-                if (el.closest('.prefs-panel, .prefs-banner, .read-bar, nav, [aria-hidden="true"]')) return false;
-                // A list item holding paragraphs is read through those paragraphs.
-                if (seen.some(parent => parent.contains(el))) return false;
-                if (el.querySelector('p, li')) return false;
-                seen.push(el);
-                return true;
-            });
+        const found = [];
+        const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT);
+        while (walker.nextNode()) {
+            const node = walker.currentNode;
+            if (!node.nodeValue.trim()) continue;
+            let el = node.parentElement, inline = null;
+            if (!el || el.closest(UNREAD)) continue;
+            while (el !== scope && getComputedStyle(el).display.indexOf('inline') === 0) {
+                inline = el;
+                el = el.parentElement;
+            }
+            if (!el.offsetParent && getComputedStyle(el).position !== 'fixed') continue;
+            found.push({ box: el, inline: inline });
+        }
+        // A box that also holds other boxes (a list item with a bold first
+        // line) is read piece by piece: its loose text goes by its own element.
+        const boxes = found.map(f => f.box);
+        const blocks = [];
+        found.forEach(f => {
+            const wraps = boxes.some(other => other !== f.box && f.box.contains(other));
+            const el = wraps ? f.inline : f.box;
+            if (el && blocks.indexOf(el) < 0 && el.innerText.trim()) blocks.push(el);
+        });
+        return blocks;
     }
 
     function voiceFor(lang) {
@@ -277,6 +296,7 @@
         [playBtn, barPlay].forEach(btn => { if (btn) mark(btn, key); });
         if (stopBtn) stopBtn.hidden = reader.state === 'idle';
         if (readBar) readBar.hidden = reader.state === 'idle';
+        root.classList.toggle('reading-mode', reader.state !== 'idle');
     }
 
     function speakNext() {
@@ -308,6 +328,28 @@
         showReading(null);
         refreshReader();
     }
+
+    // Once reading has started, a tap on any text carries on from there.
+    function readFrom(index) {
+        reader.run += 1;
+        speech.cancel();
+        reader.index = index;
+        reader.state = 'playing';
+        speakNext();
+        refreshReader();
+    }
+    document.addEventListener('click', e => {
+        if (reader.state === 'idle' || !e.target.closest) return;
+        if (e.target.closest('a, button, input, textarea, select, label, summary, video, .prefs-panel, .read-bar, .prefs-banner')) return;
+        let index = -1;
+        reader.blocks.forEach((el, i) => { if (el.contains(e.target)) index = i; });
+        if (index < 0) {
+            // Text that appeared since reading began (a new tab, an opened answer).
+            reader.blocks = readableBlocks();
+            reader.blocks.forEach((el, i) => { if (el.contains(e.target)) index = i; });
+        }
+        if (index >= 0) readFrom(index);
+    });
 
     function toggleReading() {
         if (reader.state === 'playing') {
@@ -344,7 +386,10 @@
         mark(stopBtn, 'prefs.stop');
         stopBtn.addEventListener('click', stopReading);
         row.append(playBtn, stopBtn);
-        fieldset.append(legend, row);
+        const tapHint = document.createElement('p');
+        tapHint.className = 'prefs-note';
+        mark(tapHint, 'prefs.tapHint');
+        fieldset.append(legend, row, tapHint);
         // First in the panel: the option people open it for most.
         title.after(fieldset);
 
