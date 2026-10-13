@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="ClearPage: Dyslexia Reader, New launch alert. Ready. Set. Get. Now on the App Store.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://natladev.com/assets/clearpage/og-launch.jpg">
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=12">
     <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;}catch(e){}})();</script>
     <script type="application/ld+json">
     {
@@ -78,14 +78,14 @@
                     <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download on the App Store" data-i18n-alt="cp.badgeAlt" width="135" height="40">
                     <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download on the App Store" data-i18n-alt="cp.badgeAlt" width="135" height="40">
                 </a>
-                <a href="#try" class="hero-more" data-i18n="cp.hero.more">See how it works ↓</a>
+                <a href="#devices" class="hero-more" data-i18n="cp.hero.more">See how it works ↓</a>
             </div>
         </div>
     </header>
 
     <nav class="section-nav" aria-label="On this page" data-i18n-aria="cp.snav.aria">
         <div class="container">
-            <a href="#try" data-i18n="cp.snav.see">See it</a>
+            <a href="#devices" data-covers="try" data-i18n="cp.snav.see">See it</a>
             <a href="#features" data-covers="math ai" data-i18n="cp.snav.feat">Features</a>
             <a href="#faq" data-i18n="cp.snav.faq">FAQ</a>
             <a href="#get" class="section-nav-cta" data-i18n="cp.snav.get">Get the app</a>
@@ -101,6 +101,16 @@
             </ul>
         </div>
     </div>
+
+    <section id="devices" class="section ba-section">
+        <div class="container">
+            <h2 data-i18n="cp.dev.h">On iPhone, iPhone Duo and iPad</h2>
+            <p class="ba-intro" data-i18n="cp.dev.p">One app, laid out for each screen. On iPhone Duo it follows the fold: closed, half-open like a laptop, or fully open.</p>
+            <div class="devices-film">
+                <video data-tour="devices" controls muted playsinline preload="none" width="1920" height="1080" poster="assets/clearpage/video/devices-en.jpg" src="assets/clearpage/video/devices-en.mp4" aria-label="ClearPage shown side by side on an iPad, an iPhone and an iPhone Duo that is closed, half-open and open" data-i18n-aria="cp.dev.alt"></video>
+            </div>
+        </div>
+    </section>
 
     <section id="try" class="section ba-section">
         <div class="container">
@@ -163,14 +173,6 @@
                         <i class="showcase-progress" aria-hidden="true"></i></span>
                     </button>
                 </div>
-            </div>
-            <div class="devices">
-                <h3 data-i18n="cp.dev.h">On iPhone, iPhone Duo and iPad</h3>
-                <p data-i18n="cp.dev.p">One app, laid out for each screen. On iPhone Duo it follows the fold: closed, half-open like a laptop, or fully open.</p>
-                <div class="devices-film">
-                    <video data-tour="devices" controls muted playsinline preload="none" width="1920" height="1080" poster="assets/clearpage/video/devices-en.jpg" src="assets/clearpage/video/devices-en.mp4" aria-label="ClearPage shown side by side on an iPad, an iPhone and an iPhone Duo that is closed, half-open and open" data-i18n-aria="cp.dev.alt"></video>
-                </div>
-            </div>
             </div>
         </div>
     </section>
@@ -259,7 +261,7 @@
             <div class="you-block">
                 <h3 data-i18n="cp.you.h3">And you can be part of it</h3>
                 <p class="you-intro" data-i18n="cp.you.intro">ClearPage gets better through the people who read with it. Here's how you can help shape what comes next.</p>
-                <div class="you-grid">
+                <div class="you-grid you-links">
                     <a class="you-tile" href="mailto:natiosdev@gmail.com?subject=ClearPage%20feedback">
                         <span class="you-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
                         <h4 data-i18n="cp.you.fb.h">Share feedback</h4>
