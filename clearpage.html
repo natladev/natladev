@@ -17,7 +17,7 @@
     <meta property="og:image:alt" content="ClearPage: Dyslexia Reader, New launch alert. Ready. Set. Get. Now on the App Store.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://natladev.com/assets/clearpage/og-launch.jpg">
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
     <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;}catch(e){}})();</script>
     <script type="application/ld+json">
     {
@@ -87,11 +87,20 @@
         <div class="container">
             <a href="#try" data-i18n="cp.snav.see">See it</a>
             <a href="#features" data-covers="math ai" data-i18n="cp.snav.feat">Features</a>
-            <a href="#try-live" data-i18n="cp.snav.try">Try it</a>
             <a href="#faq" data-i18n="cp.snav.faq">FAQ</a>
             <a href="#get" class="section-nav-cta" data-i18n="cp.snav.get">Get the app</a>
         </div>
     </nav>
+
+    <div class="why-strip">
+        <div class="container">
+            <p class="why-line" data-i18n="cp.story.quote">The curb cut effect: design for one, help everyone.</p>
+            <p class="who-lead" data-i18n="cp.who.lead">Made for dyslexia, useful for everyone.</p>
+            <ul class="who-chips">
+                <li data-i18n="cp.who.students.h">Students</li><li data-i18n="cp.who.adults.h">Adults with dyslexia</li><li data-i18n="cp.who.parents.h">Parents &amp; teachers</li><li data-i18n="cp.who.anyone.h">Anyone, really</li>
+            </ul>
+        </div>
+    </div>
 
     <section id="try" class="section ba-section">
         <div class="container">
@@ -229,69 +238,6 @@
                 </figure>
             </div>
             <p class="math-next" data-i18n-html="cp.ai.note"><strong>Good to know:</strong> both appear in your own typeface, spacing and colors, and can be shared or saved. They need an iPhone or iPad with Apple Intelligence; on other devices ClearPage works exactly as before. A summary or a rewrite can miss or change a detail, so the original page is always one tap away.</p>
-        </div>
-    </section>
-
-    <section id="try-live" class="section tryit-section">
-        <div class="container">
-            <h2 data-i18n="cp.try.h2">Try it yourself</h2>
-            <p class="tryit-intro" data-i18n="cp.try.intro">Type or paste anything below, then flip the switches and watch the text reshape, the same way ClearPage does it on your phone. Nothing leaves your browser.</p>
-            <div class="tryit">
-                <div class="tryit-controls">
-                    <label class="tryit-field">
-                        <span data-i18n="cp.try.label">Your text</span>
-                        <textarea id="tryInput" rows="3" spellcheck="false" data-i18n="cp.try.sample">The bold puppy dribbled a ball by the quiet pond.</textarea>
-                    </label>
-                    <div class="tryit-toggles">
-                        <div class="tryit-group" role="group" aria-label="Typeface" data-i18n-aria="cp.try.typeface">
-                            <span class="tryit-label" data-i18n="cp.try.typeface">Typeface</span>
-                            <div class="seg">
-                                <button type="button" data-opt="font" data-val="" class="is-on" data-i18n="cp.try.default">Default</button>
-                                <button type="button" data-opt="font" data-val="dys" data-i18n="cp.try.dys">Dyslexia-friendly</button>
-                            </div>
-                        </div>
-                        <div class="tryit-group" role="group" aria-label="Spacing" data-i18n-aria="cp.try.spacing">
-                            <span class="tryit-label" data-i18n="cp.try.spacing">Spacing</span>
-                            <div class="seg">
-                                <button type="button" data-opt="space" data-val="" class="is-on" data-i18n="cp.try.normal">Normal</button>
-                                <button type="button" data-opt="space" data-val="relaxed" data-i18n="cp.try.relaxed">Relaxed</button>
-                            </div>
-                        </div>
-                        <div class="tryit-group" role="group" aria-label="Text size" data-i18n-aria="cp.try.size">
-                            <span class="tryit-label" data-i18n="cp.try.size">Size</span>
-                            <div class="seg">
-                                <button type="button" data-opt="size" data-val="" class="is-on">A</button>
-                                <button type="button" data-opt="size" data-val="large">A+</button>
-                                <button type="button" data-opt="size" data-val="xl">A++</button>
-                            </div>
-                        </div>
-                        <div class="tryit-group" role="group" aria-label="Letter anchors" data-i18n-aria="cp.try.anchors">
-                            <span class="tryit-label" data-i18n="cp.try.anchors">Letter anchors</span>
-                            <div class="seg">
-                                <button type="button" data-opt="anchor" data-val="" class="is-on" data-i18n="cp.try.off">Off</button>
-                                <button type="button" data-opt="anchor" data-val="on" data-i18n="cp.try.on">On</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tryit-output" id="tryOutput"></div>
-            </div>
-            <p class="tryit-foot" data-i18n-html="cp.try.foot">Letter anchors color the letters that mirror each other, <span class="anchor a-b">b</span>, <span class="anchor a-d">d</span>, <span class="anchor a-p">p</span>, <span class="anchor a-q">q</span>, so they stop flipping.</p>
-        </div>
-    </section>
-
-    <section id="why" class="section">
-        <div class="container">
-            <h2 data-i18n="cp.story.h2">Breaking the barriers of dyslexia</h2>
-            <div class="about-content">
-                <p data-i18n="cp.story.p1">Dyslexia isn't a reading problem, it's a formatting problem. Dyslexic readers don't struggle with words themselves, but with how they sit on the page: tight spacing, standard fonts, and no room to breathe turn reading into work.</p>
-                <p data-i18n="cp.story.p2">ClearPage removes that barrier. Snap a photo or screenshot and it re-renders the text in a layout you control, your spacing, your typeface, your colors. Reading stops being a battle and becomes a choice, on your own device, with no Wi-Fi needed.</p>
-                <p class="standalone-line" data-i18n="cp.story.quote">The curb cut effect: design for one, help everyone.</p>
-            </div>
-            <p class="who-lead" data-i18n="cp.who.lead">Made for dyslexia, useful for everyone.</p>
-            <ul class="who-chips">
-                <li data-i18n="cp.who.students.h">Students</li><li data-i18n="cp.who.adults.h">Adults with dyslexia</li><li data-i18n="cp.who.parents.h">Parents &amp; teachers</li><li data-i18n="cp.who.anyone.h">Anyone, really</li>
-            </ul>
         </div>
     </section>
 
@@ -479,46 +425,6 @@
             }, { threshold: 0.12 });
             document.querySelectorAll('.section').forEach(s => { s.classList.add('reveal'); io.observe(s); });
         }
-    })();
-    </script>
-    <script>
-    // Live "Try it yourself", reshape the typed text the way ClearPage does, in-browser.
-    (function () {
-        const input = document.getElementById('tryInput');
-        const out = document.getElementById('tryOutput');
-        if (!input || !out) return;
-
-        const state = { font: '', space: '', size: '', anchor: '' };
-        const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-        const anchorClass = { b: 'a-b', d: 'a-d', p: 'a-p', q: 'a-q' };
-
-        function render() {
-            let html = esc(input.value || '');
-            if (state.anchor === 'on') {
-                html = html.replace(/[bdpq]/g, ch => '<span class="anchor ' + anchorClass[ch] + '">' + ch + '</span>');
-            }
-            html = html.replace(/\n/g, '<br>');
-            out.innerHTML = html || '<span class="tryit-empty">Your reshaped text appears here…</span>';
-            out.classList.toggle('is-dys', state.font === 'dys');
-            out.classList.toggle('sp-relaxed', state.space === 'relaxed');
-            out.classList.toggle('sz-large', state.size === 'large');
-            out.classList.toggle('sz-xl', state.size === 'xl');
-        }
-
-        document.querySelectorAll('.tryit-toggles .seg button').forEach(btn => {
-            btn.setAttribute('aria-pressed', String(btn.classList.contains('is-on')));
-            btn.addEventListener('click', () => {
-                state[btn.dataset.opt] = btn.dataset.val;
-                btn.parentElement.querySelectorAll('button').forEach(b => {
-                    const on = b === btn;
-                    b.classList.toggle('is-on', on);
-                    b.setAttribute('aria-pressed', String(on));
-                });
-                render();
-            });
-        });
-        input.addEventListener('input', render);
-        render();
     })();
     </script>
     <script>

@@ -2887,6 +2887,11 @@ section[id], header[id] { scroll-margin-top: calc(var(--nav-h) + var(--secnav-h)
 .showcase-list button[aria-selected="true"] .showcase-progress.run { opacity: 0.6; animation: sc-progress var(--sc-ms, 5000ms) linear forwards; }
 @keyframes sc-progress { to { width: 100%; } }
 
+/* The mission in one line, right under the hero */
+.why-strip { padding: 2.75rem 0 0; text-align: center; }
+.why-strip .why-line { margin: 0; font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; font-size: clamp(1.3rem, 3.2vw, 1.7rem); color: var(--accent); }
+.why-strip .who-lead { margin-top: 0.75rem; font-size: 1rem; font-weight: 500; color: var(--text-muted); }
+
 .who-chips { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; padding: 0; margin: 1rem 0 0; }
 .who-chips li { padding: 0.4rem 0.9rem; border-radius: 999px; background: var(--card-bg); border: 1px solid var(--border); color: var(--text); font-size: 0.95rem; }
 
