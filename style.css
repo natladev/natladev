@@ -3099,3 +3099,13 @@ body.scrolled .to-top { opacity: 1; pointer-events: auto; transform: none; }
     .ai-phones { justify-content: center; }
     .ai-phones .card-media { width: min(150px, 40vw); }
 }
+
+/* Home: contact links and the newsletter in one section */
+.you-links .you-tile h3 { margin: 0; font-size: 0.98rem; font-weight: 600; color: var(--text); }
+.connect-links { margin-top: 1.75rem; }
+.connect-links .you-icon svg { width: 18px; height: 18px; }
+.newsletter-title { font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 1rem; }
+.social-section .newsletter-card p { font-size: 1rem; margin-bottom: 0; }
+.social-section .newsletter-card .newsletter-fine { font-size: 0.85rem; }
+.social-section .newsletter-card { margin-top: 2rem; padding: 2rem; }
+.social-section .newsletter-badge { display: none; }
