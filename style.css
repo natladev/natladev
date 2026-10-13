@@ -1819,21 +1819,34 @@ button:focus-visible {
 
 .ba { margin: 2.5rem auto 0; }
 
+/* Before/after and the video tour, side by side */
+.see-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem clamp(2rem, 7vw, 5rem);
+    margin-top: 2.5rem;
+}
+.see-grid .ba { margin: 0; }
+.see-grid .ba-compare,
+.see-grid .watch-phone { width: min(260px, 70vw); }
+
 /* Video tour, framed like a phone */
 .watch-phone {
     width: min(300px, 78vw);
-    margin: 2.5rem auto 0;
-    padding: 8px;
-    border-radius: 40px;
-    background: #1c1c1e;
-    box-shadow: 0 18px 44px var(--shadow-soft, rgba(0, 0, 0, 0.3));
+    margin: 0 auto;
+    padding: 7px;
+    border-radius: 34px;
+    background: #10151c;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
 }
 .watch-phone video {
     display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 540 / 1170;
-    border-radius: 32px;
+    border-radius: 27px;
     background: #f7eed8;
 }
 
@@ -2543,8 +2556,8 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(1.5rem, 5vw, 3.5rem);
-    max-width: 620px;
-    margin: 3rem auto 0;
+    max-width: 470px;
+    margin: 2.5rem auto 0;
 }
 .ai-card { margin: 0; }
 .ai-card .card-media { width: 100%; margin: 0 0 1.25rem; }
@@ -2561,7 +2574,7 @@ footer {
 @media (max-width: 560px) {
     .ai-hero { flex-direction: column; text-align: center; }
     .ai-hero h2 { text-align: center; }
-    .ai-showcase { grid-template-columns: minmax(0, 260px); justify-content: center; }
+    .ai-card span { font-size: 0.9rem; }
 }
 
 /* Team — who builds the app */
