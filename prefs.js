@@ -309,7 +309,7 @@
             const dict = (hintLang !== 'en' && window.I18N && window.I18N[hintLang]) ? window.I18N[hintLang] : null;
             const hintHTML = (dict && dict['prefs.hint'])
                 ? dict['prefs.hint']
-                : 'New here? You can read this site <strong>your way</strong> — font, size, spacing, and color.';
+                : 'New here? You can read this site <strong>your way</strong> — font, size, spacing, color, and letter anchors.';
             const dismissText = (dict && dict['prefs.hintDismiss']) ? dict['prefs.hintDismiss'] : 'Got it';
 
             const hint = document.createElement('div');

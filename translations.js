@@ -25,7 +25,7 @@ window.I18N = {
         "footer.appPrivacy": "Privacidad de la app",
         "footer.accessibility": "Accesibilidad",
         // Reading-preferences first-visit hint
-        "prefs.hint": "¿Nueva por aquí? Puedes leer este sitio <strong>a tu manera</strong>: tipografía, tamaño, espaciado y color.",
+        "prefs.hint": "¿Nueva por aquí? Puedes leer este sitio <strong>a tu manera</strong>: tipografía, tamaño, espaciado, color y anclas de letras.",
         "prefs.hintDismiss": "Entendido",
         // Reading-preferences panel (built in prefs.js)
         "prefs.title": "Preferencias de lectura",
@@ -291,7 +291,7 @@ window.I18N = {
         "footer.appPrivacy": "App-Datenschutz",
         "footer.accessibility": "Barrierefreiheit",
         // Reading-preferences first-visit hint
-        "prefs.hint": "Neu hier? Du kannst diese Seite <strong>nach deiner Art</strong> lesen — Schrift, Größe, Abstand und Farbe.",
+        "prefs.hint": "Neu hier? Du kannst diese Seite <strong>nach deiner Art</strong> lesen — Schrift, Größe, Abstand, Farbe und Buchstaben-Anker.",
         "prefs.hintDismiss": "Verstanden",
         // Reading-preferences panel (built in prefs.js)
         "prefs.title": "Leseeinstellungen",
@@ -556,7 +556,7 @@ window.I18N = {
         "footer.cookies": "Cookie 政策",
         "footer.appPrivacy": "应用隐私",
         // Reading-preferences first-visit hint
-        "prefs.hint": "第一次来？你可以<strong>按自己的方式</strong>阅读本站——字体、大小、间距和颜色都能调。",
+        "prefs.hint": "第一次来？你可以<strong>按自己的方式</strong>阅读本站——字体、大小、间距、颜色和字母锚点都能调。",
         "prefs.hintDismiss": "知道了",
         // Reading-preferences panel (built in prefs.js)
         "prefs.title": "阅读偏好",
