@@ -1832,6 +1832,43 @@ button:focus-visible {
 .see-grid .ba-compare,
 .see-grid .watch-phone { width: min(260px, 70vw); }
 
+/* One app on three devices: same height, so the shapes compare */
+.devices { margin-top: 4rem; text-align: center; }
+.devices h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; color: var(--text); }
+.devices > p { max-width: 560px; margin: 0.6rem auto 0; color: var(--text-muted); line-height: 1.6; }
+.devices-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem clamp(1.25rem, 4vw, 2.75rem);
+    margin-top: 2rem;
+}
+.devices-row figure { margin: 0; }
+.devices-row img {
+    display: block;
+    height: 250px;
+    width: auto;
+    border: 5px solid #10151c;
+    border-radius: 18px;
+    background: #10151c;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+.devices-row .dev-phone img { border-radius: 22px; }
+.devices-row figcaption { margin-top: 0.75rem; font-size: 0.85rem; color: var(--text-muted); }
+@media (max-width: 760px) {
+    .devices-row img { height: 190px; }
+    .devices-row .dev-duo { order: -1; flex-basis: 100%; }
+    .devices-row .dev-duo img { margin: 0 auto; max-width: 100%; height: auto; max-height: 190px; }
+}
+
+/* The video tour beside the project card on the home page */
+.work-grid:has(.work-video) { grid-template-columns: minmax(0, 1fr) auto; align-items: center; }
+.work-video .watch-phone { width: min(220px, 62vw); }
+@media (max-width: 760px) {
+    .work-grid:has(.work-video) { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* Video tour, framed like a phone */
 .watch-phone {
     width: min(300px, 78vw);
