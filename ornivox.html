@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ornivox, a free iOS app that identifies birds by their song, offline, on iPhone, iPad and Apple Watch. On-device BirdNET, a field guide, and a private birding journal. Now in public beta on TestFlight.">
+    <title>Ornivox | Identify birds by their song</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ornivox, identify birds by their song, offline">
+    <meta property="og:description" content="Every bird has a voice. Ornivox tells you whose it is, on your iPhone, iPad or Apple Watch, even deep in the forest with no signal. Free public beta on TestFlight.">
+    <meta property="og:url" content="https://natladev.com/ornivox.html">
+    <meta property="og:image" content="https://natladev.com/assets/ornivox/og-ornivox.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Ornivox on an iPad, an iPhone and an Apple Watch, naming a European Robin as it sings.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://natladev.com/assets/ornivox/og-ornivox.jpg">
+    <link rel="stylesheet" href="style.css?v=24">
+    <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;if(p.tint){d.dataset.tint=p.tint;d.dataset.theme='light';}}catch(e){}})();</script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Ornivox",
+        "url": "https://natladev.com/ornivox.html",
+        "image": "https://natladev.com/assets/ornivox/icon512.png",
+        "operatingSystem": "iOS, iPadOS, watchOS",
+        "applicationCategory": "ReferenceApplication",
+        "softwareVersion": "1.0 beta",
+        "description": "A free iOS app that identifies birds by their song, entirely on the device: BirdNET from the Cornell Lab of Ornithology, narrowed by place and season, with a field guide and a private journal. On iPhone, iPad and Apple Watch, in English, German, Spanish and French.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "Natalia Andrzejewski", "url": "https://natladev.com/" }
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">nat</a>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="ornivox.html" data-i18n="nav.birds" aria-current="page">Birdsong</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache / 语言">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                    <button type="button" class="lang-btn" data-lang="zh" lang="zh-Hans">中文</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <header class="hero hero-has-demo" id="main">
+        <div class="container hero-split">
+            <div class="hero-copy">
+            <nav style="margin-bottom: 2rem; font-size: 0.9rem;">
+                <a href="index.html" style="color: var(--text-muted); text-decoration: none;" data-i18n="bc.home">Home</a>
+                <span style="color: var(--text-muted); margin: 0 0.5rem;">→</span>
+                <span style="color: var(--accent);">Ornivox</span>
+            </nav>
+            <h1 class="wordmark"><img class="dark-only" src="assets/ornivox/ornivox-wordmark-dark.png" alt="Ornivox" width="420" height="114"><img class="light-only" src="assets/ornivox/ornivox-wordmark-light.png" alt="Ornivox" width="420" height="114"></h1>
+            <p class="subtitle" data-i18n="ov.hero.sub">Every bird has a voice. Ornivox tells you whose it is: it identifies birds by their song, on your iPhone, iPad or Apple Watch, even deep in the forest with no signal.</p>
+            <ul class="hero-facts">
+                <li data-i18n="ov.facts.free">Free</li><li data-i18n="ov.facts.offline">Works offline</li><li data-i18n="ov.facts.private">No tracking</li><li>EN · DE · ES · FR</li>
+            </ul>
+            <div class="social-links hero-actions">
+                <!-- TESTFLIGHT_LINK: replace with the public TestFlight link once the first build is approved. -->
+                <a href="https://testflight.apple.com/join/TESTFLIGHT_LINK" class="testflight-btn" rel="noopener" data-i18n="ov.tf.join">Join the beta on TestFlight</a>
+                <a href="#devices" class="hero-more" data-i18n="ov.hero.more">See it in action ↓</a>
+            </div>
+            <p class="beta-note" data-i18n="ov.tf.note">Ornivox is in public beta while it waits for App Store review. TestFlight is Apple's free app for trying apps before they're released.</p>
+            </div>
+            <div class="hero-demo ov-demo">
+                <div class="card-media phone-shot">
+                    <img class="ov-shot" data-shot="listen" src="assets/ornivox/screens/en/listen.jpg" alt="Ornivox listening: a European Robin is singing now, 92 percent sure, after 12 minutes and five species." data-i18n-alt="ov.shot.listen" width="600" height="1305">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="section-nav" aria-label="On this page" data-i18n-aria="ov.snav.aria">
+        <div class="container">
+            <a href="#devices" data-i18n="ov.snav.see">See it</a>
+            <a href="#features" data-i18n="ov.snav.feat">Features</a>
+            <a href="#privacy" data-i18n="ov.snav.privacy">Privacy</a>
+            <a href="#faq" data-i18n="ov.snav.faq">FAQ</a>
+            <a href="#get" class="section-nav-cta" data-i18n="ov.snav.get">Join the beta</a>
+        </div>
+    </nav>
+
+    <div class="why-strip">
+        <div class="container">
+            <p class="why-line" data-i18n="ov.why.quote">Stand still, listen, and find out who is singing.</p>
+            <p class="who-lead" data-i18n="ov.who.lead">Made for curious ears.</p>
+            <ul class="who-chips">
+                <li data-i18n="ov.who.walkers">Walkers &amp; hikers</li><li data-i18n="ov.who.birders">Birders</li><li data-i18n="ov.who.families">Families</li><li data-i18n="ov.who.blind">Blind &amp; low-vision birders</li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="devices" class="section ba-section">
+        <div class="container">
+            <h2 data-i18n="ov.dev.h">On iPhone, iPad and Apple Watch</h2>
+            <p class="ba-intro" data-i18n="ov.dev.p">The whole identification runs on each device by itself. Leave the phone in your bag and listen from your wrist, with your hands free for binoculars.</p>
+            <div class="devices-film">
+                <video data-tour="devices" data-tour-dir="assets/ornivox/video/" controls muted playsinline preload="none" width="1920" height="1080" poster="assets/ornivox/video/devices-en.jpg" src="assets/ornivox/video/devices-en.mp4" aria-label="Ornivox shown side by side on an iPad, an iPhone and an Apple Watch: hearing a robin, its field-guide page, the birds likely nearby, and the journal" data-i18n-aria="ov.dev.alt"></video>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 data-i18n="ov.feat.h2">What it does</h2>
+            <div class="showcase">
+                <div class="card-media phone-shot showcase-phone">
+                    <img class="ov-shot" id="showcaseImg" data-shot="listen" src="assets/ornivox/screens/en/listen.jpg" alt="" width="600" height="1305">
+                </div>
+                <p class="showcase-caption" id="showcaseCaption" aria-live="polite"></p>
+                <div class="showcase-list" role="tablist" aria-label="Features" data-i18n-aria="ov.snav.feat">
+                    <button type="button" role="tab" aria-selected="true" data-shot="listen">
+                        <span class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg></span>
+                        <span class="sc-text"><strong data-i18n="ov.sc.listen.h">Hear who's singing</strong><em class="sc-short" data-i18n="ov.sc.listen.s">Listen</em>
+                        <span class="sc-desc" data-i18n="ov.sc.listen.p">Tap the button and Ornivox listens in three-second windows, comparing each one with 6,500 species. The bird singing now appears large, with how sure it is.</span>
+                        <i class="showcase-progress" aria-hidden="true"></i></span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" data-shot="species">
+                        <span class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg></span>
+                        <span class="sc-text"><strong data-i18n="ov.sc.guide.h">A field guide in your pocket</strong><em class="sc-short" data-i18n="ov.sc.guide.s">Guide</em>
+                        <span class="sc-desc" data-i18n="ov.sc.guide.p">Every species has its own page: a photo, its family, conservation status, size, a short description, and when it's around where you are.</span>
+                        <i class="showcase-progress" aria-hidden="true"></i></span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" data-shot="nearby">
+                        <span class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span>
+                        <span class="sc-text"><strong data-i18n="ov.sc.nearby.h">Birds likely around you</strong><em class="sc-short" data-i18n="ov.sc.nearby.s">Nearby</em>
+                        <span class="sc-desc" data-i18n="ov.sc.nearby.p">Your place and the time of year narrow the results to birds that could really be here, so a song in a Berlin park won't come back as an American robin. Browse them before you hear one.</span>
+                        <i class="showcase-progress" aria-hidden="true"></i></span>
+                    </button>
+                    <button type="button" role="tab" aria-selected="false" data-shot="journal">
+                        <span class="sc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm-4 8H7v-2h6v2z"/></svg></span>
+                        <span class="sc-text"><strong data-i18n="ov.sc.journal.h">Your birding journal</strong><em class="sc-short" data-i18n="ov.sc.journal.s">Journal</em>
+                        <span class="sc-desc" data-i18n="ov.sc.journal.p">Birds it's sure about are saved with the place, the weather and a three-second recording. Add notes and photos, see them on a map, and ask Siri which birds you heard this week.</span>
+                        <i class="showcase-progress" aria-hidden="true"></i></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy" class="section">
+        <div class="container">
+            <h2 data-i18n="ov.priv.h2">Private by design</h2>
+            <div class="about-content">
+                <p data-i18n="ov.priv.lead">Ornivox listens to the world around you, so it has to be careful with what it hears. Birds are identified on your device, and nothing you record goes to a server.</p>
+            </div>
+            <ul class="math-points">
+                <li><strong data-i18n="ov.priv.p1.h">On your device</strong><span data-i18n="ov.priv.p1.p">Identification uses BirdNET from the Cornell Lab of Ornithology, running offline on your iPhone, iPad or Apple Watch.</span></li>
+                <li><strong data-i18n="ov.priv.p2.h">Voices are discarded</strong><span data-i18n="ov.priv.p2.p">Any moment in which Ornivox hears a human voice is thrown away and never stored. Only three-second bird clips you keep in the journal are saved.</span></li>
+                <li><strong data-i18n="ov.priv.p3.h">No account, no tracking</strong><span data-i18n="ov.priv.p3.p">No sign-in, no ads, no analytics. Your journal syncs through your own private iCloud, if you use it. I never see it.</span></li>
+            </ul>
+            <p class="math-next" data-i18n-html="ov.priv.note"><strong>Online only when it helps:</strong> to add the weather to a journal entry, Ornivox asks Apple Weather about a place rounded to about a kilometre. Read the full <a href="ornivox-privacy.html">privacy policy</a>.</p>
+        </div>
+    </section>
+
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 data-i18n="ov.faq.h2">Questions</h2>
+            <div class="faq-accordion">
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q1">How do I get it?</summary>
+                    <p data-i18n-html="ov.faq.a1">Ornivox is waiting for App Store review. Until then it's a free public beta: install Apple's TestFlight app, then open the <a href="#get">beta link</a> on your iPhone or iPad. The Apple Watch app comes with it.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q2">Is it really free?</summary>
+                    <p data-i18n-html="ov.faq.a2">Yes. No ads, no subscription, nothing to unlock. It's non-commercial, as the BirdNET license asks. You can chip in on the <a href="support.html">support page</a> if you'd like.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q3">Does it work without signal?</summary>
+                    <p data-i18n="ov.faq.a3">Yes. Identification, the field guide and the journal all work offline. Only the weather for a journal entry, maps and source links need the internet, and they wait until you're back online.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q4">How many birds does it know?</summary>
+                    <p data-i18n="ov.faq.a4">More than 6,000 species worldwide. Your location and the season narrow them to the ones likely around you, which makes the results far more reliable.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q5">What do I need?</summary>
+                    <p data-i18n="ov.faq.a5">An iPhone or iPad with iOS 26, and optionally an Apple Watch with watchOS 26. Summaries and suggested notes need a device with Apple Intelligence; everything else works on all of them.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q6">Is it accessible?</summary>
+                    <p data-i18n-html="ov.faq.a6">Ornivox can speak every bird it hears, also with the screen locked, works fully with VoiceOver, Voice Control and Siri, and follows your text size up to the largest settings. <a href="ornivox-accessibility.html">Accessibility details</a>.</p>
+                </details>
+                <details class="faq-item">
+                    <summary data-i18n="ov.faq.q7">Which languages?</summary>
+                    <p data-i18n="ov.faq.a7">The app is in English, German, Spanish and French, and follows your device language. Bird names and descriptions are in English, German and Spanish; French names are coming.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="get" class="section cta-band">
+        <div class="container">
+            <h2 data-i18n="ov.cta.h2">Try the beta, free</h2>
+            <p data-i18n="ov.cta.p">On iPhone, iPad and Apple Watch. No account, no ads, no signal needed.</p>
+            <a href="https://testflight.apple.com/join/TESTFLIGHT_LINK" class="testflight-btn" rel="noopener" data-i18n="ov.tf.join">Join the beta on TestFlight</a>
+            <p class="beta-note" data-i18n-html="ov.tf.how">1. Install <a href="https://apps.apple.com/app/testflight/id899247664" rel="noopener">TestFlight</a> from the App Store. 2. Open the beta link on your iPhone or iPad. 3. Tap Install.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <a href="#main" class="to-top" aria-label="Back to top" data-i18n-aria="cp.top.aria">↑</a>
+    <div class="dl-bar">
+        <span data-i18n-html="ov.dl.p"><strong>Ornivox</strong> · free beta on TestFlight</span>
+        <a href="https://testflight.apple.com/join/TESTFLIGHT_LINK" rel="noopener" data-i18n="ov.dl.cta">Join</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+            <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a> · <a href="cookies.html" data-i18n="footer.cookies">Cookie Policy</a> · <a href="ornivox-privacy.html" data-i18n="footer.appPrivacy">App Privacy</a> · <a href="ornivox-accessibility.html" data-i18n="footer.accessibility">Accessibility</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js?v=17"></script>
+    <script src="i18n.js?v=4"></script>
+    <script src="script.js?v=7"></script>
+    <script src="prefs.js?v=13" defer></script>
+    <script>
+    // App screens follow the site language (assets/ornivox/screens/<lang>/; zh shows the English app).
+    (function () {
+        const path = (lang, shot) => 'assets/ornivox/screens/' + lang + '/' + shot + '.jpg';
+        const shots = document.querySelectorAll('img.ov-shot');
+        const set = lang => shots.forEach(img => { img.src = path(lang, img.dataset.shot); });
+        if (window.getSiteLang) set(window.getSiteLang());
+        document.addEventListener('natladev:langchange', e => set(e.detail.lang));
+        window.ornivoxShot = path;
+    })();
+    </script>
+    <script>
+    // Section nav, feature showcase, scroll helpers and reveal (as on the ClearPage page).
+    (function () {
+        const root = document.documentElement;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const navbar = document.querySelector('.navbar');
+        const fitNav = () => root.style.setProperty('--nav-h', navbar.offsetHeight + 'px');
+        fitNav(); addEventListener('resize', fitNav);
+
+        const links = [...document.querySelectorAll('.section-nav a')];
+        const io = new IntersectionObserver(ents => {
+            ents.forEach(en => {
+                if (!en.isIntersecting) return;
+                links.forEach(a => a.classList.remove('is-active'));
+                const a = links.find(l => l.getAttribute('href') === '#' + en.target.id);
+                if (a) { a.classList.add('is-active'); a.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }
+            });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        links.forEach(a => { const t = document.querySelector(a.getAttribute('href')); if (t) io.observe(t); });
+
+        const hero = document.querySelector('.hero');
+        const get = document.getElementById('get');
+        const onScroll = () => {
+            document.body.classList.toggle('scrolled', scrollY > hero.offsetHeight);
+            const r = get.getBoundingClientRect();
+            document.body.classList.toggle('at-get', r.top < innerHeight && r.bottom > 0);
+        };
+        addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+        // Feature showcase: tabs swap the phone screen, auto-advance until touched.
+        const tabs = [...document.querySelectorAll('.showcase-list [role="tab"]')];
+        const img = document.getElementById('showcaseImg');
+        const cap = document.getElementById('showcaseCaption');
+        const MS = 5000; let i = 0, timer = null, auto = !reduce, inView = false;
+        document.querySelector('.showcase').style.setProperty('--sc-ms', MS + 'ms');
+        const lang = () => (window.getSiteLang && window.getSiteLang()) || 'en';
+        function show(n) {
+            i = n;
+            tabs.forEach((t, k) => {
+                t.setAttribute('aria-selected', String(k === n));
+                t.tabIndex = k === n ? 0 : -1;
+                const bar = t.querySelector('.showcase-progress'); bar.classList.remove('run'); void bar.offsetWidth;
+                if (k === n && auto && inView) bar.classList.add('run');
+            });
+            const shot = tabs[n].dataset.shot;
+            cap.textContent = tabs[n].querySelector('.sc-desc').textContent;
+            img.alt = tabs[n].querySelector('strong').textContent;
+            const src = window.ornivoxShot(lang(), shot);
+            if (img.dataset.shot === shot && img.getAttribute('src') === src) return;
+            img.dataset.shot = shot;
+            if (reduce) { img.src = src; return; }
+            img.classList.add('is-swapping');
+            setTimeout(() => { img.src = src; img.classList.remove('is-swapping'); }, 200);
+        }
+        function schedule() { clearTimeout(timer); if (auto && inView) timer = setTimeout(() => { show((i + 1) % tabs.length); schedule(); }, MS); }
+        const stop = () => { auto = false; clearTimeout(timer); tabs.forEach(t => t.querySelector('.showcase-progress').classList.remove('run')); };
+        tabs.forEach((t, k) => {
+            t.addEventListener('click', () => { stop(); show(k); });
+            t.addEventListener('keydown', e => {
+                const d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0;
+                if (!d) return; e.preventDefault(); stop(); const n = (i + d + tabs.length) % tabs.length; show(n); tabs[n].focus();
+            });
+        });
+        new IntersectionObserver(ents => { inView = ents[0].isIntersecting; show(i); schedule(); }, { threshold: 0.5 })
+            .observe(document.querySelector('.showcase'));
+        show(0);
+        document.addEventListener('natladev:langchange', () => show(i));
+
+        if (!reduce && 'IntersectionObserver' in window) {
+            const rv = new IntersectionObserver(ents => ents.forEach(en => {
+                if (en.isIntersecting) { en.target.classList.add('is-visible'); rv.unobserve(en.target); }
+            }), { threshold: 0.12 });
+            document.querySelectorAll('.section').forEach(s => { s.classList.add('reveal'); rv.observe(s); });
+        }
+    })();
+    </script>
+</body>
+</html>

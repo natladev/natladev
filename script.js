@@ -58,7 +58,9 @@ if (!prefersReducedMotion) {
     const tours = document.querySelectorAll('video[data-tour]');
     if (!tours.length) return;
     const set = lang => tours.forEach(video => {
-        const base = 'assets/clearpage/video/' + video.dataset.tour + '-' + lang;
+        // data-tour-dir names another app's folder (default: ClearPage's).
+        const dir = video.dataset.tourDir || 'assets/clearpage/video/';
+        const base = dir + video.dataset.tour + '-' + lang;
         if (video.getAttribute('src') === base + '.mp4') return;
         video.poster = base + '.jpg';
         video.src = base + '.mp4';

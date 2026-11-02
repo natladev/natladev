@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessibility of the Ornivox app: spoken birds, VoiceOver, Voice Control, Siri, large text, and what is not supported yet.">
+    <title>Ornivox Accessibility | Natalia Andrzejewski</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=24">
+    <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;if(p.tint){d.dataset.tint=p.tint;d.dataset.theme='light';}}catch(e){}})();</script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">nat</a>
+            <div class="nav-right">
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="index.html#work" data-i18n="nav.work">Work</a></li>
+                    <li><a href="clearpage.html" data-i18n="nav.dyslexia">Dyslexia</a></li>
+                    <li><a href="ornivox.html" data-i18n="nav.birds">Birdsong</a></li>
+                    <li><a href="support.html" data-i18n="nav.support">Support</a></li>
+                    <li><a href="index.html#socials" data-i18n="nav.connect">Connect</a></li>
+                </ul>
+                <div class="lang-switch" role="group" aria-label="Language / Idioma / Sprache / 语言">
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="es">ES</button>
+                    <button type="button" class="lang-btn" data-lang="de">DE</button>
+                    <button type="button" class="lang-btn" data-lang="zh" lang="zh-Hans">中文</button>
+                </div>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section" id="main">
+        <div class="container">
+            <h2 data-i18n="ova.title">Ornivox Accessibility</h2>
+            <div class="about-content">
+                <p><em data-i18n="ova.updated">Last updated: November 2, 2026 · Applies to the Ornivox app for iPhone, iPad and Apple Watch.</em></p>
+
+                <p data-i18n="ova.intro">Birding is mostly listening, which makes it one of the outdoor hobbies that works well without sight. Ornivox is built so that it can be used entirely by ear, with VoiceOver, by voice, or at very large text sizes, alongside the accessibility features built into iPhone, iPad and Apple Watch. This page explains what's supported, how to turn it on, and where support has limits.</p>
+
+                <h3 data-i18n="ova.s1.h">Birds spoken aloud</h3>
+                <p data-i18n="ova.s1.p">Ornivox can say the name of each new bird it identifies, with how sure it is, and sum up the session when it stops. This works with the screen locked and the phone in your pocket. Choose when it speaks in Settings → Speak Birds Aloud: always, only when VoiceOver is on (the default), or never.</p>
+
+                <h3 data-i18n="ova.s2.h">VoiceOver</h3>
+                <p data-i18n="ova.s2.p">Every control is labeled, and each bird reads as one sentence: its name, how sure Ornivox is, whether it's new for your journal, and when it last sang. The listen button says what is happening ("Stop listening, Listening… 3 heard"), and changes such as voices nearby, a bird added or results arriving are announced. Coordinates are read in words, and the season chart on each bird's page has an audio graph.</p>
+
+                <h3 data-i18n="ova.s3.h">Siri, Voice Control and keyboards</h3>
+                <p data-i18n="ova.s3.p">Ask Siri "Identify birds with Ornivox" to start listening, "What is Ornivox hearing?" to hear the birds of the session without unlocking, or "Which birds did I hear today in Ornivox?". With Voice Control, say "Tap Listen" or "Tap Stop". With a hardware keyboard, ⌘L starts and stops listening, and Full Keyboard Access reaches every control.</p>
+
+                <h3 data-i18n="ova.s4.h">No gestures required</h3>
+                <p data-i18n="ova.s4.p">Every swipe action, such as adding a bird to the journal or marking a wrong guess, also works by touching and holding a row, with a pointer's secondary click, or with Voice Control's "Long press". Nothing depends on a timed gesture or on shaking the device.</p>
+
+                <h3 data-i18n="ova.s5.h">Text size and display</h3>
+                <p data-i18n="ova.s5.p">Ornivox follows your text size up to the largest accessibility sizes: rows turn into cards, filter chips wrap onto lines, and small icons show large when you touch and hold them (Large Content Viewer). It respects Bold Text, Increase Contrast, Reduce Motion and Smart Invert, which leaves bird photos in their real colors. Every color that carries meaning also has a word or a symbol.</p>
+
+                <h3 data-i18n="ova.s6.h">Apple Watch</h3>
+                <p data-i18n="ova.s6.p">The Apple Watch app identifies birds on its own, announces the first clear sighting of each bird to VoiceOver, and can be started from its complication. It sends what it hears to your iPhone's journal.</p>
+
+                <h3 data-i18n="ova.s7.h">Supported languages</h3>
+                <p data-i18n="ova.s7.p">The interface, spoken birds and Siri are available in English, German, Spanish and French. Ornivox follows your device language; set it in Settings → General → Language &amp; Region, or per app in Settings → Ornivox → Language.</p>
+
+                <h3 data-i18n="ova.s8.h">Private by design</h3>
+                <p data-i18n-html="ova.s8.p">There is no account and no sign-in, and identification works with no network at all, which removes connectivity as a barrier out in the field. See the <a href="ornivox-privacy.html">privacy policy</a> for details.</p>
+
+                <h3 data-i18n="ova.s9.h">Known limitations</h3>
+                <p data-i18n="ova.s9.p">Some things Ornivox can't fully do yet, so you know before relying on it:</p>
+                <ul>
+                    <li data-i18n-html="ova.s9.li1"><strong>Identification is a best guess.</strong> Wind, traffic, distance and several birds singing at once can lower confidence or lead to a wrong species; uncertain birds are listed separately as "Possible".</li>
+                    <li data-i18n-html="ova.s9.li2"><strong>Bird names in French.</strong> The interface is in French, but bird names and descriptions are not yet; they appear in English.</li>
+                    <li data-i18n-html="ova.s9.li3"><strong>Apple Intelligence features.</strong> Summaries, suggested notes and Describe a Bird need a device with Apple Intelligence turned on.</li>
+                    <li data-i18n-html="ova.s9.li4"><strong>Apple Watch at large text sizes.</strong> The watch app follows your text size, but it has had less testing at the largest sizes than the iPhone app.</li>
+                    <li data-i18n-html="ova.s9.li5"><strong>Spoken output and VoiceOver together.</strong> When VoiceOver is talking, Ornivox waits longer before treating speech as people nearby, so it won't stop itself; very loud speech can still pause identification for a moment.</li>
+                </ul>
+
+                <h3 data-i18n="ova.s10.h">Feedback</h3>
+                <p data-i18n-html="ova.s10.p">Accessibility is never finished. If something doesn't work for you, or you need a feature, email me at <a href="mailto:natiosdev@gmail.com">natiosdev@gmail.com</a>, or send feedback from TestFlight. Your report directly shapes what comes next.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copyright">&copy; 2026 Natalia Andrzejewski. Built with care.</p>
+            <p class="legal-links"><a href="impressum.html" data-i18n="footer.impressum">Impressum</a> · <a href="datenschutz.html" data-i18n="footer.privacy">Datenschutzerklärung</a> · <a href="cookies.html" data-i18n="footer.cookies">Cookie Policy</a> · <a href="ornivox-privacy.html" data-i18n="footer.appPrivacy">App Privacy</a></p>
+        </div>
+    </footer>
+
+    <script src="translations.js?v=17"></script>
+    <script src="i18n.js?v=4"></script>
+    <script src="script.js?v=7"></script>
+    <script src="prefs.js?v=13" defer></script>
+</body>
+</html>
