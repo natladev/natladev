@@ -3284,8 +3284,9 @@ button .anchor, [class*="cta"] .anchor, .lang-btn .anchor { color: inherit; }
 .ov-demo .phone-shot { width: 100%; }
 @media (max-width: 800px) { .ov-demo { flex-basis: auto; width: min(260px, 70vw); margin: 1.5rem auto 0; } }
 /* Home: Ornivox's card sits beside its landscape film. */
-.work-grid.work-grid-ornivox { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: center; margin-top: 2.5rem; }
-@media (max-width: 800px) { .work-grid.work-grid-ornivox { grid-template-columns: minmax(0, 1fr); } }
+.work-grid.work-grid-ornivox { margin-top: 2.5rem; }
+.work-grid.work-grid-ornivox:has(.work-video-wide) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); align-items: center; }
+@media (max-width: 800px) { .work-grid.work-grid-ornivox:has(.work-video-wide) { grid-template-columns: minmax(0, 1fr); } }
 .work-video-wide video { width: 100%; height: auto; border-radius: var(--radius); display: block; }
 .badge-beta {
     display: inline-block;
@@ -3296,4 +3297,4 @@ button .anchor, [class*="cta"] .anchor, .lang-btn .anchor { color: inherit; }
     color: #fff;
     background: linear-gradient(135deg, #5549eb, #458ccc);
 }
-.devices-film video[data-tour-dir*="ornivox"], .work-video-wide video { background: #e9e4fb; }
+.devices-film video[data-tour-dir*="ornivox"], .work-video-wide video, .watch-phone video[data-tour-dir*="ornivox"] { background: #e9e4fb; }

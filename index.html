@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://natladev.com/">
     <meta property="og:image" content="https://natladev.com/nat.jpg">
     <meta name="twitter:card" content="summary">
-    <link rel="stylesheet" href="style.css?v=24">
+    <link rel="stylesheet" href="style.css?v=25">
     <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;if(p.tint){d.dataset.tint=p.tint;d.dataset.theme='light';}}catch(e){}})();</script>
     <script type="application/ld+json">
     {
@@ -66,6 +66,11 @@
                     <img class="dark-only" src="assets/clearpage/clearpage-wordmark-cream.svg" alt="ClearPage" width="420" height="142">
                     <img class="light-only" src="assets/clearpage/clearpage-wordmark-ink.svg" alt="ClearPage" width="420" height="142">
                     <span class="hero-app-tag" data-i18n="home.hero.tag.cp">Dyslexia &amp; dyscalculia reading</span>
+                </a>
+                <a href="ornivox.html" class="hero-app" aria-label="Ornivox, bird songs identified offline">
+                    <img class="dark-only" src="assets/ornivox/ornivox-wordmark-dark.png" alt="Ornivox" width="420" height="114">
+                    <img class="light-only" src="assets/ornivox/ornivox-wordmark-light.png" alt="Ornivox" width="420" height="114">
+                    <span class="hero-app-tag" data-i18n="home.hero.tag.ov">Bird songs, identified offline</span>
                 </a>
             </div>
         </div>
@@ -132,8 +137,10 @@
                         <span>Accessibility</span>
                     </div>
                 </a>
-                <div class="work-video work-video-wide">
-                    <video data-tour="devices" data-tour-dir="assets/ornivox/video/" controls muted playsinline preload="none" width="1920" height="1080" poster="assets/ornivox/video/devices-en.jpg" src="assets/ornivox/video/devices-en.mp4" aria-label="Ornivox shown side by side on an iPad, an iPhone and an Apple Watch" data-i18n-aria="home.work.ov.videoAria"></video>
+                <div class="work-video">
+                    <div class="watch-phone">
+                        <video data-tour="overview" data-tour-dir="assets/ornivox/video/" controls muted playsinline preload="none" width="540" height="1170" poster="assets/ornivox/video/overview-en.jpg" src="assets/ornivox/video/overview-en.mp4" aria-label="A short video tour of Ornivox on an iPhone" data-i18n-aria="home.work.ov.videoAria"></video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,7 +215,7 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=17"></script>
+    <script src="translations.js?v=18"></script>
     <script src="i18n.js?v=4"></script>
     <script src="script.js?v=7"></script>
     <script src="prefs.js?v=13" defer></script>
