@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ornivox, a free iOS app that identifies birds by their song, offline, on iPhone, iPad and Apple Watch. On-device BirdNET, a field guide, and a private birding journal. Now in public beta on TestFlight.">
+    <meta name="apple-itunes-app" content="app-id=6825053277">
+    <meta name="description" content="Ornivox, a free iOS app that identifies birds by their song, offline, on iPhone, iPad and Apple Watch. On-device BirdNET, a field guide, and a private birding journal.">
     <title>Ornivox | Identify birds by their song</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ornivox, identify birds by their song, offline">
-    <meta property="og:description" content="Every bird has a voice. Ornivox tells you whose it is, on your iPhone, iPad or Apple Watch, even deep in the forest with no signal. Free public beta on TestFlight.">
+    <meta property="og:description" content="Every bird has a voice. Ornivox tells you whose it is, on your iPhone, iPad or Apple Watch, even deep in the forest with no signal. Free on the App Store.">
     <meta property="og:url" content="https://natladev.com/ornivox.html">
-    <meta property="og:image" content="https://natladev.com/assets/ornivox/og-ornivox.jpg">
+    <meta property="og:image" content="https://natladev.com/assets/ornivox/og-launch.jpg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Ornivox on an iPad, an iPhone and an Apple Watch, naming a European Robin as it sings.">
+    <meta property="og:image:height" content="628">
+    <meta property="og:image:alt" content="Ornivox: Identify Bird Songs. New launch alert. Ready. Set. Get. Download on the App Store.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://natladev.com/assets/ornivox/og-ornivox.jpg">
-    <link rel="stylesheet" href="style.css?v=24">
+    <meta name="twitter:image" content="https://natladev.com/assets/ornivox/og-launch.jpg">
+    <link rel="stylesheet" href="style.css?v=25">
     <script>(function(){try{var p=JSON.parse(localStorage.getItem('natladev-prefs')||'{}');var d=document.documentElement,t=p.theme;d.dataset.theme=(t==='light'||t==='dark')?t:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');if(p.font)d.dataset.font=p.font;if(p.textsize)d.dataset.textsize=p.textsize;if(p.spacing)d.dataset.spacing=p.spacing;if(p.tint){d.dataset.tint=p.tint;d.dataset.theme='light';}}catch(e){}})();</script>
     <script type="application/ld+json">
     {
@@ -27,9 +28,11 @@
         "image": "https://natladev.com/assets/ornivox/icon512.png",
         "operatingSystem": "iOS, iPadOS, watchOS",
         "applicationCategory": "ReferenceApplication",
-        "softwareVersion": "1.0 beta",
+        "softwareVersion": "1.0",
+        "downloadUrl": "https://apps.apple.com/app/ornivox-identify-bird-songs/id6825053277",
+        "installUrl": "https://apps.apple.com/app/ornivox-identify-bird-songs/id6825053277",
         "description": "A free iOS app that identifies birds by their song, entirely on the device: BirdNET from the Cornell Lab of Ornithology, narrowed by place and season, with a field guide and a private journal. On iPhone, iPad and Apple Watch, in English, German, Spanish and French.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR", "url": "https://apps.apple.com/app/ornivox-identify-bird-songs/id6825053277" },
         "author": { "@type": "Person", "name": "Natalia Andrzejewski", "url": "https://natladev.com/" }
     }
     </script>
@@ -74,11 +77,12 @@
                 <li data-i18n="ov.facts.free">Free</li><li data-i18n="ov.facts.offline">Works offline</li><li data-i18n="ov.facts.private">No tracking</li><li>EN · DE · ES · FR</li>
             </ul>
             <div class="social-links hero-actions">
-                <!-- Public TestFlight group "Public Beta" (App Store Connect). -->
-                <a href="https://testflight.apple.com/join/6mqgn4Q4" class="testflight-btn" rel="noopener" data-i18n="ov.tf.join">Join the beta on TestFlight</a>
+                <a href="https://apps.apple.com/app/ornivox-identify-bird-songs/id6825053277" class="appstore-badge" rel="noopener" aria-label="Download Ornivox on the App Store">
+                    <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download on the App Store" data-i18n-alt="ov.badgeAlt" width="135" height="40">
+                    <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download on the App Store" data-i18n-alt="ov.badgeAlt" width="135" height="40">
+                </a>
                 <a href="#devices" class="hero-more" data-i18n="ov.hero.more">See it in action ↓</a>
             </div>
-            <p class="beta-note" data-i18n="ov.tf.note">Ornivox is in public beta while it waits for App Store review. TestFlight is Apple's free app for trying apps before they're released.</p>
             </div>
             <div class="hero-demo ov-demo">
                 <div class="card-media phone-shot">
@@ -94,7 +98,7 @@
             <a href="#features" data-i18n="ov.snav.feat">Features</a>
             <a href="#privacy" data-i18n="ov.snav.privacy">Privacy</a>
             <a href="#faq" data-i18n="ov.snav.faq">FAQ</a>
-            <a href="#get" class="section-nav-cta" data-i18n="ov.snav.get">Join the beta</a>
+            <a href="#get" class="section-nav-cta" data-i18n="ov.snav.get">Download</a>
         </div>
     </nav>
 
@@ -177,7 +181,7 @@
             <div class="faq-accordion">
                 <details class="faq-item">
                     <summary data-i18n="ov.faq.q1">How do I get it?</summary>
-                    <p data-i18n-html="ov.faq.a1">Ornivox is waiting for App Store review. Until then it's a free public beta: install Apple's TestFlight app, then open the <a href="#get">beta link</a> on your iPhone or iPad. The Apple Watch app comes with it.</p>
+                    <p data-i18n-html="ov.faq.a1">Download it free from the <a href="#get">App Store</a> on your iPhone or iPad. The Apple Watch app comes with it: if it doesn\'t appear on your watch, install it from the Watch app on your iPhone.</p>
                 </details>
                 <details class="faq-item">
                     <summary data-i18n="ov.faq.q2">Is it really free?</summary>
@@ -209,10 +213,12 @@
 
     <section id="get" class="section cta-band">
         <div class="container">
-            <h2 data-i18n="ov.cta.h2">Try the beta, free</h2>
-            <p data-i18n="ov.cta.p">On iPhone, iPad and Apple Watch. No account, no ads, no signal needed.</p>
-            <a href="https://testflight.apple.com/join/6mqgn4Q4" class="testflight-btn" rel="noopener" data-i18n="ov.tf.join">Join the beta on TestFlight</a>
-            <p class="beta-note" data-i18n-html="ov.tf.how">1. Install <a href="https://apps.apple.com/app/testflight/id899247664" rel="noopener">TestFlight</a> from the App Store. 2. Open the beta link on your iPhone or iPad. 3. Tap Install.</p>
+            <h2 data-i18n="ov.cta.h2">Free on iPhone, iPad and Apple Watch</h2>
+            <p data-i18n="ov.cta.p">No account, no ads, no signal needed.</p>
+            <a href="https://apps.apple.com/app/ornivox-identify-bird-songs/id6825053277" class="appstore-badge" rel="noopener" aria-label="Download Ornivox on the App Store">
+                <img class="dark-only" src="assets/clearpage/appstoremerch/white.svg" alt="Download on the App Store" data-i18n-alt="ov.badgeAlt" width="135" height="40">
+                <img class="light-only" src="assets/clearpage/appstoremerch/black.svg" alt="Download on the App Store" data-i18n-alt="ov.badgeAlt" width="135" height="40">
+            </a>
         </div>
     </section>
 
@@ -220,8 +226,8 @@
 
     <a href="#main" class="to-top" aria-label="Back to top" data-i18n-aria="cp.top.aria">↑</a>
     <div class="dl-bar">
-        <span data-i18n-html="ov.dl.p"><strong>Ornivox</strong> · free beta on TestFlight</span>
-        <a href="https://testflight.apple.com/join/6mqgn4Q4" rel="noopener" data-i18n="ov.dl.cta">Join</a>
+        <span data-i18n-html="ov.dl.p"><strong>Ornivox</strong> · free on iPhone, iPad &amp; Watch</span>
+        <a href="https://apps.apple.com/app/ornivox-identify-bird-songs/id6825053277" rel="noopener" data-i18n="ov.dl.cta">Get it</a>
     </div>
 
     <footer>
@@ -231,7 +237,7 @@
         </div>
     </footer>
 
-    <script src="translations.js?v=17"></script>
+    <script src="translations.js?v=19"></script>
     <script src="i18n.js?v=4"></script>
     <script src="script.js?v=7"></script>
     <script src="prefs.js?v=13" defer></script>
